@@ -1,0 +1,22 @@
+#include <windows.h>
+
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+1 VERSIONINFO
+	FILEVERSION 0,5,0,0
+{
+	BLOCK "StringFileInfo"
+	{
+		BLOCK "04090025"
+		{
+			VALUE "FileDescription", "RZClient Server Plugin"
+			VALUE "LegalCopyright", "Copyright © 2016 DarkuzDEV"
+			VALUE "OriginalFilename", "rzclient.dll"
+			VALUE "ProductName", "RZClient SA:MP Plugin"
+			VALUE "ProductVersion", "v0.3.7-RC2A"
+		}
+	}
+	BLOCK "VarFileInfo"
+	{
+		VALUE "Translation", 1033, 37
+	}
+}
