@@ -25,11 +25,11 @@ stock mission_GetWeaponName(weaponid, weapon[], len = sizeof(weapon))
     switch(weaponid)
     {
         case 18: strcat(weapon, "Molotov Cocktail", len);
-        case 44: strcat(weapon, "Googles de Visión Nocturna", len);
+        case 44: strcat(weapon, "Googles de Visiï¿½n Nocturna", len);
         case 45:  strcat(weapon, "Googles Infrarojos", len);
         default: GetWeaponName(weaponid, weapon, len);
     }
-    return weapon;
+    return 1;
 }
 
 enum MissionInfo
@@ -59,7 +59,7 @@ stock CreateMissionForPlayer(playerid, mtype, rtype)
 	{
 	    case MISSION_KILL_ZOMBIES: ShowPlayerMissionPrompt(playerid, MISSION_KILL_ZOMBIES, gRandom(50, 400), gRandom(1, 4), rtype);//matar 30 o 300 zombis
 	    case MISSION_KILL_HUMANS: ShowPlayerMissionPrompt(playerid, MISSION_KILL_HUMANS, gRandom(50, 250), 0, rtype);//matar 50 o 150 humanos
-	    case MISSION_FIND_WEAPONS: ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{F50000}* R.Z System", "{ffffff}Por el momento esta misión no está disponible.", "x", "");//encontrar munición
+	    case MISSION_FIND_WEAPONS: ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{F50000}* R.Z System", "{ffffff}Por el momento esta misiï¿½n no estï¿½ disponible.", "x", "");//encontrar municiï¿½n
 	    case MISSION_FIND_PICKUPS: ShowPlayerMissionPrompt(playerid, MISSION_FIND_PICKUPS, gRandom(30, 120), ChooseNumber(1241, 1252, 1254, 1275, 1313, 1276, 1279, 1247/*, 1582*/), rtype);//encontrar pickups de 30 a 120
 		default: return 1;
 	}
@@ -113,7 +113,7 @@ stock mission_GetPickUpName(pickupId, pikcupName[], len)
         case 1582: strcat(pikcupName, "Pizzas", len);
         default: strcat(pikcupName, "???", len);
     }
-    return pikcupName;
+    return 1;
 }
 
 
@@ -127,7 +127,7 @@ stock mission_GetVirusTypeText(virus_type, virusText[], len)
 	    case 3: strcat(virusText,"Zombies con el G-Virus", len);
 	    case 4: strcat(virusText,"Zombies con el Z-Virus", len);
 	}
-	return virusText;
+	return 1;
 }
 
 stock GetMissionObjName(mtype, target, objName[], len = sizeof(objName))
@@ -140,7 +140,7 @@ stock GetMissionObjName(mtype, target, objName[], len = sizeof(objName))
 	    case MISSION_FIND_PICKUPS: mission_GetPickUpName(target,objName, len);
 	    default: strcat(objName, "?", len);
 	}
-	return objName;
+	return 1;
 }
 
 stock GetMissionObjetiveName(mtype, missionObjetiveName[], len = sizeof(missionObjetiveName))
@@ -153,7 +153,7 @@ stock GetMissionObjetiveName(mtype, missionObjetiveName[], len = sizeof(missionO
         case MISSION_FIND_PICKUPS: strcat(missionObjetiveName, "Encontrar", len);
         default: strcat(missionObjetiveName, "?", len);
     }
-    return missionObjetiveName;
+    return 1;
 }
 
 
@@ -165,7 +165,7 @@ stock GetRewardTypeTextByTypeId(rtype, text[], len = sizeof(text))
         case MISSION_REWARD_SCORE: strcat(text, "Puntos", len);
         default: strcat(text, "???", len);
     }
-    return text;
+    return 1;
 }
 
 stock GetRewardTypeText(playerid, text[], len = sizeof(text))
@@ -177,7 +177,7 @@ stock GetRewardTypeText(playerid, text[], len = sizeof(text))
         case MISSION_REWARD_SCORE: strcat(text, "Puntos", len);
         default: strcat(text, "???", len);
     }
-    return text;
+    return 1;
 }
 
 stock ShowPlayerMissionPrompt(playerid, mtype, amount, objtarget_id, rtype)
@@ -197,7 +197,7 @@ stock ShowPlayerMissionPrompt(playerid, mtype, amount, objtarget_id, rtype)
 	GetRewardTypeTextByTypeId(rtype, RewardType);
 	
 	new request_string[256],request_title[128];
-	format(request_string, sizeof(request_string), "{FF6633}Eh vale... qué te parece esto?\n{FF6633}%s {ffffff}%d %s{FF6633}, por supuesto.. la recompensa: %d %s (%d).\n{33FF66}¿Aceptas la Mission?", MissionObjetive, amount, objName, Obtendras, RewardType, rtype);
+	format(request_string, sizeof(request_string), "{FF6633}Eh vale... quï¿½ te parece esto?\n{FF6633}%s {ffffff}%d %s{FF6633}, por supuesto.. la recompensa: %d %s (%d).\n{33FF66}ï¿½Aceptas la Mission?", MissionObjetive, amount, objName, Obtendras, RewardType, rtype);
 	format(request_title, sizeof(request_title), "{FF33CC}R.Z{ffffff} Mision de: {FF33CC}%s",MissionObjetive);
 	return ShowPlayerDialog(playerid,DIALOG_MISSION_REQUEST,DIALOG_STYLE_MSGBOX,request_title,request_string,"SI","NO");
 }
@@ -210,11 +210,11 @@ stock ShowMissionsForPlayer(playerid)
 		"Tipo\tRecompensa\n\
 		Matar Zombies\t{66FF33}Monedas\n\
 		Matar Humanos\t{66FF33}Monedas\n\
-		Recolectar Munición\t{66FF33}Monedas\n\
+		Recolectar Municiï¿½n\t{66FF33}Monedas\n\
 		Buscar Objetos\t{66FF33}Monedas\n\
 		Matar Zombies\t{FF6633}SCORE\n\
 		Matar Humanos\t{FF6633}SCORE\n\
-		Recolectar Munición\t{FF6633}SCORE\n\
+		Recolectar Municiï¿½n\t{FF6633}SCORE\n\
 		Buscar Objetos\t{FF6633}SCORE",
 		"VER", "X");
 	}
@@ -227,7 +227,7 @@ public RZM_OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 	{
 		if(response == 1)
 		{
-		    if(PlayerMission[playerid][active]) return ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{F50000}* Mission Errror", "Ya estas en una misión", "x", "");
+		    if(PlayerMission[playerid][active]) return ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{F50000}* Mission Errror", "Ya estas en una misiï¿½n", "x", "");
 			switch(listitem)
 			{
 			    case 0: return CreateMissionForPlayer(playerid, MISSION_KILL_ZOMBIES, MISSION_REWARD_MONEY);//kill zombies - money
@@ -329,12 +329,12 @@ stock LoadMissionInfo(playerid)
 		{
 			if(GetMissionProgressAmount(playerid) < GetMissionProgressLimit(playerid)){
 			new request_string[256];
-			format(request_string, sizeof(request_string), "{FFFFFF}Hey!! No te olvides de completar tu misión.\n{FFFFFF}Aun tienes que %s {FF6633}%d %s más,{FFFFFF} Te pagaremos {FF6633}%d %s.", MissionObjetive, PlayerMission[playerid][remount]-PlayerMission[playerid][camount], objName, Obtendras, RewardType);
+			format(request_string, sizeof(request_string), "{FFFFFF}Hey!! No te olvides de completar tu misiï¿½n.\n{FFFFFF}Aun tienes que %s {FF6633}%d %s mï¿½s,{FFFFFF} Te pagaremos {FF6633}%d %s.", MissionObjetive, PlayerMission[playerid][remount]-PlayerMission[playerid][camount], objName, Obtendras, RewardType);
 			ShowPlayerDialog(playerid,0,DIALOG_STYLE_MSGBOX,"R.Z Mission Reminder",request_string,"OK","");
 			}
 			else
 			{
-			ShowPlayerDialog(playerid,0,DIALOG_STYLE_MSGBOX,"R.Z Mission Reminder","{ffffff}Hey! Ya has completado tu misión,\nPara obtener tu recompensa acude con cualquier cientifico.","OK","");
+			ShowPlayerDialog(playerid,0,DIALOG_STYLE_MSGBOX,"R.Z Mission Reminder","{ffffff}Hey! Ya has completado tu misiï¿½n,\nPara obtener tu recompensa acude con cualquier cientifico.","OK","");
 			}
 		}
     }
@@ -416,7 +416,7 @@ stock checkMissionCompleted(playerid)
 	        PlayerMission[playerid][active] = 0;
 	        new recompensa[40];
 	        GetRewardTypeText(playerid, recompensa);
-			SendFormatMessage(playerid,red,"]< Mission Completed >[ {ffffff}Has recibido %d %s por completar una misión.", GetMissionReward(playerid), recompensa);
+			SendFormatMessage(playerid,red,"]< Mission Completed >[ {ffffff}Has recibido %d %s por completar una misiï¿½n.", GetMissionReward(playerid), recompensa);
 			if(GetMissionRewardType(playerid) == 0)
 			{
 			    GivePlayerMoney(playerid, GetMissionReward(playerid));
@@ -427,7 +427,7 @@ stock checkMissionCompleted(playerid)
 			}
 			PlayerPlaySound(playerid, 1057, 0.0, 0.0, 0.0);
             new missionlog[256];
-            format(missionlog,sizeof(missionlog),"Completo la misión %s %d %s y recibio %d %s", GetMissionObjetiveText(playerid), GetMissionProgressLimit(playerid), GetMissionObjTypeName(playerid), GetMissionReward(playerid), recompensa);
+            format(missionlog,sizeof(missionlog),"Completo la misiï¿½n %s %d %s y recibio %d %s", GetMissionObjetiveText(playerid), GetMissionProgressLimit(playerid), GetMissionObjTypeName(playerid), GetMissionReward(playerid), recompensa);
             MissionLog(playerid, missionlog);
             PlayerMission[playerid][active] = 0;
             SaveMissionInfo(playerid);
@@ -435,7 +435,7 @@ stock checkMissionCompleted(playerid)
 	    }
 	    else
 	    {
-		 	ShowPlayerDialog(playerid,DIALOG_MISSION_CANCELREQUEST,DIALOG_STYLE_MSGBOX,"R.Z Mission","{FF6633}Hey hey hey! Aun no has completado tu misión anterior\n{33FF66}¿Deseas Cancelarla y obtener una nueva?","SI","NO");
+		 	ShowPlayerDialog(playerid,DIALOG_MISSION_CANCELREQUEST,DIALOG_STYLE_MSGBOX,"R.Z Mission","{FF6633}Hey hey hey! Aun no has completado tu misiï¿½n anterior\n{33FF66}ï¿½Deseas Cancelarla y obtener una nueva?","SI","NO");
 		}
 		return 1;
 	}
@@ -453,7 +453,7 @@ stock ShowMissionInformationForPlayer(playerid)
 		new recompensa[30];
 		GetRewardTypeText(playerid, recompensa);
 		new request_string[256];
-		format(request_string, sizeof(request_string), "{FFFFFF}%s {FF6633}%d %s más.\n{FFFFFF} Recompensa: {FF6633}%d %s\n{ffffff}Status: {33FF66}Mision Completada.", GetMissionObjetiveText(playerid),  GetMissionProgressLimit(playerid)-GetMissionProgressAmount(playerid), GetMissionObjTypeName(playerid), GetMissionReward(playerid), recompensa);
+		format(request_string, sizeof(request_string), "{FFFFFF}%s {FF6633}%d %s mï¿½s.\n{FFFFFF} Recompensa: {FF6633}%d %s\n{ffffff}Status: {33FF66}Mision Completada.", GetMissionObjetiveText(playerid),  GetMissionProgressLimit(playerid)-GetMissionProgressAmount(playerid), GetMissionObjTypeName(playerid), GetMissionReward(playerid), recompensa);
 		ShowPlayerDialog(playerid,0,DIALOG_STYLE_MSGBOX,"R.Z Mission Info",request_string,"OK","");
 	    PlayerPlaySound(playerid, 1057, 0.0, 0.0, 0.0);
 	}
@@ -462,7 +462,7 @@ stock ShowMissionInformationForPlayer(playerid)
 		new recompensa[30];
 		GetRewardTypeText(playerid, recompensa);
 		new request_string[256];
-		format(request_string, sizeof(request_string), "{FFFFFF}%s {FF6633}%d %s más,{FFFFFF} Recompensa: {FF6633}%d %s.\n{ffffff}Status: {F50000}Mision Incompleta.",GetMissionObjetiveText(playerid),  GetMissionProgressLimit(playerid)-GetMissionProgressAmount(playerid), GetMissionObjTypeName(playerid), GetMissionReward(playerid), recompensa);
+		format(request_string, sizeof(request_string), "{FFFFFF}%s {FF6633}%d %s mï¿½s,{FFFFFF} Recompensa: {FF6633}%d %s.\n{ffffff}Status: {F50000}Mision Incompleta.",GetMissionObjetiveText(playerid),  GetMissionProgressLimit(playerid)-GetMissionProgressAmount(playerid), GetMissionObjTypeName(playerid), GetMissionReward(playerid), recompensa);
 		ShowPlayerDialog(playerid,0,DIALOG_STYLE_MSGBOX,"R.Z Mission Info",request_string,"OK","");
 	}
 	return 1;

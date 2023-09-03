@@ -1,13 +1,13 @@
 /*
 
-Copyrgiht © soknifedev. GNU Public License V3
-Hecho en México, con Amors <3 
+Copyrgiht ï¿½ soknifedev. GNU Public License V3
+Hecho en Mï¿½xico, con Amors <3 
 
 */
 //==============================================================================
 // Includes.
 //==============================================================================
-//Desmarca este pragma para hacer que el servidor ocupe más memoria, en caso de que no quiera iniciar.
+//Desmarca este pragma para hacer que el servidor ocupe mï¿½s memoria, en caso de que no quiera iniciar.
 
 #pragma dynamic 9999999999999999999999999
 #include <a_samp>
@@ -52,7 +52,7 @@ new RCM_DIALOG[300];
 #define dcmd(%1,%2,%3) if ((strcmp((%3)[1], #%1, true, (%2)) == 0) && ((((%3)[(%2) + 1] == 0) && (dcmd_%1(playerid, "")))||(((%3)[(%2) + 1] == 32) && (dcmd_%1(playerid, (%3)[(%2) + 2]))))) return 1
 #define IsNull(%1) \
     ((!(%1[0])) || (((%1[0]) == '\1') && (!(%1[1]))))
-#define Maximo_Contraseñas_Incorrectas 3
+#define Maximo_Contraseï¿½as_Incorrectas 3
 new DB:DataBase_USERS,DBResult: NUM_ROWS_SQL;
 //#define SistemaDECombustible //no activar porque no le gusta a la gente xD
 #define BIDON_DIALOG 22
@@ -116,7 +116,7 @@ enum InfectedZoneInfo
 	gangZoneId
 }
 
-new InfectedZone[MAX_INFECTED_ZONES][InfectedZoneInfo];//INCREMENTAR SI PONGO MÁS ZONAS XD LUEGO.
+new InfectedZone[MAX_INFECTED_ZONES][InfectedZoneInfo];//INCREMENTAR SI PONGO Mï¿½S ZONAS XD LUEGO.
 
 enum InfectedZoneMusicFields
 {
@@ -769,7 +769,7 @@ new ZOMBIES_SPAWN_TIME, ZOMBIES_SPAWN_LIMIT;
 new Float:ZombieSpawnerDistance;
 new Float:ZombieVisionDistance;
 
-//Calcular un circulo alrededor de las coordenadas X,Y, y de ese circulo obtener una posición basado en el angulo y el offset con cierta distancia.
+//Calcular un circulo alrededor de las coordenadas X,Y, y de ese circulo obtener una posiciï¿½n basado en el angulo y el offset con cierta distancia.
 stock NextCirclePosition(Float:x, Float:y, Float:offset, &Float:nx, &Float:ny, &Float:angle, Float:radius)
 {
 	nx = x + radius * floatcos(angle, degrees );
@@ -932,7 +932,7 @@ public OnPlayerPause(playerid)
 	#if defined USE_SOBEIT_CAMERA_DETECTION
 	if(PlayerInfo[playerid][SC_Anim] == 1)
 	{
-	    printf("[SOBEIT]: %s ha sido expulsado por pausarse en la verificación.",PlayerName2(playerid));
+	    printf("[SOBEIT]: %s ha sido expulsado por pausarse en la verificaciï¿½n.",PlayerName2(playerid));
 		SendFormatDialog(playerid,"{ffffff}<-- {f50000}Anti Cheat {ffffff}-->","{B366FF}%s, Parece que estas desincronizado, fuiste expulsado del servidor, entra nuevamente. #Paused?",PlayerName2(playerid));
 	    Kick(playerid);
 	}
@@ -1255,7 +1255,7 @@ stock IsPlayerIDLE(playerid)
 public RZClient_OnClientDisconnect(playerid,version[])
 {
     SendClientMessage(playerid,red,"********");
-	SendClientMessage(playerid,red,">] RZCLIENT [< {ffffff}La conexión con el servidor se ha perdido.");
+	SendClientMessage(playerid,red,">] RZCLIENT [< {ffffff}La conexiï¿½n con el servidor se ha perdido.");
 	SendClientMessage(playerid,red,"********");
 	PlayerPlaySound(playerid, 1057, 0.0, 0.0, 0.0);
 	return 1;
@@ -1836,7 +1836,7 @@ PUBLIC:BackupServer()
     HumanCore[ServerBackup] = 1;
     GameTextForAll("~w~Backup in progress!~n~~r~~h~RESPALDANDO..!", 5*1000*60, 3);
     SendClientMessageToAll(red,"********");
-	SendClientMessageToAll(COLOR_AMARILLO,">] RESET [< {ffffff}La copia de seguridad se está efectuando.");
+	SendClientMessageToAll(COLOR_AMARILLO,">] RESET [< {ffffff}La copia de seguridad se estï¿½ efectuando.");
 	SendClientMessageToAll(COLOR_AMARILLO,">] RESET [< {ffffff}Las armas por default alrededor del juego se restauraran.");
 	SendClientMessageToAll(COLOR_AMARILLO,">] RESET [< {ffffff}Se guaradaran los objetos, armas y autos de todo el servidor.");
 	SendClientMessageToAll(red,"********");
@@ -1872,7 +1872,7 @@ PUBLIC:BackupServer()
 PUBLIC:checkBackupServer()
 {
     SendClientMessageToAll(red,"********");
-	SendClientMessageToAll(red,">] RESET [< {ffffff}Una copia de seguridad será efectuada en {FF33CC}5{ffffff} minutos.");
+	SendClientMessageToAll(red,">] RESET [< {ffffff}Una copia de seguridad serï¿½ efectuada en {FF33CC}5{ffffff} minutos.");
 	SendClientMessageToAll(red,">] RESET [< {ffffff}Durante el procesamiento de la misma, se puede ocasionar un lag temporal.");
 	SendClientMessageToAll(red,">] RESET [< {ffffff}Despues de efectuar la copia de seguridad, el lag desaparecera.");
 	SendClientMessageToAll(red,"********");
@@ -1918,14 +1918,14 @@ stock CheckTradingForPlayer(playerid, actorid)
 		    {
 		        case ACTOR_TYPE_GUNSMITH: {
 					return ShowPlayerDialog(playerid, COMERCIO_RZ, DIALOG_STYLE_LIST, "{FF0099}R.Z: {FFFFFF}Comercio",
-					"Armas y Munición\n\
+					"Armas y Municiï¿½n\n\
 					Antibioticos","VER", "x");
 				}
 		        case ACTOR_TYPE_SCIENTIFIC: return ShowMissionsForPlayer(playerid);
 		        case ACTOR_TYPE_WAITER:
 		        {
 					return ShowPlayerDialog(playerid, AntibioticosRZ, DIALOG_STYLE_TABLIST_HEADERS, "{FF0099}R.Z: {FFFFFF}Comercio::{FF0099} Antibioticos",
-					"Antibiotico\tPrecio\tSanación\n\
+					"Antibiotico\tPrecio\tSanaciï¿½n\n\
 					Neomelubrina (MedicKIT)\t$3000\t100\n\
 					Hidrocortisona\t$$1500\t50\n\
 					Aspirinas\t$750\t25\n\
@@ -1983,13 +1983,13 @@ public OnPlayerRequestSpawn(playerid)
 		if(IsPlayerRegistered(playerid) == 0)
 		{
 				new str_DL[256];
-				format(str_DL,sizeof(str_DL),"{FFCC33}%s  \n {FFFFFF} Necesitas registrarte, ingresa una contraseña que recuerdes para continuar.",PlayerName2(playerid));
+				format(str_DL,sizeof(str_DL),"{FFCC33}%s  \n {FFFFFF} Necesitas registrarte, ingresa una contraseï¿½a que recuerdes para continuar.",PlayerName2(playerid));
 				ShowPlayerDialog(playerid, REGISTRO, DIALOG_STYLE_PASSWORD, "{858585}Bienvenido a RZ =)", str_DL , "Listo", "");
 		}
 		else	if(IsPlayerRegistered(playerid) == 1)
 		{
 				new str_DL[256];
-				format(str_DL,sizeof(str_DL),"{FFCC33}%s \n {FFFFFF}Bienvenido de vuelta, ingresa tu contraseña para continuar.",PlayerName2(playerid));
+				format(str_DL,sizeof(str_DL),"{FFCC33}%s \n {FFFFFF}Bienvenido de vuelta, ingresa tu contraseï¿½a para continuar.",PlayerName2(playerid));
 				ShowPlayerDialog(playerid, INGRESO, DIALOG_STYLE_PASSWORD, "{858585}Hola de nuevo =)", str_DL , "OK", "");
 		}
 		return 0;
@@ -2407,7 +2407,7 @@ stock CheckUserBanned(playerid)
 				if(PlayerInfo[playerid][Banned] == 1)
 				{
 				new string[256];
-				format(string,sizeof(string), "**{FFFFFF} *%s {4DFFFF} [E]xpulso a {FFFFFF}%s [%d] {BBC1C1}[Razón: %s]",bAdmin[playerid],bNick[playerid],playerid,bRazon[playerid]);
+				format(string,sizeof(string), "**{FFFFFF} *%s {4DFFFF} [E]xpulso a {FFFFFF}%s [%d] {BBC1C1}[Razï¿½n: %s]",bAdmin[playerid],bNick[playerid],playerid,bRazon[playerid]);
 				AdminMessageToAdmins(playerid,0x4DFFFFAA,string);
 				printf("Usuario %s Esta Baneado.",PlayerName2(playerid));
 				new bDialog[1500],bDialogSW[1500];
@@ -2416,7 +2416,7 @@ stock CheckUserBanned(playerid)
 				strcat(bDialogSW,bDialog);
 				format(bDialog,sizeof(bDialog),"{FFCC33}Bloqueado Por:{FFFFFF} %s\n",bAdmin[playerid]);
 				strcat(bDialogSW,bDialog);
-				format(bDialog,sizeof(bDialog),"{FFCC33}Razón:{FFFFFF} %s\n",bRazon[playerid]);
+				format(bDialog,sizeof(bDialog),"{FFCC33}Razï¿½n:{FFFFFF} %s\n",bRazon[playerid]);
 				strcat(bDialogSW,bDialog);
 				format(bDialog,sizeof(bDialog),"{FFCC33}IP:{FFFFFF} %s\n",bIP[playerid]);
 				strcat(bDialogSW,bDialog);
@@ -2438,7 +2438,7 @@ stock CheckRZClientRestricted(playerid)
 	if(PlayerInfo[playerid][RZClient_Locked] == 1 && !RZClient_IsClientConnected(playerid))
 	{
 			new string[256];
-			format(string,sizeof(string), "**{FFFFFF} %s {4DFFFF} [E]xpulso al jugador sin RZClient {FFFFFF}%s [%d] {BBC1C1}[Razón: %s]",bAdmin[playerid],bNick[playerid],playerid,bRazon[playerid]);
+			format(string,sizeof(string), "**{FFFFFF} %s {4DFFFF} [E]xpulso al jugador sin RZClient {FFFFFF}%s [%d] {BBC1C1}[Razï¿½n: %s]",bAdmin[playerid],bNick[playerid],playerid,bRazon[playerid]);
 			AdminMessageToAdmins(playerid,0x4DFFFFAA,string);
 			printf("Usuario %s Esta Restringido.",PlayerName2(playerid));
 			new bDialog[1500],bDialogSW[1500];
@@ -2449,7 +2449,7 @@ stock CheckRZClientRestricted(playerid)
 			strcat(bDialogSW,bDialog);
 			format(bDialog,sizeof(bDialog),"{FFCC33}Fecha:{FFFFFF} %s\n",bFecha[playerid]);
 			strcat(bDialogSW,bDialog);
-			format(bDialog,sizeof(bDialog),"{FFCC33}Razón:{FFFFFF} %s\n\n",bRazon[playerid]);
+			format(bDialog,sizeof(bDialog),"{FFCC33}Razï¿½n:{FFFFFF} %s\n\n",bRazon[playerid]);
 			strcat(bDialogSW,bDialog);
 			strcat(bDialogSW,"{33FFFF}Para seguir jugando descarga el RZClient en \n{FFFFFF}www.Revolucion-Zombie.com\n");
 			ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{F50000}Cuenta Restringida", bDialogSW, "x", "");
@@ -2484,7 +2484,7 @@ stock RCM_ProcessCountry(playerid)
 	if(IsPlayerConnected(playerid))
 	{
 		new RZSTR[320];
-		format(RZSTR,sizeof(RZSTR),"[ RZ ] {ffffff}%s [%d] Entro a la Revolución de los Zombies [%s].", RCM_PlayerName(playerid), playerid, GetPlayerCountry(playerid));
+		format(RZSTR,sizeof(RZSTR),"[ RZ ] {ffffff}%s [%d] Entro a la Revoluciï¿½n de los Zombies [%s].", RCM_PlayerName(playerid), playerid, GetPlayerCountry(playerid));
         SendClientMessageToAll(COLOR_BLUE_SOLID,RZSTR);
 	}
 }
@@ -2548,7 +2548,7 @@ stock IsCountryBanned(playerid,pais[])
 	else if(strfind(pais, "BANNED", true) != -1)
 	{
 		new RZSTR[256];
-		format(RZSTR,sizeof(RZSTR),"[ RZ ] {ffffff}%s [%d] Fue Expulsado del servidor (%s) País NO PERMITIDO.", RCM_PlayerName(playerid), playerid,pais);
+		format(RZSTR,sizeof(RZSTR),"[ RZ ] {ffffff}%s [%d] Fue Expulsado del servidor (%s) Paï¿½s NO PERMITIDO.", RCM_PlayerName(playerid), playerid,pais);
    		SendClientMessageToAll(COLOR_BLUE_SOLID,RZSTR);
 		RCM_SendDialog(playerid,"{ffffff}<-- {f50000}COUNTRY BANNED {ffffff}-->","{B366FF}YOUR COUNTRY {ffffff}%s{B366FF} IS BANNED FROM THIS SERVER\n\n{ffffff}in order to keep this server safe of cheaters,\nthe admins of this server has blocked your country.\n\nSorry but you can't play here before of 1am (Mexican Hour).",pais);
 		/*return */
@@ -3006,7 +3006,7 @@ stock KillBOT(npcid,killerid,weapon)
 				if(GetMissionProgressAmount(killerid) >= GetMissionProgressLimit(killerid))
 				{
 					PlayerPlaySound(killerid, 1057, 0.0, 0.0, 0.0);
-     				SendClientMessage(killerid,red,"]<!>[ {ffffff}Tú mision está completa, dirigete con cualquier cientifico para recibir tu recompensa.");
+     				SendClientMessage(killerid,red,"]<!>[ {ffffff}Tï¿½ mision estï¿½ completa, dirigete con cualquier cientifico para recibir tu recompensa.");
 				}else{
 				SetMissionProgressAmount(killerid, GetMissionProgressAmount(killerid)+1);
 				SendFormatMessage(killerid,red,"]< Mission Status >[ {ffffff}%s %d %s: %d/%d.",GetMissionObjetiveText(killerid),GetMissionProgressLimit(killerid),GetMissionObjTypeName(killerid),GetMissionProgressAmount(killerid),GetMissionProgressLimit(killerid));
@@ -3476,7 +3476,7 @@ public OnPlayerText(playerid, text[])
 	{
     new name [MAX_PLAYER_NAME], string[256];
 	GetPlayerName (playerid,name,sizeof(name));
-	//SendClientMessage(playerid,-1,"{f50000} No se ha enviado el texto, Posible spam, ¡ADMINISTRADORES ADVERTIDOS!");
+	//SendClientMessage(playerid,-1,"{f50000} No se ha enviado el texto, Posible spam, ï¿½ADMINISTRADORES ADVERTIDOS!");
 	format(string,sizeof(string),"El Jugador %s[%d]",name,playerid);
 	MessageToAdmins(verde,string);
     format(string,sizeof(string),"Escribio Posible SPAM:{ffffff} %s {f50000}| {FFFF00}!",text);
@@ -3675,19 +3675,19 @@ public UpdateNPCHealth(playerid)
 {
         new data[256],barra[50];
         new Float:health = GetNPCHealth(playerid);
-        if(health >= 100) barra = ""HEALTH_LLENA"••••••••••••••••••••";
-        else if(health >= 90) barra = ""HEALTH_LLENA"••••••••••••••••••"HEALTH_VACIA"••";
-        else if(health >= 80) barra = ""HEALTH_LLENA"••••••••••••••••"HEALTH_VACIA"••••";
-        else if(health >= 70) barra = ""HEALTH_LLENA"••••••••••••••"HEALTH_VACIA"••••••";
-        else if(health >= 60) barra = ""HEALTH_LLENA"••••••••••••"HEALTH_VACIA"••••••••";
-        else if(health >= 50) barra = ""HEALTH_LLENA"••••••••••"HEALTH_VACIA"••••••••••";
-        else if(health >= 40) barra = ""HEALTH_LLENA"••••••••"HEALTH_VACIA"••••••••••••";
-        else if(health >= 30) barra = ""HEALTH_LLENA"••••••"HEALTH_VACIA"••••••••••••••";
-        else if(health >= 25) barra = ""HEALTH_LLENA"••••"HEALTH_VACIA"••••••••••••••••";
-        else if(health >= 20) barra = ""HEALTH_LLENA"•••"HEALTH_VACIA"••••••••••••••";
-        else if(health >= 15) barra = ""HEALTH_LLENA"••"HEALTH_VACIA"••••••••••••••••";
-        else if(health >= 10) barra = ""HEALTH_LLENA"•"HEALTH_VACIA"••••••••••••••••••";
-        else if(health < 10) barra = ""HEALTH_VACIA"••••••••••••••••••••";
+        if(health >= 100) barra = ""HEALTH_LLENA"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
+        else if(health >= 90) barra = ""HEALTH_LLENA"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"HEALTH_VACIA"ï¿½ï¿½";
+        else if(health >= 80) barra = ""HEALTH_LLENA"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"HEALTH_VACIA"ï¿½ï¿½ï¿½ï¿½";
+        else if(health >= 70) barra = ""HEALTH_LLENA"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"HEALTH_VACIA"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
+        else if(health >= 60) barra = ""HEALTH_LLENA"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"HEALTH_VACIA"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
+        else if(health >= 50) barra = ""HEALTH_LLENA"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"HEALTH_VACIA"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
+        else if(health >= 40) barra = ""HEALTH_LLENA"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"HEALTH_VACIA"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
+        else if(health >= 30) barra = ""HEALTH_LLENA"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"HEALTH_VACIA"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
+        else if(health >= 25) barra = ""HEALTH_LLENA"ï¿½ï¿½ï¿½ï¿½"HEALTH_VACIA"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
+        else if(health >= 20) barra = ""HEALTH_LLENA"ï¿½ï¿½ï¿½"HEALTH_VACIA"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
+        else if(health >= 15) barra = ""HEALTH_LLENA"ï¿½ï¿½"HEALTH_VACIA"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
+        else if(health >= 10) barra = ""HEALTH_LLENA"ï¿½"HEALTH_VACIA"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
+        else if(health < 10) barra = ""HEALTH_VACIA"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
         if(IsDroneBOT(playerid))
         {
         format(data,sizeof(data),"{66B3FF}%s {ffffff}(%d)",PlayerName2(playerid),playerid);
@@ -3769,7 +3769,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 	    PlayerInfo[playerid][ZonaInfectada] = 1;
 		SetPlayerTime(playerid, IZ_Hour, 0);
 		SetPlayerWeather(playerid, IZ_Weather);
-		GameTextForPlayer(playerid, ANNOUNCE_BUG("~R~~R~~H~¡EXTREME INFECTED ZONE!"),4000,3);
+		GameTextForPlayer(playerid, ANNOUNCE_BUG("~R~~R~~H~ï¿½EXTREME INFECTED ZONE!"),4000,3);
 		if(InfectedZoneMusic[Enabled] == 1)
 		{
 		    PlayAudioStreamForPlayerEx(playerid, InfectedZoneMusic[MP3]);
@@ -4763,16 +4763,16 @@ if(!IsPlayerNPC(playerid))
 	{
 	    CheckRZClientRestricted(playerid);
 		//StopAudioStreamForPlayerEx(playerid);
-		//ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{00FFFF}RZUpdate: {FF0099}SafeZone", "{FFFFFF}Actualización {FF0099}SafeZone\n{ffffff}- Iconos de las zonas seguras actualizados!\n-Corregidos bugs de los cientificos.\n-Mortalidad de Cerebro Incrementada!\n-Spawns Humanos actualizados.\n-Nuevo núcleo número 6." , "OK", "");
-		//ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{00FFFF}RZUpdate: {FF0099}Drone Beta", "{FFFFFF}Actualización {FF0099}Drone Beta\n{ffffff}- Se añadieron drones inteligentes anti zombies." , "OK", "");
-		ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{FFFF00}Server update: {FF0000}Infected Zone", "{FFFFFF}Actualización {FF0000}InfectedZone\n{FF00FF}- Zonas de Extrema infección añadidas!\n{ffffff}- Nuevo NPCZombie Disponible: {{FF00FF}}Heart.\n{ffffff}- Modo cinemática añadido.\n- Spawns Humanos actualizados.\n- Corrección de bugs y optimización interna." , "OK", "");
+		//ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{00FFFF}RZUpdate: {FF0099}SafeZone", "{FFFFFF}Actualizaciï¿½n {FF0099}SafeZone\n{ffffff}- Iconos de las zonas seguras actualizados!\n-Corregidos bugs de los cientificos.\n-Mortalidad de Cerebro Incrementada!\n-Spawns Humanos actualizados.\n-Nuevo nï¿½cleo nï¿½mero 6." , "OK", "");
+		//ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{00FFFF}RZUpdate: {FF0099}Drone Beta", "{FFFFFF}Actualizaciï¿½n {FF0099}Drone Beta\n{ffffff}- Se aï¿½adieron drones inteligentes anti zombies." , "OK", "");
+		ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{FFFF00}Server update: {FF0000}Infected Zone", "{FFFFFF}Actualizaciï¿½n {FF0000}InfectedZone\n{FF00FF}- Zonas de Extrema infecciï¿½n aï¿½adidas!\n{ffffff}- Nuevo NPCZombie Disponible: {{FF00FF}}Heart.\n{ffffff}- Modo cinemï¿½tica aï¿½adido.\n- Spawns Humanos actualizados.\n- Correcciï¿½n de bugs y optimizaciï¿½n interna." , "OK", "");
 
 	}
 	OnPlayerSpawnOK(playerid);
 	if(CallRemoteFunction("GetPlayerHackStatus", "d", playerid) == 1 && !IsPlayerAdmin(playerid))
 	{
 		new string[256];
-		format(string,sizeof(string), "**{FFFFFF} Anti Cheat {4DFFFF}[B]loqueo a {FFFFFF}%s {BBC1C1}[Razón: mod Sobeit ]",PlayerName2(playerid));
+		format(string,sizeof(string), "**{FFFFFF} Anti Cheat {4DFFFF}[B]loqueo a {FFFFFF}%s {BBC1C1}[Razï¿½n: mod Sobeit ]",PlayerName2(playerid));
 		SendClientMessageToAll(0x04DFFFFFF, string);
 		if(RZClient_IsClientConnected(playerid))
 		{
@@ -4793,7 +4793,7 @@ public OnPlayerVehicleHealthHack(playerid)
 {
 	if(!IsPlayerAdmin(playerid) && !IsPlayerKicked(playerid)){
 	new string[256];
-	format(string,sizeof(string), "**{FFFFFF} Anti Cheat {4DFFFF}Expulso a {FFFFFF}%s {BBC1C1}[Razón: Ilegal Vehicle Repair]",PlayerName2(playerid));
+	format(string,sizeof(string), "**{FFFFFF} Anti Cheat {4DFFFF}Expulso a {FFFFFF}%s {BBC1C1}[Razï¿½n: Ilegal Vehicle Repair]",PlayerName2(playerid));
 	SendClientMessageToAll(0x04DFFFFFF, string);
 	Kick(playerid);
 	//BanSQL(playerid,INVALID_PLAYER_ID,"Cheating Tools");
@@ -4930,8 +4930,8 @@ public SobeitChecker(playerid)
 	if(PlayerInfo[playerid][MusicInicio] == 1)
 	{
 		//StopAudioStreamForPlayerEx(playerid);
-		//ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{00FFFF}RZUpdate: {FF0099}SafeZone", "{FFFFFF}Actualización {FF0099}SafeZone\n{ffffff}- Iconos de las zonas seguras actualizados!\n-Corregidos bugs de los cientificos.\n-Mortalidad de Cerebro Incrementada!\n-Spawns Humanos actualizados.\n-Nuevo núcleo número 6." , "OK", "");
-		ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{00FFFF}RZUpdate: {FF0099}Drone Beta", "{FFFFFF}Actualización {FF0099}Drone Beta\n{ffffff}- Se añadieron drones inteligentes anti zombies." , "OK", "");
+		//ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{00FFFF}RZUpdate: {FF0099}SafeZone", "{FFFFFF}Actualizaciï¿½n {FF0099}SafeZone\n{ffffff}- Iconos de las zonas seguras actualizados!\n-Corregidos bugs de los cientificos.\n-Mortalidad de Cerebro Incrementada!\n-Spawns Humanos actualizados.\n-Nuevo nï¿½cleo nï¿½mero 6." , "OK", "");
+		ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{00FFFF}RZUpdate: {FF0099}Drone Beta", "{FFFFFF}Actualizaciï¿½n {FF0099}Drone Beta\n{ffffff}- Se aï¿½adieron drones inteligentes anti zombies." , "OK", "");
         CheckRZClientRestricted(playerid);
 	}
 	OnPlayerSpawnOK(playerid);
@@ -5045,7 +5045,7 @@ stock OnPlayerSpawnOK(playerid)
 		Attach3DTextLabelToPlayer(LabelCabecero[playerid], playerid, 0.0, 0.0, 0.7);
 	}
 	if(!RZClient_IsClientConnected(playerid) && PlayerInfo[playerid][MusicInicio] == 0 && !IsPlayerAdmin(playerid)){
-			SendFormatDialog(playerid,"{ffffff}<-- {f50000} RZClient.exe {ffffff}-->","{4DFFFF}Hey {ffffff}%s!\nPara Conseguir más beneficios en Nuestro servidor, descarga el {4DFFFF}RZ Client{ffffff} en:\n{4DFFFF}http://bit.ly/RZCLIENTE\n{ffffff}Al descargarlo tambien eliminaras este molesto aviso & conseguiras más puntaje & dinero.",PlayerName2(playerid));
+			SendFormatDialog(playerid,"{ffffff}<-- {f50000} RZClient.exe {ffffff}-->","{4DFFFF}Hey {ffffff}%s!\nPara Conseguir mï¿½s beneficios en Nuestro servidor, descarga el {4DFFFF}RZ Client{ffffff} en:\n{4DFFFF}http://bit.ly/RZCLIENTE\n{ffffff}Al descargarlo tambien eliminaras este molesto aviso & conseguiras mï¿½s puntaje & dinero.",PlayerName2(playerid));
 			PlayerPlaySound(playerid, 1053, 0.0, 0.0, 0.0);
 	}
 	PlayerInfo[playerid][MusicInicio] = 0;
@@ -5163,7 +5163,7 @@ stock GivePlayerWeaponEx(playerid,weaponid,ammo, bool:droppable = true)
   		PlayerInfo[playerid][AAH_WeaponAmmo][weaponid_slot] = ammo + (stored_ammo);
   		//printf("[Debug GivePlayerWeaponEx]: |Memory Weapon| playerid: %d, weaponid: %d, weaponid_slot: %d, callback ammo: %d, memory ammo: %d, new variable stored ammo: %d.",playerid, weaponid, weaponid_slot, ammo, stored_ammo, PlayerInfo[playerid][AAH_WeaponAmmo][weaponid_slot]);
 	}
-	else //Si no tiene munición o no se puede tirar, setear la munición.
+	else //Si no tiene municiï¿½n o no se puede tirar, setear la municiï¿½n.
 	{
 	    //RemovePlayerWeapon(playerid, weaponid);
 		//SendFormatMessageToAll(COLOR_AMARILLO,"[W]: VStored Ammo(%d), FStored Ammo(%d) set: %d", PlayerInfo[playerid][AAH_WeaponAmmo][weaponid], stored_ammo, ammo);
@@ -5431,7 +5431,7 @@ public OnPlayerWeaponShot(playerid, weaponid, hittype, hitid, Float: fX,Float: f
 		{
 		    //SendFormatMessageToAll(-1,"[AC]: PlayerID: %d, WeaponId: %d, Stored Ammo: %d, Current Ammo: %d",playerid, stored_weaponid, PlayerInfo[playerid][AAH_WeaponAmmo][stored_weaponid], stored_ammo);
             new ilegal_bullets = stored_ammo - PlayerInfo[playerid][AAH_WeaponAmmo][stored_weaponid_slot];
-			if(ilegal_bullets >= 1)// se aumento la munición
+			if(ilegal_bullets >= 1)// se aumento la municiï¿½n
 			{
 				new PlayerIP[128];
 				GetPlayerIp(playerid,PlayerIP,sizeof(PlayerIP));
@@ -5491,7 +5491,7 @@ public OnPlayerWeaponShot(playerid, weaponid, hittype, hitid, Float: fX,Float: f
 		}
 		/*if(GetTickDiff( GetTickCount(), PlayerInfo[playerid][AAH_AmmoTick] ) >= 1)
 		{
-		    //guardar en la memoria la cantidad de munición del jugador si ya pasaron 500 milisegundos.
+		    //guardar en la memoria la cantidad de municiï¿½n del jugador si ya pasaron 500 milisegundos.
 			PlayerInfo[playerid][AAH_WeaponAmmo][stored_weaponid] = stored_ammo;
 			PlayerInfo[playerid][AAH_AmmoTick] = GetTickCount();
 		}*/
@@ -5801,7 +5801,7 @@ public OnPlayerDeath(playerid, killerid, reason)
 								if(GetMissionProgressAmount(killerid) >= GetMissionProgressLimit(killerid))
 								{
 									PlayerPlaySound(killerid, 1057, 0.0, 0.0, 0.0);
-									SendClientMessage(killerid,red,"]<!>[ {ffffff}Tú mision está completa, dirigete con cualquier cientifico para recibir tu recompensa.");
+									SendClientMessage(killerid,red,"]<!>[ {ffffff}Tï¿½ mision estï¿½ completa, dirigete con cualquier cientifico para recibir tu recompensa.");
 								}
 								else
 								{
@@ -5864,7 +5864,7 @@ public OnPlayerDeath(playerid, killerid, reason)
             if(PlayerInfo[playerid][DeathSpam] == 5)
             {
 			if(IsPlayerAdmin(playerid)) return 0;
-			format(string, sizeof(string), "{FFFFFF}El Servidor {4DFFFF} [B]loqueo del servidor al Jugador {ffffff}%s. {4DFFFF}[Razón: FakeKills ]",PlayerName2(playerid));
+			format(string, sizeof(string), "{FFFFFF}El Servidor {4DFFFF} [B]loqueo del servidor al Jugador {ffffff}%s. {4DFFFF}[Razï¿½n: FakeKills ]",PlayerName2(playerid));
 			SendClientMessageToAll(-1, string);
             BanEx(playerid,"FakeKILL"); // Banear By Anti Cheat
             }
@@ -5874,7 +5874,7 @@ public OnPlayerDeath(playerid, killerid, reason)
     PlayerInfo[playerid][LastDeath] = time;
     }
 	if(!RZClient_IsClientConnected(playerid) && PlayerInfo[playerid][MusicInicio] == 0){
-			SendFormatDialog(playerid,"{ffffff}<-- {f50000} RZClient.exe {ffffff}-->","{4DFFFF}Hey {ffffff}%s!\nPara Conseguir más beneficios en Nuestro servidor, descarga el {4DFFFF}RZ Client{ffffff} en:\n{4DFFFF}http://bit.ly/RZCLIENTE\n{ffffff}Al descargarlo tambien eliminaras este molesto aviso & conseguiras más puntaje & dinero.",PlayerName2(playerid));
+			SendFormatDialog(playerid,"{ffffff}<-- {f50000} RZClient.exe {ffffff}-->","{4DFFFF}Hey {ffffff}%s!\nPara Conseguir mï¿½s beneficios en Nuestro servidor, descarga el {4DFFFF}RZ Client{ffffff} en:\n{4DFFFF}http://bit.ly/RZCLIENTE\n{ffffff}Al descargarlo tambien eliminaras este molesto aviso & conseguiras mï¿½s puntaje & dinero.",PlayerName2(playerid));
 			PlayerPlaySound(playerid, 1053, 0.0, 0.0, 0.0);
 	}
  return 1;
@@ -6135,41 +6135,41 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	tmp = strtok(cmdtext, idx);
  	if (!strlen(tmp))
 	{
-	SendClientMessage(playerid, COLOR_DE_ERROR, "[ RZ ® ]{FFFFFF} /clan Crear{"COLOR_DE_ERROR_EX"} Crea un Clan :D");
-	SendClientMessage(playerid, COLOR_DE_ERROR, "[ RZ ® ]{FFFFFF} /clan ver{"COLOR_DE_ERROR_EX"} Lista completa de los integrantes de un clan y fundadores.");
-	SendClientMessage(playerid, COLOR_DE_ERROR, "[ RZ ® ]{FFFFFF} /clan Reclutar{"COLOR_DE_ERROR_EX"} para integrar miembros a tu clan.");
-	SendClientMessage(playerid, COLOR_DE_ERROR, "[ RZ ® ]{FFFFFF} /clan Kick{"COLOR_DE_ERROR_EX"} expulsa a un jugador de tu clan.");
-	SendClientMessage(playerid, COLOR_DE_ERROR, "[ RZ ® ]{FFFFFF} /clan Tag{"COLOR_DE_ERROR_EX"} Si deseas cambiar el 'TAG' De tu Clan.");
-	SendClientMessage(playerid, COLOR_DE_ERROR, "[ RZ ® ]{FFFFFF} /clan Salir{"COLOR_DE_ERROR_EX"} Si usas este comando y eres dueño de un clan este sera eliminado.");
-	return SendClientMessage(playerid, COLOR_DE_ERROR, "[ RZ ® ]{FFFFFF} /clan admin{"COLOR_DE_ERROR_EX"} Comando para otorgar/quitar privilegios de fundador a un miembro de tu clan.");
+	SendClientMessage(playerid, COLOR_DE_ERROR, "[ RZ ï¿½ ]{FFFFFF} /clan Crear{"COLOR_DE_ERROR_EX"} Crea un Clan :D");
+	SendClientMessage(playerid, COLOR_DE_ERROR, "[ RZ ï¿½ ]{FFFFFF} /clan ver{"COLOR_DE_ERROR_EX"} Lista completa de los integrantes de un clan y fundadores.");
+	SendClientMessage(playerid, COLOR_DE_ERROR, "[ RZ ï¿½ ]{FFFFFF} /clan Reclutar{"COLOR_DE_ERROR_EX"} para integrar miembros a tu clan.");
+	SendClientMessage(playerid, COLOR_DE_ERROR, "[ RZ ï¿½ ]{FFFFFF} /clan Kick{"COLOR_DE_ERROR_EX"} expulsa a un jugador de tu clan.");
+	SendClientMessage(playerid, COLOR_DE_ERROR, "[ RZ ï¿½ ]{FFFFFF} /clan Tag{"COLOR_DE_ERROR_EX"} Si deseas cambiar el 'TAG' De tu Clan.");
+	SendClientMessage(playerid, COLOR_DE_ERROR, "[ RZ ï¿½ ]{FFFFFF} /clan Salir{"COLOR_DE_ERROR_EX"} Si usas este comando y eres dueï¿½o de un clan este sera eliminado.");
+	return SendClientMessage(playerid, COLOR_DE_ERROR, "[ RZ ï¿½ ]{FFFFFF} /clan admin{"COLOR_DE_ERROR_EX"} Comando para otorgar/quitar privilegios de fundador a un miembro de tu clan.");
 	}
 	if (!strcmp(tmp, "crear", true))
 	{
-		if(PlayerInfo[playerid][CLAN_OWN] == 1 || PlayerInfo[playerid][CLAN] == 1) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ » ERROR « ]:{ffffff} Ya tienes un clan.");
-		if(GetPlayerScore(playerid) < 10000) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ » ERROR « ]:{ffffff} Se requieren al menos 10 mil puntos para crear un clan.");
+		if(PlayerInfo[playerid][CLAN_OWN] == 1 || PlayerInfo[playerid][CLAN] == 1) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ ï¿½ ERROR ï¿½ ]:{ffffff} Ya tienes un clan.");
+		if(GetPlayerScore(playerid) < 10000) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ ï¿½ ERROR ï¿½ ]:{ffffff} Se requieren al menos 10 mil puntos para crear un clan.");
 	    ShowPlayerDialog(playerid,CLAN_CREAR,DIALOG_STYLE_INPUT,"Creacion de Clan","{ffffff}Ahora solo tienes que ingresar un TAG para tu clan:","Crear","Cancelar");
 	}
 	else if (!strcmp(tmp, "reclutar", true))
 	{
-	if(PlayerInfo[playerid][CLAN] == 0) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ » ERROR « ]:{ffffff} No Perteneces a un clan.");
-	if(PlayerInfo[playerid][CLAN_OWN] == 0) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ » ERROR « ]:{ffffff} Tu no eres fundador de ningun clan.");
+	if(PlayerInfo[playerid][CLAN] == 0) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ ï¿½ ERROR ï¿½ ]:{ffffff} No Perteneces a un clan.");
+	if(PlayerInfo[playerid][CLAN_OWN] == 0) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ ï¿½ ERROR ï¿½ ]:{ffffff} Tu no eres fundador de ningun clan.");
 	ShowPlayerDialog(playerid,CLAN_RECLUTAR,DIALOG_STYLE_INPUT,"Reclutacion de Jugadores","{ffffff}Por favor ingresa el ID del jugador que quieres unir a tu grupo, si este acepta se unira satisfactoriamente.","Invitar","Cancelar");
 	}
 	else if (!strcmp(tmp, "kick", true))
 	{
-	if(PlayerInfo[playerid][CLAN] == 0) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ » ERROR « ]:{ffffff} No Perteneces a un clan.");
-	if(PlayerInfo[playerid][CLAN_OWN] == 0) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ » ERROR « ]:{ffffff} Tu no eres fundador de ningun clan.");
+	if(PlayerInfo[playerid][CLAN] == 0) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ ï¿½ ERROR ï¿½ ]:{ffffff} No Perteneces a un clan.");
+	if(PlayerInfo[playerid][CLAN_OWN] == 0) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ ï¿½ ERROR ï¿½ ]:{ffffff} Tu no eres fundador de ningun clan.");
 	ShowPlayerDialog(playerid,CLAN_KICK,DIALOG_STYLE_INPUT,"Expulsion de Miembro","{ffffff}Por favor ingresa el ID del jugador que quieres expulsar de tu CLAN/GRUPO, Tiene que estar ONLINE.","KICK","Cancelar");
 	}
 	else if (!strcmp(tmp, "tag", true))
 	{
-	if(PlayerInfo[playerid][CLAN] == 0) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ » ERROR « ]:{ffffff} No Perteneces a un clan.");
-	if(PlayerInfo[playerid][CLAN_OWN] == 0) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ » ERROR « ]:{ffffff} No Tienes suficientes permisos en este clan para cambiar el TAG.");
+	if(PlayerInfo[playerid][CLAN] == 0) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ ï¿½ ERROR ï¿½ ]:{ffffff} No Perteneces a un clan.");
+	if(PlayerInfo[playerid][CLAN_OWN] == 0) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ ï¿½ ERROR ï¿½ ]:{ffffff} No Tienes suficientes permisos en este clan para cambiar el TAG.");
     ShowPlayerDialog(playerid,CLAN_CTAG,DIALOG_STYLE_INPUT,"Cambiar TAG","{ffffff}Por favor ingresa un Nuevo TAG Para tu Clan en el recuadro de abajo, No Mas de 7 Caracteres.",">>","x");
 	}
 	else if (!strcmp(tmp, "salir", true))
 	{
-	if(PlayerInfo[playerid][CLAN] == 0) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ » ERROR « ]:{ffffff} No Perteneces a un clan.");
+	if(PlayerInfo[playerid][CLAN] == 0) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ ï¿½ ERROR ï¿½ ]:{ffffff} No Perteneces a un clan.");
 		if(PlayerInfo[playerid][CLAN_OWN] == 1)
 		{
 		    //eliminara a todos los usuarios del clan %s
@@ -6222,23 +6222,23 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	}
 	else if (!strcmp(tmp, "admin", true))
 	{
-	if(PlayerInfo[playerid][CLAN] == 0) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ » ERROR « ]:{ffffff} No Perteneces a un clan.");
-	if(PlayerInfo[playerid][CLAN_OWN] == 0) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ » ERROR « ]:{ffffff} No Tienes suficientes permisos en este clan para dar admin.");
+	if(PlayerInfo[playerid][CLAN] == 0) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ ï¿½ ERROR ï¿½ ]:{ffffff} No Perteneces a un clan.");
+	if(PlayerInfo[playerid][CLAN_OWN] == 0) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ ï¿½ ERROR ï¿½ ]:{ffffff} No Tienes suficientes permisos en este clan para dar admin.");
     ShowPlayerDialog(playerid,CLAN_DADMIN,DIALOG_STYLE_INPUT,"Privilegios del CLAN","{ffffff}Por favor ingresa EL {f50000}ID DEL USUARIO {ffffff}al que quieres otorgar privilegios de admin para tu clan.\n\n{F50000}EL USUARIO PODRA MODERAR EL CLAN COMO SI FUESE EL FUNDADOR,\n{FFFFFF}PODRA ELIMINARTE / ELIMINAR EL CLAN ENTERO / RECLUTAR USUARIOS\n\n{FFFF1F}SI TE ROBAN EL CLAN, NOSOTROS NO PODREMOS HACER NADA, USELO CON CUIDADO.",">>","x");
 	}
 	else if (!strcmp(tmp, "ver", true))
 	{
-	    //SendClientMessage(playerid, COLOR_DE_ERROR, "[ » ERROR « ]:{ffffff} Desactivado por bug.");
-    	ShowPlayerDialog(playerid,CLAN_VER,DIALOG_STYLE_INPUT,"{ffffff}Ver Información sobre un CLAN","{ffffff}Por favor ingresa el TAG del clan que deseas ver.",">>","x");
+	    //SendClientMessage(playerid, COLOR_DE_ERROR, "[ ï¿½ ERROR ï¿½ ]:{ffffff} Desactivado por bug.");
+    	ShowPlayerDialog(playerid,CLAN_VER,DIALOG_STYLE_INPUT,"{ffffff}Ver Informaciï¿½n sobre un CLAN","{ffffff}Por favor ingresa el TAG del clan que deseas ver.",">>","x");
 	}
 	else{
-	SendClientMessage(playerid, COLOR_DE_ERROR, "[ RZ ® ]{FFFFFF} /clan Crear{"COLOR_DE_ERROR_EX"} Crea un Clan :D");
-	SendClientMessage(playerid, COLOR_DE_ERROR, "[ RZ ® ]{FFFFFF} /clan ver{"COLOR_DE_ERROR_EX"} Lista completa de los integrantes de un clan y fundadores.");
-	SendClientMessage(playerid, COLOR_DE_ERROR, "[ RZ ® ]{FFFFFF} /clan Reclutar{"COLOR_DE_ERROR_EX"} para integrar miembros a tu clan.");
-	SendClientMessage(playerid, COLOR_DE_ERROR, "[ RZ ® ]{FFFFFF} /clan Kick{"COLOR_DE_ERROR_EX"} expulsa a un jugador de tu clan.");
-	SendClientMessage(playerid, COLOR_DE_ERROR, "[ RZ ® ]{FFFFFF} /clan Tag{"COLOR_DE_ERROR_EX"} Si deseas cambiar el 'TAG' De tu Clan.");
-	SendClientMessage(playerid, COLOR_DE_ERROR, "[ RZ ® ]{FFFFFF} /clan Salir{"COLOR_DE_ERROR_EX"} Si usas este comando y eres dueño de un clan este sera eliminado.");
-	SendClientMessage(playerid, COLOR_DE_ERROR, "[ RZ ® ]{FFFFFF} /clan admin{"COLOR_DE_ERROR_EX"} Comando para otorgar/quitar privilegios de fundador a un miembro de tu clan.");
+	SendClientMessage(playerid, COLOR_DE_ERROR, "[ RZ ï¿½ ]{FFFFFF} /clan Crear{"COLOR_DE_ERROR_EX"} Crea un Clan :D");
+	SendClientMessage(playerid, COLOR_DE_ERROR, "[ RZ ï¿½ ]{FFFFFF} /clan ver{"COLOR_DE_ERROR_EX"} Lista completa de los integrantes de un clan y fundadores.");
+	SendClientMessage(playerid, COLOR_DE_ERROR, "[ RZ ï¿½ ]{FFFFFF} /clan Reclutar{"COLOR_DE_ERROR_EX"} para integrar miembros a tu clan.");
+	SendClientMessage(playerid, COLOR_DE_ERROR, "[ RZ ï¿½ ]{FFFFFF} /clan Kick{"COLOR_DE_ERROR_EX"} expulsa a un jugador de tu clan.");
+	SendClientMessage(playerid, COLOR_DE_ERROR, "[ RZ ï¿½ ]{FFFFFF} /clan Tag{"COLOR_DE_ERROR_EX"} Si deseas cambiar el 'TAG' De tu Clan.");
+	SendClientMessage(playerid, COLOR_DE_ERROR, "[ RZ ï¿½ ]{FFFFFF} /clan Salir{"COLOR_DE_ERROR_EX"} Si usas este comando y eres dueï¿½o de un clan este sera eliminado.");
+	SendClientMessage(playerid, COLOR_DE_ERROR, "[ RZ ï¿½ ]{FFFFFF} /clan admin{"COLOR_DE_ERROR_EX"} Comando para otorgar/quitar privilegios de fundador a un miembro de tu clan.");
 	}
 	return 1;
 	}
@@ -6299,7 +6299,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 		{
 	    	if(!RZClient_IsClientConnected(playerid) && !IsPlayerAdmin(playerid)) return SendClientMessage(playerid, red, ">> Error {ffffff}Para acceder al minijuego necesitas estar conectado con el RZClient.");
 		    new CurrentDefenders = getHCPlayerCount();
-		    if(CurrentDefenders >= HumanCore[MAX_DEFENDERS] && !IsPlayerAdmin(playerid)) return SendClientMessage(playerid, red, ">> Ya no se admiten más reclutas, espera para la próxima ronda.");
+		    if(CurrentDefenders >= HumanCore[MAX_DEFENDERS] && !IsPlayerAdmin(playerid)) return SendClientMessage(playerid, red, ">> Ya no se admiten mï¿½s reclutas, espera para la prï¿½xima ronda.");
 		    PlayerInfo[playerid][InCORE] = 1;
 		    CurrentDefenders++;
 		    SendFormatMessageToAll(red,">] RZ [< {ffffff}%s [%d] se enlisto para proteger el nucleo. (%d/%d) {33FFFF}/join",PlayerName2(playerid),playerid,CurrentDefenders,HumanCore[MAX_DEFENDERS]);
@@ -6312,7 +6312,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 		}
 		/*else if(HumanCore[STATE] == CORE_FIGHTING)
 		{
-		     return SendClientMessage(playerid, red, ">> error {ffffff}La misión para proteger al nucleo ha comenzado.");
+		     return SendClientMessage(playerid, red, ">> error {ffffff}La misiï¿½n para proteger al nucleo ha comenzado.");
 		}*/
 		else return SendClientMessage(playerid, red, ">> error {ffffff}No hay ningun nucleo que proteger todavia.");
 		return 1;
@@ -6328,7 +6328,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	//873 chars calculated.
 	new BIG_DIALOG[910];
 	strcat(BIG_DIALOG, ""COL_WHITE"1.\t/drop\t\t"COL_WHITE"Suelta el arma que estes utilizando.\n", sizeof(BIG_DIALOG));
-	strcat(BIG_DIALOG, ""COL_CMDS"2.\t/mission\t"COL_CMDS"Muestra información de tu misión actual.\n", sizeof(BIG_DIALOG));
+	strcat(BIG_DIALOG, ""COL_CMDS"2.\t/mission\t"COL_CMDS"Muestra informaciï¿½n de tu misiï¿½n actual.\n", sizeof(BIG_DIALOG));
 	strcat(BIG_DIALOG, ""COL_WHITE"3.\t/sendcash\t"COL_WHITE"Envia dinero a otros jugadores.\n", sizeof(BIG_DIALOG));
 	strcat(BIG_DIALOG, ""COL_CMDS"4.\t/rules\t\t"COL_CMDS"Muestra las reglas que rigen a todos los usuarios.\n", sizeof(BIG_DIALOG));
 	strcat(BIG_DIALOG, ""COL_WHITE"5.\t/sync\t\t"COL_WHITE"Desbugea tu personaje (refresca).\n", sizeof(BIG_DIALOG));
@@ -6340,7 +6340,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	strcat(BIG_DIALOG, ""COL_WHITE"11.\t/gc\t\t"COL_WHITE"Guarda el progreso actual de tu cuenta.\n", sizeof(BIG_DIALOG));
 	strcat(BIG_DIALOG, ""COL_CMDS"12.\t/rvip\t\t"COL_CMDS"Te otorga nivel vip basado en tu puntaje actual.\n", sizeof(BIG_DIALOG));
 //	strcat(BIG_DIALOG, ""COLOR_CMDS". "COL_WHITE"\n", sizeof(BIG_DIALOG));
-	ShowPlayerDialog(playerid, DIALOG_COMANDOS, DIALOG_STYLE_MSGBOX, ""COL_GB_LIGHT"* [RZ] Comandos: "COL_CMDS"Comando"COL_GB_LIGHT" - "COL_WHITE"Función.", BIG_DIALOG, "More", "Cancel");
+	ShowPlayerDialog(playerid, DIALOG_COMANDOS, DIALOG_STYLE_MSGBOX, ""COL_GB_LIGHT"* [RZ] Comandos: "COL_CMDS"Comando"COL_GB_LIGHT" - "COL_WHITE"Funciï¿½n.", BIG_DIALOG, "More", "Cancel");
 	return 1;
 	}
 	if(strcmp("/Comandos2", cmdtext, true, 10) == 0 || strcmp("/cmds2", cmdtext, true, 10) == 0)
@@ -6353,8 +6353,8 @@ public OnPlayerCommandText(playerid, cmdtext[])
 		strcat(BIG_DIALOG, ""COL_WHITE"17.\t/freedrone\t"COL_WHITE"Libera tu drone actual\n", sizeof(BIG_DIALOG));
 		strcat(BIG_DIALOG, ""COL_CMDS"18.\t/pms\t\t"COL_CMDS"Activa / desactiva tus mensajes privados\n", sizeof(BIG_DIALOG));
 		strcat(BIG_DIALOG, ""COL_WHITE"19.\t/clanes\t\t"COL_WHITE"Lista de clanes del servidor.\n", sizeof(BIG_DIALOG));
-		strcat(BIG_DIALOG, ""COL_CMDS"20.\t/stop\t\t"COL_CMDS"Detiene el AudioStream en reproducción.\n", sizeof(BIG_DIALOG));
-		ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, ""COL_GB_LIGHT"* [RZ] Comandos: "COL_CMDS"Comando"COL_GB_LIGHT" - "COL_WHITE"Función.", BIG_DIALOG, "OK", "Cancel");
+		strcat(BIG_DIALOG, ""COL_CMDS"20.\t/stop\t\t"COL_CMDS"Detiene el AudioStream en reproducciï¿½n.\n", sizeof(BIG_DIALOG));
+		ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, ""COL_GB_LIGHT"* [RZ] Comandos: "COL_CMDS"Comando"COL_GB_LIGHT" - "COL_WHITE"Funciï¿½n.", BIG_DIALOG, "OK", "Cancel");
 		return 1;
 	}
 
@@ -6391,7 +6391,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 
 	if(strcmp("/rvip", cmdtext, true, 10) == 0)
 	{
-	//ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{FFFF00}Reclamación de VIP (RVIP).", "Este comando fue desactivado, para obtener vip debes pedirlo a x[R]icard[O.O]x", "x", "");
+	//ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{FFFF00}Reclamaciï¿½n de VIP (RVIP).", "Este comando fue desactivado, para obtener vip debes pedirlo a x[R]icard[O.O]x", "x", "");
 	new RVIPSTR[80],rVIP[570];
 	if(GetPlayerScore(playerid) >= VIP_SCORE_SILVER && GetPlayerScore(playerid) < VIP_SCORE_GOLD && PlayerInfo[playerid][VIP] < 1)
 	{
@@ -6399,7 +6399,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 		db_query(DataBase_USERS,RVIPSTR);
 		strcat(rVIP, "{FFFFFF}Te hemos quitado {F5000}175.000{FFFFFF} (mil)  puntos por obtener el nivel Silver.\n");
 		strcat(rVIP, "{f50000}Nivel VIP Obtenido: Silver (1) - Utiliza /CMDSVIP para ver tus nuevos comandos & beneficios.");
-		ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{FFFF00}Reclamación de VIP (RVIP).", rVIP, "x", "");
+		ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{FFFF00}Reclamaciï¿½n de VIP (RVIP).", rVIP, "x", "");
 		PlayerInfo[playerid][VIP] = 1;
 		SetPlayerScore(playerid, GetPlayerScore(playerid) - VIP_SCORE_SILVER);
 		CallLocalFunction("OnPlayerCommandText", "is", playerid, "/gc");
@@ -6410,7 +6410,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 		db_query(DataBase_USERS,RVIPSTR);
 		strcat(rVIP, "{f50000}Nivel VIP Obtenido: Gold (2) - Utiliza /CMDSVIP para ver tus nuevos comandos & beneficios.\n");
 		strcat(rVIP, "{FFFFFF}Te hemos quitado {F5000}950.000{FFFFFF} (mil) puntos por obtener el nivel GOLD.\n");
-		ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{FFFF00}Reclamación de VIP (RVIP).", rVIP, "x", "");
+		ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{FFFF00}Reclamaciï¿½n de VIP (RVIP).", rVIP, "x", "");
 		PlayerInfo[playerid][VIP] = 2;
 		SetPlayerScore(playerid, GetPlayerScore(playerid) - VIP_SCORE_GOLD);
 		CallLocalFunction("OnPlayerCommandText", "is", playerid, "/gc");
@@ -6421,7 +6421,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 		db_query(DataBase_USERS,RVIPSTR);
 		strcat(rVIP, "{FFFFFF}Te hemos quitado {F5000}1.000.000{FFFFFF} (millon) de puntos por obtener el nivel Premium.\n");
 		strcat(rVIP, "{f50000}Nivel VIP Obtenido: Premium (3) - Utiliza /CMDSVIP para ver tus nuevos comandos & beneficios.");
-		ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{FFFF00}Reclamación de VIP (RVIP).", rVIP, "x", "");
+		ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{FFFF00}Reclamaciï¿½n de VIP (RVIP).", rVIP, "x", "");
 		PlayerInfo[playerid][VIP] = 3;
 		SetPlayerScore(playerid, GetPlayerScore(playerid) - VIP_SCORE_PREMIUM);
 		CallLocalFunction("OnPlayerCommandText", "is", playerid, "/gc");
@@ -6432,7 +6432,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 		strcat(rVIP, "{FFFF33}VIP: {F500F5}Silver (1){ffffff}:{CC99FF} 175.000 {F500F5}PUNTOS/3.99 USD/mes\n");
 		strcat(rVIP, "{FFFF33}VIP: {F500F5}Golden (2){ffffff}:{CC99FF} 950.000 {F500F5}PUNTOS/6.99 USD/mes\n");
 		strcat(rVIP, "{FFFF33}VIP: {F500F5}Premium (3){ffffff}:{CC99FF} 1.000.000 {F500F5}PUNTOS/13.99/mes USD\n");
-		ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{FFFF00}Reclamación de VIP (RVIP).", rVIP, "x", "");
+		ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{FFFF00}Reclamaciï¿½n de VIP (RVIP).", rVIP, "x", "");
 	}
 	return 1;
 	}
@@ -6493,7 +6493,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 
 	if(strcmp("/friendlyfire", cmdtext, true, 10) == 0)
 	{
-       if(!IsPlayerAdmin(playerid)) return SendClientMessage(playerid,0xCC0000FF, "ño :3");
+       if(!IsPlayerAdmin(playerid)) return SendClientMessage(playerid,0xCC0000FF, "ï¿½o :3");
         EnableVehicleFriendlyFire();
         SendClientMessage(playerid,0xCC0000FF, "Sent!");
 		return 1;
@@ -6538,7 +6538,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 
         new GunID_Slot = GetWeaponSlot(GunID);
         new ilegal_bullets = GunAmmo - PlayerInfo[playerid][AAH_WeaponAmmo][GunID_Slot];
-		if(ilegal_bullets >= 1)// se aumento la munición
+		if(ilegal_bullets >= 1)// se aumento la municiï¿½n
 		{
 				new PlayerIP[128];
 				GetPlayerIp(playerid,PlayerIP,sizeof(PlayerIP));
@@ -6564,7 +6564,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
                     break;
                 }
             }
-            if(f > MAX_DROPPED_WEAPONS) return SendClientMessage(playerid, COLOR_DE_ERROR, "Es imposible soltar el arma en este momento, intentalo más tarde!");
+            if(f > MAX_DROPPED_WEAPONS) return SendClientMessage(playerid, COLOR_DE_ERROR, "Es imposible soltar el arma en este momento, intentalo mï¿½s tarde!");
             if(PlayerHaveAHackedWeapon(playerid, GunID, GunAmmo)) return checkPlayerWeaponHacking(playerid);
 			RemovePlayerWeapon(playerid, GunID);
 
@@ -6600,7 +6600,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
                     break;
                 }
             }
-            if(f > MAX_DROPPED_WEAPONS) return SendClientMessage(playerid, COLOR_DE_ERROR, "Es imposible soltar el arma en este momento, intentalo más tarde!");
+            if(f > MAX_DROPPED_WEAPONS) return SendClientMessage(playerid, COLOR_DE_ERROR, "Es imposible soltar el arma en este momento, intentalo mï¿½s tarde!");
 
             GetPlayerPos(playerid, dGunData[f][ObjPos][0], dGunData[f][ObjPos][1], dGunData[f][ObjPos][2]);
             /*if(GetPlayerInterior(playerid) != 0)
@@ -6633,7 +6633,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
                     break;
                 }
             }
-            if(f > MAX_DROPPED_WEAPONS) return SendClientMessage(playerid, COLOR_DE_ERROR, "Es imposible soltar el arma en este momento, intentalo más tarde!");
+            if(f > MAX_DROPPED_WEAPONS) return SendClientMessage(playerid, COLOR_DE_ERROR, "Es imposible soltar el arma en este momento, intentalo mï¿½s tarde!");
 			//RemovePlayerWeapon(playerid, GunID);
 			dGunData[f][ObjData][0] = GunID;
 			dGunData[f][ObjData][1] = GunAmmo;
@@ -6669,13 +6669,13 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	strcat(CMDS, "{9C00EB} 2. {FF0000}ESTA ESTRICTAMENTE PROHIBIDO INSULTARSE ENTRE USERS Y USERS {9C00EB}(CALLAR)\n", sizeof(CMDS));
 	strcat(CMDS, "{9C00EB} 3. {FFFFFF}No usar ningun tipo de modificacion no permitida. {9C00EB}(BAN)\n", sizeof(CMDS));
 	strcat(CMDS, "{9C00EB} 4. {FFFFFF}No repetir lo escribes muchas veces, no hacer publicidad. {9C00EB}(CALLAR)\n", sizeof(CMDS));
-	strcat(CMDS, "{9C00EB} 6. {FFFFFF}ESTA ESTRICTAMENTE PROHÍBIDO SER COMPLICE DE LOS HACKERS {9C00EB}(UBAN)\n", sizeof(CMDS));
-	strcat(CMDS, "{9C00EB} 7. {FFFFFF}NO SE PUEDE PEDIR ADMIN, CUANDO HAYA VACANTES SERÁ TU TURNO {9C00EB}(CALLAR)\n", sizeof(CMDS));
+	strcat(CMDS, "{9C00EB} 6. {FFFFFF}ESTA ESTRICTAMENTE PROHï¿½BIDO SER COMPLICE DE LOS HACKERS {9C00EB}(UBAN)\n", sizeof(CMDS));
+	strcat(CMDS, "{9C00EB} 7. {FFFFFF}NO SE PUEDE PEDIR ADMIN, CUANDO HAYA VACANTES SERï¿½ TU TURNO {9C00EB}(CALLAR)\n", sizeof(CMDS));
 	strcat(CMDS, "{9C00EB} 8. {FFFFFF}No ABUSAR DE NINGUN BUG/ERROR (UBAN)\n", sizeof(CMDS));
 	strcat(CMDS, "{9C00EB} 9. {FFFFFF}LOS BUGS DE ARMAS CON LA RECORTADA O CUALQUIER OTRA ESTAN PROHIBIDOS CONTRA JUGADORES{9C00EB}(KICK)\n", sizeof(CMDS));
 	strcat(CMDS, "{9C00EB} 10. {FFFFFF}EL DRIVE BY ESTA PERMITIDO, EXCEPTO SI NO HAY NADIE CONDUCIENDO! {9C00EB}(SLAP)\n", sizeof(CMDS));
-	strcat(CMDS, "{9C00EB} 11. {FFFFFF}ESTA ESTRICTAMENTE PROHIBIDO REGALAR MUERTES! (SCORE FÁCIL){9C00EB}(UBAN)\n", sizeof(CMDS));
-	strcat(CMDS, "{9C00EB} 12. {FFFFFF}CONTINUACIÓN ==> /rules2\n", sizeof(CMDS));
+	strcat(CMDS, "{9C00EB} 11. {FFFFFF}ESTA ESTRICTAMENTE PROHIBIDO REGALAR MUERTES! (SCORE Fï¿½CIL){9C00EB}(UBAN)\n", sizeof(CMDS));
+	strcat(CMDS, "{9C00EB} 12. {FFFFFF}CONTINUACIï¿½N ==> /rules2\n", sizeof(CMDS));
 	ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, " {00FF19}RZ: 2016 RULES", CMDS, "OK", "") ;
 	return 1;
 	}
@@ -6683,7 +6683,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	if(strcmp(cmd, "/rules2", true) == 0 || strcmp(cmd, "/reglas2", true) == 0)
 	{
 	new CMDS[325];
-	strcat(CMDS, "{9C00EB} 12. {FFFFFF}QUEDA ESTRICTAMENTE PROHIBIDO PERTURBAR LA PAZ PÚBLICA DEL SERVER{9C00EB}(CALLAR)\n", sizeof(CMDS));
+	strcat(CMDS, "{9C00EB} 12. {FFFFFF}QUEDA ESTRICTAMENTE PROHIBIDO PERTURBAR LA PAZ Pï¿½BLICA DEL SERVER{9C00EB}(CALLAR)\n", sizeof(CMDS));
 	strcat(CMDS, "{9C00EB} 13. {FFFFFF}SI UN ADMIN ABUSA, DEBIDO A LA REGLA 1, DEBERAS REPORTARLO EN FACEBOOK{9C00EB}(BYEADM)\n", sizeof(CMDS));
 	strcat(CMDS, "{9C00EB} 13. {FFFFFF}SI EN LUGAR DE TOMAR PRUEBAS CONTUNDENTES ROMPES LA REGLA 12 SERAS {9C00EB}CALLADO!\n", sizeof(CMDS));
 	ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, " {00FF19}RZ: 2016 RULES #2", CMDS, "OK", "") ;
@@ -6697,13 +6697,13 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	strcat(CMDS, "{9C00EB} 1. {FFFFFF}LAS REGLAS DE LOS USUARIOS APLICAN PARA LOS ADMINS + ESTAS:\n", 1024);
 	strcat(CMDS, "{9C00EB} 2. {FFFFFF}QUEDA ESTRICTAMENTE PROHIBIDO CUALQUIER TIPO DE ABUSO\n", 1024);
 	strcat(CMDS, "{9C00EB} 3. {FFFFFF}ESTA PROHIBIDO BANEAR USUARIOS POR MATARTE (SOSPECHOSO DE HACK)\n", 1024);
-	strcat(CMDS, "{9C00EB} 3. {FFFFFF}SI UN USUARIO SOSPECHAS TIENE HACK, NO PUEDES BANEARLO HASTA QUE MATE A ALGUIEN MÁS\n", 1024);
-	strcat(CMDS, "{9C00EB} 3. {FFFFFF}SI LO BANEAS Y NO TIENES PRUEBAS EXACTAS DEL HACK O NO FUE ACUSADO POR ALGUIEN MÁS\n", 1024);
-	strcat(CMDS, "{9C00EB} 3. {FFFFFF}SERÁS EXPULSADO DE LA ADMINISTRACIÓN DEBIDO A LA REGLA 12 DE LOS USUARIOS.\n", 1024);
+	strcat(CMDS, "{9C00EB} 3. {FFFFFF}SI UN USUARIO SOSPECHAS TIENE HACK, NO PUEDES BANEARLO HASTA QUE MATE A ALGUIEN Mï¿½S\n", 1024);
+	strcat(CMDS, "{9C00EB} 3. {FFFFFF}SI LO BANEAS Y NO TIENES PRUEBAS EXACTAS DEL HACK O NO FUE ACUSADO POR ALGUIEN Mï¿½S\n", 1024);
+	strcat(CMDS, "{9C00EB} 3. {FFFFFF}SERï¿½S EXPULSADO DE LA ADMINISTRACIï¿½N DEBIDO A LA REGLA 12 DE LOS USUARIOS.\n", 1024);
 	strcat(CMDS, "{9C00EB} 5. {FFFFFF}ESTA PROHIBIDO USAR /lsay PARA HABLAR TODO EL TIEMPO!\n", 1024);
 	strcat(CMDS, "{9C00EB} 6. {FFFFFF}LSAY SOLO DEBERA SER USADO PARA RESPONDER DUDAS, MINI EVENTOS!\n", 1024);
 	strcat(CMDS, "{9C00EB} 7. {FFFFFF}DESDE HOY, QUEDA ESTRICTAMENTE PROHIBIDO BANEAR CON RAZONES INFANTILES\n", 1024);
-	strcat(CMDS, "{9C00EB} 8. {FFFFFF}CUALQUIER BANEO DEBERA CONTENER EN LA RAZÓN UNA VÁLIDA Y CORRECTA DEL MISMO.\n", 1024);
+	strcat(CMDS, "{9C00EB} 8. {FFFFFF}CUALQUIER BANEO DEBERA CONTENER EN LA RAZï¿½N UNA Vï¿½LIDA Y CORRECTA DEL MISMO.\n", 1024);
 	strcat(CMDS, "{9C00EB} 9. {FFFFFF}/ReglasAdmin2\n", 1024);
 	//strcat(CMDS, "{9C00EB} 12. {FFFFFF}Si no entras en 3 dias seguidos sin aviso previo, seras rebajado 1 nivel. \n", 1024);
 	ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, " {00FF19}RZ: {FFFFFF}2016 ADMIN RULES ", CMDS, "OK", "") ;
@@ -6714,31 +6714,31 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	{
 	new CMDS[2000];
 	strcat(CMDS, "{9C00EB} 9. {FFFFFF}ESTA ESTRICTAMENTE PROHIBIDO ADMINISTRAR OTRO SERVIDOR AJENO A RZ\n", 1024);
-	strcat(CMDS, "{9C00EB} 10. {FFFFFF}ESTRA ESTRICTAMENTE PROHIBIDO EXPULSAR, EXPLOTAR, BANEAR O CALLAR SIN RAZONES VÁLIDAS!\n", 1024);
+	strcat(CMDS, "{9C00EB} 10. {FFFFFF}ESTRA ESTRICTAMENTE PROHIBIDO EXPULSAR, EXPLOTAR, BANEAR O CALLAR SIN RAZONES Vï¿½LIDAS!\n", 1024);
 	strcat(CMDS, "{9C00EB} 11. {FFFFFF}USTED DEBERA CONECTARSE AL MENOS 3 DIAS A LA SEMANA PARA MANTENER SU NIVEL.\n", 1024);
 	strcat(CMDS, "{9C00EB} 12. {FF0000}ESTA ESTRICTAMENTE PROHIBIDO UTILIZAR LOS COMANDOS ADMIN EN CONJUTO CON LOS COMANDOS VIP{9C00EB}(BAN)\n", 1024);
 	strcat(CMDS, "{9C00EB} 13. {FF0000}ESTA ESTRICTAMENTE PROHIBIDO UTILIZAR CUALQUIER TIPO DE CHEAT!{9C00EB}(RZBAN)\n", 1024);
-	strcat(CMDS, "{9C00EB} 14. {FF0000}ESTA ESTRICTAMENTE PROHIBIDO UTILIZAR LSAY COMO CHAT COMÚN!{9C00EB}(CALLAR/-1LVL)\n", 1024);
+	strcat(CMDS, "{9C00EB} 14. {FF0000}ESTA ESTRICTAMENTE PROHIBIDO UTILIZAR LSAY COMO CHAT COMï¿½N!{9C00EB}(CALLAR/-1LVL)\n", 1024);
 	ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, " {00FF19}RZ: {FFFFFF}2016 ADMIN RULES ", CMDS, "OK", "") ;
 	return 1;
 	}
 
 	if(strcmp(cmd, "/dardinero", true) == 0 || strcmp(cmd, "/sendcash", true) == 0)
 	{
-	  	if(CheckAdminsOnline() < 2) return SendClientMessage(playerid, COLOR_DE_ERROR, "[» ERROR «]: {FFFFFF}No hay más de 2 administradores conectados, Por lo tanto, no puedes enviar dinero.");
+	  	if(CheckAdminsOnline() < 2) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ï¿½ ERROR ï¿½]: {FFFFFF}No hay mï¿½s de 2 administradores conectados, Por lo tanto, no puedes enviar dinero.");
 		if(PlayerInfo[playerid][Identificado] == 0 || PlayerInfo[playerid][RZClient_Verified] == 0){SendClientMessage(playerid, COLOR_DE_ERROR, "[ ERROR ]{ffffff} Para utilizar el chat necesitas identificarte/spawnear por primera vez."); return 0;}
 		new giveplayerid, moneys,sendernameZ[MAX_PLAYER_NAME],giveplayer[MAX_PLAYER_NAME],playermoney;
 		new DineroTmp[256],stringZD[300],stringZDD[256];
         DineroTmp = strtok(cmdtext, idx);
-        if(!strlen(DineroTmp)) return SendClientMessage(playerid, COLOR_DE_ERROR, "[» ERROR «]: {FFFFFF}USA: /sendcash [playerid] [cantidad a dar]");
+        if(!strlen(DineroTmp)) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ï¿½ ERROR ï¿½]: {FFFFFF}USA: /sendcash [playerid] [cantidad a dar]");
 
         giveplayerid = strval(DineroTmp);
         DineroTmp = strtok(cmdtext, idx);
-        if(!strlen(DineroTmp)) return SendClientMessage(playerid, COLOR_DE_ERROR, "[» ERROR «]: {FFFFFF}USA: /sendcash [playerid] [cantidad a dar]");
+        if(!strlen(DineroTmp)) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ï¿½ ERROR ï¿½]: {FFFFFF}USA: /sendcash [playerid] [cantidad a dar]");
         moneys = strval(DineroTmp);
-        if (giveplayerid == playerid) return SendClientMessage(playerid, COLOR_DE_ERROR, "[» ERROR «]:{FFFFFF} no puedes darte dinero de ti para ti, asi no funciona la cosa.");
-        if (PlayerInfo[giveplayerid][nivel] >= 1) return SendClientMessage(playerid, COLOR_DE_ERROR, "[» ERROR «]:{FFFFFF} No puedes enviar dinero a los moderadores.");
-        if(strlen(DineroTmp) > 7 && PlayerInfo[giveplayerid][nivel] >= 1 && PlayerInfo[giveplayerid][nivel] <= 5) return SendClientMessage(playerid, COLOR_DE_ERROR, "[» ERROR «]:{FFFFFF} No puedes enviar una cantidad mayor de 7 digitos siendo ADMIN.");
+        if (giveplayerid == playerid) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ï¿½ ERROR ï¿½]:{FFFFFF} no puedes darte dinero de ti para ti, asi no funciona la cosa.");
+        if (PlayerInfo[giveplayerid][nivel] >= 1) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ï¿½ ERROR ï¿½]:{FFFFFF} No puedes enviar dinero a los moderadores.");
+        if(strlen(DineroTmp) > 7 && PlayerInfo[giveplayerid][nivel] >= 1 && PlayerInfo[giveplayerid][nivel] <= 5) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ï¿½ ERROR ï¿½]:{FFFFFF} No puedes enviar una cantidad mayor de 7 digitos siendo ADMIN.");
         if (IsPlayerConnected(giveplayerid))
 		{
 	        GetPlayerName(giveplayerid, giveplayer, sizeof(giveplayer));
@@ -6758,12 +6758,12 @@ public OnPlayerCommandText(playerid, cmdtext[])
 			}
 			else
 			{
-	        	SendClientMessage(playerid, COLOR_DE_ERROR, "[» ERROR «]: {FFFFFF}acción no permitida.");
+	        	SendClientMessage(playerid, COLOR_DE_ERROR, "[ï¿½ ERROR ï¿½]: {FFFFFF}acciï¿½n no permitida.");
 	        }
         }
 		else
 		{
-        format(stringZDD, sizeof(stringZDD), "[» ERROR «]: {FFFFFF}El Jugador Numero %d no esta conectado.", giveplayerid);
+        format(stringZDD, sizeof(stringZDD), "[ï¿½ ERROR ï¿½]: {FFFFFF}El Jugador Numero %d no esta conectado.", giveplayerid);
         SendClientMessage(playerid, COLOR_DE_ERROR, stringZDD);
         }
 	return 1;
@@ -6775,7 +6775,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	tmp = strtok(cmdtext, idx);
 	if(!strlen(tmp))
 	{
-		SendClientMessage(playerid, COLOR_DE_ERROR, "[» ERROR «]:{ffffff} USA: /psound id");
+		SendClientMessage(playerid, COLOR_DE_ERROR, "[ï¿½ ERROR ï¿½]:{ffffff} USA: /psound id");
 		return 1;
 	}
 	id = strval(tmp);
@@ -6793,21 +6793,21 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	tmp = strtok(cmdtext, idx);
 	if(!strlen(tmp))
 	{
-	SendClientMessage(playerid, COLOR_DE_ERROR, "[» ERROR «]:{ffffff} USA: /PM [ID] [MSG]");
+	SendClientMessage(playerid, COLOR_DE_ERROR, "[ï¿½ ERROR ï¿½]:{ffffff} USA: /PM [ID] [MSG]");
 	return 1;
 	}
 	id = strval(tmp);
 	message = strrest(cmdtext, idx);
 	if(!strlen(message))
 	{
-	SendClientMessage(playerid, COLOR_DE_ERROR, "[» ERROR «]:{ffffff} USA: /PM [ID] [MSG]");
+	SendClientMessage(playerid, COLOR_DE_ERROR, "[ï¿½ ERROR ï¿½]:{ffffff} USA: /PM [ID] [MSG]");
 	return 1;
 	}
-	if(IsNull(message)) return SendClientMessage(playerid, COLOR_DE_ERROR, "[» ERROR «]:{ffffff} USA: /PM [ID] [MSG]");
-	if(PlayerInfo[playerid][callado] == 1) return SendClientMessage(playerid, COLOR_DE_ERROR, "[» ERROR «]:{ffffff} Estas silenciado no puedes usar este comando.");
-	if(!IsPlayerConnected(id)) return SendClientMessage(playerid, COLOR_DE_ERROR, "[» ERROR «]:{ffffff} Jugador(ID) No Encontrada/Conectada.");
-	if(PlayerInfo[id][PM] == 0 && !IsPlayerAdmin(playerid)) return SendClientMessage(playerid, COLOR_DE_ERROR, "[» ERROR «]:{ffffff} Jugador(ID) Tiene los Mensajes Privados Desactivados.");
-	if(DetectarSpam(message))return SendClientMessage(playerid, COLOR_DE_ERROR, "[» ERROR «]:{ffffff} Encontramos Posible Spam en tu mensaje, los administradores fueron advertidos.");
+	if(IsNull(message)) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ï¿½ ERROR ï¿½]:{ffffff} USA: /PM [ID] [MSG]");
+	if(PlayerInfo[playerid][callado] == 1) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ï¿½ ERROR ï¿½]:{ffffff} Estas silenciado no puedes usar este comando.");
+	if(!IsPlayerConnected(id)) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ï¿½ ERROR ï¿½]:{ffffff} Jugador(ID) No Encontrada/Conectada.");
+	if(PlayerInfo[id][PM] == 0 && !IsPlayerAdmin(playerid)) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ï¿½ ERROR ï¿½]:{ffffff} Jugador(ID) Tiene los Mensajes Privados Desactivados.");
+	if(DetectarSpam(message))return SendClientMessage(playerid, COLOR_DE_ERROR, "[ï¿½ ERROR ï¿½]:{ffffff} Encontramos Posible Spam en tu mensaje, los administradores fueron advertidos.");
 	format(stringPM,sizeof(stringPM),"[MP-Recibido] %s[%d]: %s",PlayerName2(playerid),playerid,message);
 	SendClientMessage(id,0xFFFF00FF,stringPM);
 	PlayerPlaySound(id, 1085, 0.0, 0.0, 0.0);
@@ -6916,7 +6916,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
     if(strcmp("/duda",cmdtext,true)==0 || strcmp("/ask",cmdtext,true)==0)
     {
 		if(SinCHAT == 1&& !IsPlayerAdmin(playerid)) return SendClientMessage(playerid,COLOR_DE_ERROR, "[ ERROR ] {FFFFFF}El chat esta desactivado."), 0;
-		ShowPlayerDialog(playerid,Duda,DIALOG_STYLE_INPUT, "¿ Alguna duda ?","{ffff00}Introduce Lo Que deseas saber Aqui, Gracias.\n\n","Enviar","Cerrar");
+		ShowPlayerDialog(playerid,Duda,DIALOG_STYLE_INPUT, "ï¿½ Alguna duda ?","{ffff00}Introduce Lo Que deseas saber Aqui, Gracias.\n\n","Enviar","Cerrar");
 		return 1;
 	}
 	//if(PlayerInfo[playerid][Identificado] == 0 && !IsPlayerAdmin(playerid)) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ERROR]: {ffffff} Para usar comandos tienes que logearte..");
@@ -6925,7 +6925,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 		if(SinCHAT == 1&& !IsPlayerAdmin(playerid)) return SendClientMessage(playerid,COLOR_DE_ERROR, "[ ERROR ] {FFFFFF}El chat esta desactivado."), 0;
 		if(PlayerInfo[playerid][nivel] >= 4)
 		{
-			ShowPlayerDialog(playerid,NMusica2,DIALOG_STYLE_INPUT,"NLink","{ffffff}Pon el Link de La Canción\n\nque no sea demasiado largo o podria crashear el servidor.","Seguir","x");
+			ShowPlayerDialog(playerid,NMusica2,DIALOG_STYLE_INPUT,"NLink","{ffffff}Pon el Link de La Canciï¿½n\n\nque no sea demasiado largo o podria crashear el servidor.","Seguir","x");
 		}
 		else
 		{
@@ -6935,7 +6935,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	}
 	if(strcmp(cmd, "/Mp3", true) == 0 || strcmp(cmd, "/song", true) == 0)
     {
-	ShowPlayerDialog(playerid,SongDialog,DIALOG_STYLE_INPUT,"{ffffff}Buscador de Musica {f50000}=D","{ffffff}Escribe el nombre de la canción / sonido o parte del nombre para escucharla\n\n{f50000}* si deseas introducir tu propio enlace utiliza /link [enlace]","Play","x");
+	ShowPlayerDialog(playerid,SongDialog,DIALOG_STYLE_INPUT,"{ffffff}Buscador de Musica {f50000}=D","{ffffff}Escribe el nombre de la canciï¿½n / sonido o parte del nombre para escucharla\n\n{f50000}* si deseas introducir tu propio enlace utiliza /link [enlace]","Play","x");
     return 1;
     }
 
@@ -6959,7 +6959,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	{
 	if(SinCHAT == 1&& !IsPlayerAdmin(playerid)) return SendClientMessage(playerid,COLOR_DE_ERROR, "[ ERROR ] {FFFFFF}El chat esta desactivado."), 0;
 	if(PlayerInfo[playerid][nivel] < 5) return ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{ffffff}Musica:{f50000} ZR", "{4DFFFF}Requiere nivel 5 para utilizar este comando.", "x", "");
-	ShowPlayerDialog(playerid,SongDialogADM,DIALOG_STYLE_INPUT,"{ffffff}Buscador de Musica {f50000}=D","{ffffff}Escribe el nombre de la canción / sonido o parte del nombre para Reproducirla a Todos\n\n{f50000}* si deseas introducir tu propio enlace utiliza /cancion","Play","x");
+	ShowPlayerDialog(playerid,SongDialogADM,DIALOG_STYLE_INPUT,"{ffffff}Buscador de Musica {f50000}=D","{ffffff}Escribe el nombre de la canciï¿½n / sonido o parte del nombre para Reproducirla a Todos\n\n{f50000}* si deseas introducir tu propio enlace utiliza /cancion","Play","x");
     PlayerPlaySound(playerid,1057,0.0,0.0,0.0);
 	return 1;
 	}
@@ -6971,9 +6971,9 @@ public OnPlayerCommandText(playerid, cmdtext[])
     strcat(CMDS,"{FF0000}Cliente: http://bit.ly/RZCliente\n\n", sizeof(CMDS));
     strcat(CMDS,"{FF0000}Pagina web: {FFFFFF}www.Revolucion-Zombie.com\n", sizeof(CMDS));
     strcat(CMDS,"{FF0000}Facebook: {FFFFFF}www.facebook.com/groups/revolutionzombie\n", sizeof(CMDS));
-    strcat(CMDS,"{FF0000}Dueño: {FFFFFF} es.zRicardo\n", sizeof(CMDS));
+    strcat(CMDS,"{FF0000}Dueï¿½o: {FFFFFF} es.zRicardo\n", sizeof(CMDS));
     strcat(CMDS,"{FF0000}Colaboradores: {FFFFFF} JAKE_MULLER,EvilMaster,Rubi_Orozco,Jess\n", sizeof(CMDS));
-    strcat(CMDS,"{FF0000}¡Gracias por jugar en Zombie Attack!.\n", sizeof(CMDS));
+    strcat(CMDS,"{FF0000}ï¿½Gracias por jugar en Zombie Attack!.\n", sizeof(CMDS));
     ShowPlayerDialog(playerid,0, DIALOG_STYLE_MSGBOX, "{F5B800}Zombie Attack Credits", CMDS, "x", "");
     PlayerPlaySound(playerid,1057,0.0,0.0,0.0);
     return 1;
@@ -7048,7 +7048,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
     GetPlayerName(jugador, nombrejugador, MAX_PLAYER_NAME);
     GetPlayerName(usador, nombreusador, MAX_PLAYER_NAME);
     PlayerInfo[jugador][Lsay] = 0;
-    format(string1,sizeof(string1), "%s Te Ha otorgado una cuenta En La Administración de Nivel: %d. Usa /Acmds y /Acmds2 | Si abusas Puedes ser DesPromovido.", nombreusador,strval(tmp2));
+    format(string1,sizeof(string1), "%s Te Ha otorgado una cuenta En La Administraciï¿½n de Nivel: %d. Usa /Acmds y /Acmds2 | Si abusas Puedes ser DesPromovido.", nombreusador,strval(tmp2));
     format(string2,sizeof(string2), "[Admin] Has otorgado una cuenta Admin de nivel : %d a %s.", strval(tmp2), nombrejugador);
     SendClientMessage(jugador, COLOR_VERDE_CLARO, string1);
     SendClientMessage(usador, COLOR_VERDE_CLARO, string2);
@@ -7642,7 +7642,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	{
 	if (PlayerInfo[playerid][VIP] >= 1 )
 	{
-	if(GetPlayerState(playerid) == PLAYER_STATE_SPECTATING && !IsPlayerAdmin(playerid)) return SendClientMessage(playerid, COLOR_ROJO, "Error >> {FFFFFF}Despidete de tu cuenta, rufían.");
+	if(GetPlayerState(playerid) == PLAYER_STATE_SPECTATING && !IsPlayerAdmin(playerid)) return SendClientMessage(playerid, COLOR_ROJO, "Error >> {FFFFFF}Despidete de tu cuenta, rufï¿½an.");
 	GetPlayerPos(playerid,PlayerInfo[playerid][savedPos][0],PlayerInfo[playerid][savedPos][1],PlayerInfo[playerid][savedPos][2]);
 	GetPlayerFacingAngle(playerid,PlayerInfo[playerid][savedPos][3]);
 	SendClientMessage(playerid,COLOR_AMARILLO,"Posicion guardada!");
@@ -7678,7 +7678,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	}
 
 	new CMDERROR[256];
-	format(CMDERROR,sizeof(CMDERROR),"[» ERROR «]:{ffffff} El Comando {"COLOR_DE_ERROR_EX"}%s{ffffff} no existe, utiliza /cmds para ver más comandos.",cmdtext);
+	format(CMDERROR,sizeof(CMDERROR),"[ï¿½ ERROR ï¿½]:{ffffff} El Comando {"COLOR_DE_ERROR_EX"}%s{ffffff} no existe, utiliza /cmds para ver mï¿½s comandos.",cmdtext);
 	return SendClientMessage(playerid,COLOR_DE_ERROR,CMDERROR);
 }
 
@@ -7728,14 +7728,14 @@ if(IsPlayerConnected(playerid)){
 if(PlayerInfo[playerid][Identificado] == 0 || PlayerInfo[playerid][Registrado] == 0) return SendClientMessage(playerid,red,"No estas registrado..You're not registered...");
 new tmp2[256],Index;
 tmp2 = strtok(params,Index);
-if(!strlen(tmp2)) return SendClientMessage(playerid, red, "Uso correcto: /cambiarpass [Nueva contraseña]");
-if(strlen(tmp2) > 14) return SendClientMessage(playerid, red, "ERROR: La contraseña contiene mas de 14 caracteres!.");
-if(strlen(tmp2) < 3) return SendClientMessage(playerid, red, "ERROR: La contraseña debe ser mayor a 3 caracteres.");
+if(!strlen(tmp2)) return SendClientMessage(playerid, red, "Uso correcto: /cambiarpass [Nueva contraseï¿½a]");
+if(strlen(tmp2) > 14) return SendClientMessage(playerid, red, "ERROR: La contraseï¿½a contiene mas de 14 caracteres!.");
+if(strlen(tmp2) < 3) return SendClientMessage(playerid, red, "ERROR: La contraseï¿½a debe ser mayor a 3 caracteres.");
 strmid(Password[playerid], tmp2, 0, strlen(tmp2));
 new UpdateUser[101];
 format(UpdateUser, sizeof(UpdateUser), "UPDATE Usuarios SET Password='%s' WHERE Username = '%s'",tmp2,PlayerName2(playerid));
 db_query(DataBase_USERS,UpdateUser);
-SendClientMessage(playerid,green,"Tu contraseña fue cambiada satisfactoriamente, este cambio NO afectara tu cuenta del foro.");
+SendClientMessage(playerid,green,"Tu contraseï¿½a fue cambiada satisfactoriamente, este cambio NO afectara tu cuenta del foro.");
 }
 return 1;
 }
@@ -7785,7 +7785,7 @@ dcmd_kick(playerid, params[]){
     new tmp[256], tmp2[256], Index;
     tmp = strtok(params, Index);
     tmp2 = strrest(params, Index);
-    if(!strlen(params) || !IsNumeric(tmp))return SendClientMessage(playerid, COLOR_BLANCO, "USO: /kick <playerid> <razón>");
+    if(!strlen(params) || !IsNumeric(tmp))return SendClientMessage(playerid, COLOR_BLANCO, "USO: /kick <playerid> <razï¿½n>");
     new jugador, name[MAX_PLAYER_NAME], admin[MAX_PLAYER_NAME], str[300];
     jugador = strval(tmp);
     if(!IsPlayerConnected(jugador)) return SendClientMessage(playerid, COLOR_BLANCO, "Jugador no conectado.");
@@ -7800,7 +7800,7 @@ dcmd_kick(playerid, params[]){
           format(str, sizeof(str), "{4DFFFF}**{FFFFFF} %s {4DFFFF}ha [E]xpusaldo a {FFFFFF}%s {4DFFFF}[Razon: %s  ]", admin, name, tmp2);
         }
         AdminMessageToAdmins(playerid,COLOR_GRIS,str);
-        format(str, sizeof(str), "[KICK] Usuario %s Expulsado Por %s Razón: %s",name, admin, tmp2);
+        format(str, sizeof(str), "[KICK] Usuario %s Expulsado Por %s Razï¿½n: %s",name, admin, tmp2);
         SaveCMD(playerid, str);
         return Kick(jugador);
       }else return SendClientMessage(playerid, COLOR_ROJO, "ERROR: No puedes usar este comando sobre este jugador");
@@ -7857,7 +7857,7 @@ dcmd_dbug(playerid, params[]){
     new tmp[256], tmp2[256], Index;
     tmp = strtok(params, Index);
     tmp2 = strrest(params, Index);
-    if(!strlen(params) || !IsNumeric(tmp))return SendClientMessage(playerid, COLOR_BLANCO, "USO: /dbug <playerid> <razón> | reconecta a un jugador, adecuado para desbugear usuarios.");
+    if(!strlen(params) || !IsNumeric(tmp))return SendClientMessage(playerid, COLOR_BLANCO, "USO: /dbug <playerid> <razï¿½n> | reconecta a un jugador, adecuado para desbugear usuarios.");
     new jugador, name[MAX_PLAYER_NAME], admin[MAX_PLAYER_NAME], str[300];
     jugador = strval(tmp);
     if(!IsPlayerConnected(jugador)) return SendClientMessage(playerid, COLOR_BLANCO, "Jugador no conectado.");
@@ -7872,7 +7872,7 @@ dcmd_dbug(playerid, params[]){
           format(str, sizeof(str), "{4DFFFF}**{FFFFFF} %s {4DFFFF}ha [R]econectado a {FFFFFF}%s {4DFFFF}[Razon: %s  ]", admin, name, tmp2);
         }
         PlayerMessageToPlayers(playerid, -1,str);
-        format(str, sizeof(str), "[RE-CONNECT] Usuario %s Reconectado Por %s Razón: %s",name, admin, tmp2);
+        format(str, sizeof(str), "[RE-CONNECT] Usuario %s Reconectado Por %s Razï¿½n: %s",name, admin, tmp2);
         SaveCMD(playerid, str);
         return ReConnect(jugador);
       }else return SendClientMessage(playerid, COLOR_ROJO, "ERROR: No puedes usar este comando sobre este jugador");
@@ -7884,7 +7884,7 @@ dcmd_chbug(playerid, params[]){
   if(PlayerInfo[playerid][nivel] >= 1 || IsPlayerAdmin(playerid)){
     new tmp[256], Index;
     tmp = strtok(params, Index);
-    if(!strlen(params) || !IsNumeric(tmp))return SendClientMessage(playerid, COLOR_BLANCO, "USO: /chbug <playerid> <razón> | verifica si un jugador esta bug (esta funcion es inestable).");
+    if(!strlen(params) || !IsNumeric(tmp))return SendClientMessage(playerid, COLOR_BLANCO, "USO: /chbug <playerid> <razï¿½n> | verifica si un jugador esta bug (esta funcion es inestable).");
     new jugador,str[300];
     jugador = strval(tmp);
     if(PlayerInfo[jugador][nivel] < PlayerInfo[playerid][nivel] || !IsPlayerAdmin(jugador))
@@ -7925,7 +7925,7 @@ dcmd_sbcheck(playerid, params[]){
 	    SetPlayerHealth(jugador, 0);
 	    //TogglePlayerSpectating(jugador, true);
 	    //TogglePlayerSpectating(jugador, false);
-		return SendClientMessage(playerid, COLOR_ROJO, "Success >> {FFFFFF}El servidor se encargara de todo, no es necesario hacer nada más.");
+		return SendClientMessage(playerid, COLOR_ROJO, "Success >> {FFFFFF}El servidor se encargara de todo, no es necesario hacer nada mï¿½s.");
     }else return SendClientMessage(playerid, COLOR_ROJO, "ERROR: El jugador no esta conectado, es superior a ti o es inmune a este comando.");
   }else return SendClientMessage(playerid, COLOR_ROJO, "ERROR: No posees el nivel suficiente para usar este comando");
 }
@@ -7936,7 +7936,7 @@ dcmd_warn(playerid, params[]){
     new tmp[256], tmp2[256], Index;
     tmp = strtok(params, Index);
     tmp2 = strrest(params, Index);
-    if(!strlen(params) || !IsNumeric(tmp))return SendClientMessage(playerid, COLOR_BLANCO, "USO: /kick <playerid> <razón>");
+    if(!strlen(params) || !IsNumeric(tmp))return SendClientMessage(playerid, COLOR_BLANCO, "USO: /kick <playerid> <razï¿½n>");
     new jugador, name[MAX_PLAYER_NAME], admin[MAX_PLAYER_NAME], str[300];
     jugador = strval(tmp);
     if(!IsPlayerConnected(jugador)) return SendClientMessage(playerid, COLOR_BLANCO, "Jugador no conectado.");
@@ -7950,7 +7950,7 @@ dcmd_warn(playerid, params[]){
 		{
         format(str, sizeof(str), "{4DFFFF}**{FFFFFF} %s {4DFFFF}ha [E]xpusaldo a {FFFFFF}%s {4DFFFF}[Razon: %s  ] [%d/%d]", admin, name, tmp2,PlayerInfo[jugador][Advertencias],ADVERTENCIAS_MAXIMAS);
         SendFormatDialog(jugador,"{ffffff}<-- {f50000}Expulsado {fffff}-->","{4DFFFF}Expulsado por:{ffffff}%s\n\n{4DFFFF}Razon:{ffffff}%s\n\n{ffffff}Si este administrador abuso de su poder toma foto con F8 y publicala en facebook.",admin,tmp2);
-        printf("[KICK] Usuario %s Expulsado Por %s Razón: %s [%d/%d]",admin, name, tmp2,PlayerInfo[jugador][Advertencias],ADVERTENCIAS_MAXIMAS);
+        printf("[KICK] Usuario %s Expulsado Por %s Razï¿½n: %s [%d/%d]",admin, name, tmp2,PlayerInfo[jugador][Advertencias],ADVERTENCIAS_MAXIMAS);
         PlayerMessageToPlayers(playerid, -1, str);
 		return Kick(jugador);
 		}
@@ -7958,7 +7958,7 @@ dcmd_warn(playerid, params[]){
         PlayerInfo[jugador][Advertencias]++;
         SendFormatDialog(jugador,"{ffffff}<--{f50000} ADVERTENCIA {fffff}-->","{4DFFFF}El Administrador:{ffffff} %s {4DFFFF}Te ha dado una advertencia\n\n{4DFFFF}Razon:{ffffff} %s",admin,tmp2);
 		SendClientMessageToAll(-1,str);
-		printf("[WARN] Usuario %s Advertido Por %s Razón: %s",admin, name, tmp2);
+		printf("[WARN] Usuario %s Advertido Por %s Razï¿½n: %s",admin, name, tmp2);
 		return 1;
       }else return SendClientMessage(playerid, COLOR_ROJO, "ERROR: No puedes usar este comando sobre este jugador");
     }else return SendClientMessage(playerid, COLOR_ROJO, "ERROR: El jugador no esta conectado o la id no es correcta");
@@ -7972,15 +7972,15 @@ dcmd_votekick(playerid, params[])
     new tmp[256], tmp2[256],VK_STR[600],VK_STR2[600], Index, jugador;
     tmp = strtok(params, Index);
     tmp2 = strrest(params, Index);
-    if(!strlen(params) || !IsNumeric(tmp))return SendClientMessage(playerid, COLOR_BLANCO, "USO: /VoteKick <playerid> <razón>");
+    if(!strlen(params) || !IsNumeric(tmp))return SendClientMessage(playerid, COLOR_BLANCO, "USO: /VoteKick <playerid> <razï¿½n>");
     jugador = strval(tmp);
     if(PlayerInfo[jugador][nivel] >= 1 && !IsPlayerAdmin(playerid)) return SendClientMessage(playerid, COLOR_ROJO, "ERROR: No puedes utilizar este comando en un administrador.");
     if(!IsPlayerConnected(jugador)) return SendClientMessage(playerid, COLOR_BLANCO, "Jugador no conectado.");
     if (IsPlayerNPC(jugador)) return SendClientMessage(playerid,red, "ERROR: No expulses a los bots.");
     if((rztickcount() - AntiVoteKickFlood) < TIEMPO_KICK) return SendClientMessage(playerid,red, "ERROR: No ha pasado 1 Minuto desde que se expulso un jugador, agurda un poco mas.");
     if((rztickcount() - VoteKickFlood[playerid]) >= TIEMPO_KICK && Voto[playerid] == 1){Voto[playerid] = 0;}
-	if (Voto[playerid] == 1) return SendClientMessage(playerid,red, "ERROR: Ya has Votado, Espera a que voten más personas para votar.");
-    if(!IsNull(tmp2) && Votos_KICK[jugador] == 0 && strlen( RemoveSpaces(tmp2) ) < 3 )return SendClientMessage(playerid,red, "[ RZ; Razón Invalida ]: {ffffff}Utiliza este comando responsablemente o te bloquearemos la cuenta.");
+	if (Voto[playerid] == 1) return SendClientMessage(playerid,red, "ERROR: Ya has Votado, Espera a que voten mï¿½s personas para votar.");
+    if(!IsNull(tmp2) && Votos_KICK[jugador] == 0 && strlen( RemoveSpaces(tmp2) ) < 3 )return SendClientMessage(playerid,red, "[ RZ; Razï¿½n Invalida ]: {ffffff}Utiliza este comando responsablemente o te bloquearemos la cuenta.");
     if(IsPlayerConnected(jugador) && jugador != INVALID_PLAYER_ID)
 	{
 		if(Votos_KICK[jugador] <= 1)
@@ -7991,7 +7991,7 @@ dcmd_votekick(playerid, params[])
 		if(Votos_KICK[jugador] >= VOTOS_PARA_KICK)
 		{
 		    format(VK_STR2, sizeof(VK_STR2), "**{FFFFFF} %s {4DFFFF}ha [E]xpusaldo a {FFFFFF}%s {4DFFFF}[Razon: %s ] {ffffff}K.By %s", PlayerName2(playerid), PlayerName2(jugador), RAZON_KICK[jugador],VTK_NAME[jugador]);
-			printf("[VoteKick:KICK] Usuario %s Dio El Ultimo Voto para Expulsar a %s Razón: %s [%d/%d]",PlayerName2(playerid), PlayerName2(jugador), RAZON_KICK[jugador],PlayerInfo[jugador][Advertencias],ADVERTENCIAS_MAXIMAS);
+			printf("[VoteKick:KICK] Usuario %s Dio El Ultimo Voto para Expulsar a %s Razï¿½n: %s [%d/%d]",PlayerName2(playerid), PlayerName2(jugador), RAZON_KICK[jugador],PlayerInfo[jugador][Advertencias],ADVERTENCIAS_MAXIMAS);
         	SendClientMessageToAll(0x4DFFFFFF,VK_STR2);
         	Voto[playerid] = 1;
         	VoteKickFlood[playerid] = rztickcount();
@@ -8005,7 +8005,7 @@ dcmd_votekick(playerid, params[])
 		Votos_KICK[jugador]++;
 		Voto[playerid] = 1;
 		VoteKickFlood[playerid] = rztickcount();
-		printf("[VoteKick:WARN] Usuario %s Advertido Por %s Razón: %s",PlayerName2(playerid), PlayerName2(jugador), tmp2);
+		printf("[VoteKick:WARN] Usuario %s Advertido Por %s Razï¿½n: %s",PlayerName2(playerid), PlayerName2(jugador), tmp2);
 		return 1;
 	}else return SendClientMessage(playerid, COLOR_ROJO, "ERROR: El jugador no esta conectado o la id no es correcta");
   //}else return SendClientMessage(playerid, COLOR_ROJO, "ERROR: Comando desactivado, Ya Hay Administradores Conectados, usa /Reportar.");
@@ -8016,7 +8016,7 @@ dcmd_sban(playerid, params[]){
     new name[MAX_PLAYER_NAME], tmp2[300], Index;//arrays
     name = strtok(params, Index);//tomara el 1 valor del comando, es decir la id del jugador
     tmp2 = strrest(params, Index);//tomara el 2 valor del comando, es decir la razon del ban
-    if(!strlen(params))return SendClientMessage(playerid, COLOR_BLANCO, "USO: /sban <nombre> <razón> | bloquea la cuenta de un usuario");//comprobamos que hayan igresado los argumentos, y que la id sea un numero.
+    if(!strlen(params))return SendClientMessage(playerid, COLOR_BLANCO, "USO: /sban <nombre> <razï¿½n> | bloquea la cuenta de un usuario");//comprobamos que hayan igresado los argumentos, y que la id sea un numero.
     if(!strlen(tmp2))return SendClientMessage(playerid, COLOR_ROJO, "ERROR: ingresa una razon y asegurate de que sea valida.");
     new admin[MAX_PLAYER_NAME], str[256];
 	//if(IsPlayerAdmin(playerid)) return SendClientMessage(playerid,red,"ERROR: NO PUEDES BANEAR AL DIOS XD PUTO .l.");
@@ -8027,7 +8027,7 @@ dcmd_sban(playerid, params[]){
         GetPlayerName(playerid, admin, sizeof(admin));
         format(str, sizeof(str), "{4DFFFF}**{FFFFFF} %s {4DFFFF}ha [B]aneado la Cuenta {FFFFFF}%s {BBC1C1}[Razon: %s]", admin, name, tmp2);
         AdminMessageToAdmins(playerid, COLOR_GRIS, str);
-        format(str, sizeof(str), "%s Baneado por el admin %s, [Razón: %s] \n",name, admin, tmp2);
+        format(str, sizeof(str), "%s Baneado por el admin %s, [Razï¿½n: %s] \n",name, admin, tmp2);
         SaveCMD(playerid, str);
         return BanByName(name,playerid,tmp2); //banear x nick
     }else return SendClientMessage(playerid, COLOR_ROJO, "ERROR: ingresa un nick valido.");
@@ -8039,7 +8039,7 @@ dcmd_rzcban(playerid, params[]){
     new name[MAX_PLAYER_NAME], tmp2[300], Index;//arrays
     name = strtok(params, Index);//tomara el 1 valor del comando, es decir la id del jugador
     tmp2 = strrest(params, Index);//tomara el 2 valor del comando, es decir la razon del ban
-    if(!strlen(params))return SendClientMessage(playerid, COLOR_BLANCO, "USO: /rzcban <nombre> <razón> | bloquea la cuenta de un usuario solo para RZC");//comprobamos que hayan igresado los argumentos, y que la id sea un numero.
+    if(!strlen(params))return SendClientMessage(playerid, COLOR_BLANCO, "USO: /rzcban <nombre> <razï¿½n> | bloquea la cuenta de un usuario solo para RZC");//comprobamos que hayan igresado los argumentos, y que la id sea un numero.
     if(!strlen(tmp2))return SendClientMessage(playerid, COLOR_ROJO, "ERROR: ingresa una razon y asegurate de que sea valida.");
     new admin[MAX_PLAYER_NAME], str[256];
     if(!IsNull(name))
@@ -8049,7 +8049,7 @@ dcmd_rzcban(playerid, params[]){
         GetPlayerName(playerid, admin, sizeof(admin));
         format(str, sizeof(str), "{4DFFFF}**{FFFFFF} %s {4DFFFF}ha Restringido con RZClient la cuenta {FFFFFF}%s {BBC1C1}[Razon: %s]", admin, name, tmp2);
         AdminMessageToAdmins(playerid, COLOR_GRIS, str);
-        format(str, sizeof(str), "%s RZClient restricted por el admin %s, [Razón: %s] \n",name, admin, tmp2);
+        format(str, sizeof(str), "%s RZClient restricted por el admin %s, [Razï¿½n: %s] \n",name, admin, tmp2);
         SaveCMD(playerid, str);
         return RZCBanByName(name,playerid,tmp2);
     }else return SendClientMessage(playerid, COLOR_ROJO, "ERROR: ingresa un nick valido.");
@@ -8061,7 +8061,7 @@ dcmd_cban(playerid, params[]){
     new name[MAX_PLAYER_NAME], tmp2[300], Index;//arrays
     name = strtok(params, Index);//tomara el 1 valor del comando, es decir la id del jugador
     tmp2 = strrest(params, Index);//tomara el 2 valor del comando, es decir la razon del ban
-    if(!strlen(params))return SendClientMessage(playerid, COLOR_BLANCO, "USO: /cban <nombre> <razón> | Elimina la cuenta de un usuario");//comprobamos que hayan igresado los argumentos, y que la id sea un numero.
+    if(!strlen(params))return SendClientMessage(playerid, COLOR_BLANCO, "USO: /cban <nombre> <razï¿½n> | Elimina la cuenta de un usuario");//comprobamos que hayan igresado los argumentos, y que la id sea un numero.
     if(!strlen(tmp2))return SendClientMessage(playerid, COLOR_ROJO, "ERROR: ingresa una razon y asegurate de que sea valida.");
     new admin[MAX_PLAYER_NAME], str[256];
     if(!IsNull(name))
@@ -8071,7 +8071,7 @@ dcmd_cban(playerid, params[]){
         GetPlayerName(playerid, admin, sizeof(admin));
         format(str, sizeof(str), "{4DFFFF}**{FFFFFF} %s {4DFFFF}ha [E]liminado la cuenta {FFFFFF}%s {BBC1C1}[Razon: %s]", admin, name, tmp2);
         AdminMessageToAdmins(playerid, COLOR_GRIS, str);
-        format(str, sizeof(str), "%s Eliminado por el admin %s, [Razón: %s] \n",name, admin, tmp2);
+        format(str, sizeof(str), "%s Eliminado por el admin %s, [Razï¿½n: %s] \n",name, admin, tmp2);
         SaveCMD(playerid, str);
 		new DeleteAccount[100];
 		format(DeleteAccount, sizeof(DeleteAccount), "DELETE FROM Usuarios WHERE Username='%s'",name);
@@ -8086,8 +8086,8 @@ dcmd_ban(playerid, params[]){
     new tmp[256], tmp2[300], Index;//arrays
     tmp = strtok(params, Index);//tomara el 1 valor del comando, es decir la id del jugador
     tmp2 = strrest(params, Index);//tomara el 2 valor del comando, es decir la razon del ban
-    if(!strlen(params) || !IsNumeric(tmp))return SendClientMessage(playerid, COLOR_BLANCO, "USO: /ban <playerid> <razón>");//comprobamos que hayan igresado los argumentos, y que la id sea un numero.
-    if(!strlen(tmp2))return SendClientMessage(playerid, COLOR_ROJO, "ERROR: Debes ingresar una razón");
+    if(!strlen(params) || !IsNumeric(tmp))return SendClientMessage(playerid, COLOR_BLANCO, "USO: /ban <playerid> <razï¿½n>");//comprobamos que hayan igresado los argumentos, y que la id sea un numero.
+    if(!strlen(tmp2))return SendClientMessage(playerid, COLOR_ROJO, "ERROR: Debes ingresar una razï¿½n");
     new jugador, name[MAX_PLAYER_NAME],LOLAVISO[256], admin[MAX_PLAYER_NAME], str[128]; //arrays que usaremos para almacenar nombres, la id del jugador y un mensaje
     jugador = strval(tmp);//jugador =valor de tmp es decir la id.
     if(!IsPlayerConnected(jugador)) return SendClientMessage(playerid, COLOR_BLANCO, "Jugador no conectado.");
@@ -8106,8 +8106,8 @@ dcmd_ban(playerid, params[]){
         GetPlayerName(playerid, admin, sizeof(admin));
         format(str, sizeof(str), "{4DFFFF}**{FFFFFF} %s {4DFFFF}ha [B]aneado a {FFFFFF}%s {BBC1C1}[Razon: %s]", admin, name, tmp2);
         AdminMessageToAdmins(playerid,COLOR_GRIS, str);
-        printf("[NOTICIA] Usuario %s Baneado Por %s Razón: %s",name, admin, tmp2);
-        format(str, sizeof(str), "%s Baneado Por el miembro del staff %s, [Razón: %s] \n",name, admin, tmp2);
+        printf("[NOTICIA] Usuario %s Baneado Por %s Razï¿½n: %s",name, admin, tmp2);
+        format(str, sizeof(str), "%s Baneado Por el miembro del staff %s, [Razï¿½n: %s] \n",name, admin, tmp2);
         SaveCMD(playerid, str);
         PlayerInfo[jugador][Banned] = 1;
         return BanSQL(jugador,playerid,tmp2); // Banear
@@ -8122,8 +8122,8 @@ dcmd_rzban(playerid, params[]){
     new tmp[256], tmp2[300], Index;//arrays
     tmp = strtok(params, Index);//tomara el 1 valor del comando, es decir la id del jugador
     tmp2 = strrest(params, Index);//tomara el 2 valor del comando, es decir la razon del ban
-    if(!strlen(params) || !IsNumeric(tmp))return SendClientMessage(playerid, COLOR_BLANCO, "USO: /ban <playerid> <razón>");//comprobamos que hayan igresado los argumentos, y que la id sea un numero.
-    if(!strlen(tmp2))return SendClientMessage(playerid, COLOR_ROJO, "ERROR: Debes ingresar una razón");
+    if(!strlen(params) || !IsNumeric(tmp))return SendClientMessage(playerid, COLOR_BLANCO, "USO: /ban <playerid> <razï¿½n>");//comprobamos que hayan igresado los argumentos, y que la id sea un numero.
+    if(!strlen(tmp2))return SendClientMessage(playerid, COLOR_ROJO, "ERROR: Debes ingresar una razï¿½n");
     new jugador, name[MAX_PLAYER_NAME],LOLAVISO[256], admin[MAX_PLAYER_NAME], str[128]; //arrays que usaremos para almacenar nombres, la id del jugador y un mensaje
     jugador = strval(tmp);//jugador =valor de tmp es decir la id.
     if(!IsPlayerConnected(jugador)) return SendClientMessage(playerid, COLOR_BLANCO, "Jugador no conectado.");
@@ -8142,8 +8142,8 @@ dcmd_rzban(playerid, params[]){
         GetPlayerName(playerid, admin, sizeof(admin));
         format(str, sizeof(str), "{4DFFFF}**{FFFFFF} %s {4DFFFF}ha [R]estringido con RZClient a {FFFFFF}%s {BBC1C1}[Razon: %s]", admin, name, tmp2);
         AdminMessageToAdmins(playerid,COLOR_GRIS, str);
-        printf("[NOTICIA] Usuario %s Restringido Por %s Razón: %s",name, admin, tmp2);
-        format(str, sizeof(str), "%s Restringido Por el miembro del staff %s, [Razón: %s] \n",name, admin, tmp2);
+        printf("[NOTICIA] Usuario %s Restringido Por %s Razï¿½n: %s",name, admin, tmp2);
+        format(str, sizeof(str), "%s Restringido Por el miembro del staff %s, [Razï¿½n: %s] \n",name, admin, tmp2);
         SaveCMD(playerid, str);
         return RZCBanSQL(jugador,playerid,tmp2); // Banear
       }else return SendClientMessage(playerid, COLOR_ROJO, "ERROR: No puedes usar este comando sobre este jugador");
@@ -8156,8 +8156,8 @@ dcmd_uban(playerid, params[]){
     new tmp[256], tmp2[256], Index;
     tmp = strtok(params, Index);
     tmp2 = strrest(params, Index);
-    if(!strlen(params) || !IsNumeric(tmp))return SendClientMessage(playerid, COLOR_BLANCO, "USO: /uban <playerid> <razón> | Elimina la cuenta de un usuario de la base de datos.");
-    if(!strlen(tmp2))return SendClientMessage(playerid, COLOR_ROJO, "ERROR: Debes ingresar una razón");
+    if(!strlen(params) || !IsNumeric(tmp))return SendClientMessage(playerid, COLOR_BLANCO, "USO: /uban <playerid> <razï¿½n> | Elimina la cuenta de un usuario de la base de datos.");
+    if(!strlen(tmp2))return SendClientMessage(playerid, COLOR_ROJO, "ERROR: Debes ingresar una razï¿½n");
     new jugador, name[MAX_PLAYER_NAME],admin[MAX_PLAYER_NAME], str[300];
     jugador = strval(tmp);
     if(!IsPlayerConnected(jugador)) return SendClientMessage(playerid, COLOR_BLANCO, "Jugador no conectado.");
@@ -8169,8 +8169,8 @@ dcmd_uban(playerid, params[]){
         GetPlayerName(playerid, admin, sizeof(admin));
         format(str, sizeof(str), "{4DFFFF}**{FFFFFF} %s {4DFFFF}ha [E]liminado La Cuenta de {FFFFFF}%s {BBC1C1}[Razon: %s]", admin, name, tmp2);
         AdminMessageToAdmins(playerid,COLOR_GRIS, str);
-        printf("[U-BAN]: Usuario %s Eliminado de la DB Por %s[%d] Razón: %s",name, admin,playerid, tmp2);
-        format(str, sizeof(str), "%s Eliminado de la DB Por %s, [Razón: %s] \n",name, admin, tmp2);
+        printf("[U-BAN]: Usuario %s Eliminado de la DB Por %s[%d] Razï¿½n: %s",name, admin,playerid, tmp2);
+        format(str, sizeof(str), "%s Eliminado de la DB Por %s, [Razï¿½n: %s] \n",name, admin, tmp2);
         SaveCMD(playerid, str);
 		new DeleteAccount[100];
 		format(DeleteAccount, sizeof(DeleteAccount), "DELETE FROM Usuarios WHERE Username='%s'",name);
@@ -8187,7 +8187,7 @@ dcmd_callar(playerid, params[]){
     new tmp[256], tmp2[256], Index;
     tmp = strtok(params, Index);
     tmp2 = strrest(params, Index);
-    if(!strlen(params) || !IsNumeric(tmp))return SendClientMessage(playerid, COLOR_BLANCO, "USO: /callar <playerid> opcional <razón>");
+    if(!strlen(params) || !IsNumeric(tmp))return SendClientMessage(playerid, COLOR_BLANCO, "USO: /callar <playerid> opcional <razï¿½n>");
     new jugador, name[MAX_PLAYER_NAME], admin[MAX_PLAYER_NAME], str[300];
     jugador = strval(tmp);
 	if(IsPlayerAdmin(jugador)) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ ERROR ]{FFFFFF} NO Autorizado.");
@@ -8199,7 +8199,7 @@ dcmd_callar(playerid, params[]){
           if(!strlen(tmp2)){
             format(str, sizeof(str), "{4DFFFF}El Administrador {ffffff}%s{4DFFFF} ha callado a {ffffff}%s.", admin, name);
           }else{
-            format(str, sizeof(str), "{4DFFFF}El Administrador {ffffff}%s{4DFFFF} ha callado a {ffffff}%s. {4DFFFF}[Razón: %s]", admin, name, tmp2);
+            format(str, sizeof(str), "{4DFFFF}El Administrador {ffffff}%s{4DFFFF} ha callado a {ffffff}%s. {4DFFFF}[Razï¿½n: %s]", admin, name, tmp2);
           }
           AdminMessageToAdmins(playerid,COLOR_GRIS, str);
           CMDMessageToAdmins(playerid,"CALLAR");
@@ -8244,7 +8244,7 @@ dcmd_rban(playerid,params[]) {
     	        format(ip,128,"%s**",ip);
 				format(ip,128,"banip %s",ip);
             	PlayerInfo[player1][Banned] = 1;
-            	printf("[NOTICIA] Usuario %s [R]Baneado Por %s Razón: %s",playername,adminname,tmp2);
+            	printf("[NOTICIA] Usuario %s [R]Baneado Por %s Razï¿½n: %s",playername,adminname,tmp2);
             	SaveCMD(playerid, string2);
 				BanSQL(player1,playerid,tmp2); // Banear
 				return SendRconCommand(ip);
@@ -8296,7 +8296,7 @@ dcmd_gcardb(playerid,params[]) {
         if(!IsPlayerInAnyVehicle(playerid)) return SendClientMessage(playerid,COLOR_ROJO,"no estas en un vehiculo.");
         new vID = GetPlayerVehicleID(playerid);
         SaveSQLVehicle(vID);
-		SendClientMessage(playerid,COLOR_ARTICULO,"Success: El vehiculo ha sido insertado en la base de datos y estará listo en el proximo reinicio.");
+		SendClientMessage(playerid,COLOR_ARTICULO,"Success: El vehiculo ha sido insertado en la base de datos y estarï¿½ listo en el proximo reinicio.");
         return 1;
 }
 
@@ -8605,7 +8605,7 @@ dcmd_setzspawntime(playerid,params[]) {
 	if(IsPlayerAdmin(playerid)) {
 		if(!strlen(params)) return SendClientMessage(playerid, red, "USAGE: /setzspawntime [seconds]");
 		new var = strval(params);
-		if(var > 600 && var <= 0) return SendClientMessage(playerid, red, "No se permite menos de 1 segundo o más de 600 segundos (10 minutos).");
+		if(var > 600 && var <= 0) return SendClientMessage(playerid, red, "No se permite menos de 1 segundo o mï¿½s de 600 segundos (10 minutos).");
        	CMDMessageToAdmins(playerid,"SETZSPAWNTIME");
        	ZOMBIES_SPAWN_TIME = var * 1000;
 		for(new i = 0; i < GetMaxPlayers(); i++)
@@ -8627,7 +8627,7 @@ dcmd_setzspawnrange(playerid,params[]) {
 	if(IsPlayerAdmin(playerid)) {
 		if(!strlen(params)) return SendClientMessage(playerid, red, "USAGE: /setzspawnrange [distance]");
 		new Float:var = floatround(floatstr(params));
-		if(var >= ZombieVisionDistance) return SendFormatMessage(playerid, red, "No se permite una distancia de spawn mayor o igual que la visión del zombie(%.02f).", ZombieVisionDistance);
+		if(var >= ZombieVisionDistance) return SendFormatMessage(playerid, red, "No se permite una distancia de spawn mayor o igual que la visiï¿½n del zombie(%.02f).", ZombieVisionDistance);
        	CMDMessageToAdmins(playerid,"SETZSPAWNRANGE");
        	ZombieSpawnerDistance = var;
 		new string[256];
@@ -8644,7 +8644,7 @@ dcmd_setzvision(playerid,params[]) {
        	CMDMessageToAdmins(playerid,"SETZVISION");
        	ZombieVisionDistance = var;
 		new string[256];
-		format(string,sizeof(string),"* %s{4DFFFF} cambio la capacidad de visión de los zombies, {ffffff}%.02f metros.", pName(playerid), ZombieVisionDistance);
+		format(string,sizeof(string),"* %s{4DFFFF} cambio la capacidad de visiï¿½n de los zombies, {ffffff}%.02f metros.", pName(playerid), ZombieVisionDistance);
 		return PlayerMessageToPlayers(playerid, -1, string);
 	} else return SendClientMessage(playerid,red,"ERROR: You are not a high enough level to use this command");
 }
@@ -8654,7 +8654,7 @@ dcmd_setizspawntime(playerid,params[]) {
 	if(IsPlayerAdmin(playerid)) {
 		if(!strlen(params)) return SendClientMessage(playerid, red, "USAGE: /setizspawntime [seconds]");
 		new var = strval(params);
-		if(var > 600 && var <= 0) return SendClientMessage(playerid, red, "No se permite menos de 1 segundo o más de 600 segundos (10 minutos).");
+		if(var > 600 && var <= 0) return SendClientMessage(playerid, red, "No se permite menos de 1 segundo o mï¿½s de 600 segundos (10 minutos).");
        	CMDMessageToAdmins(playerid,"SETIZSPAWNTIME");
        	IZ_ZombiesRespawnTime = var * 1000;
 		for(new i = 0; i < GetMaxPlayers(); i++)
@@ -8858,7 +8858,7 @@ dcmd_congelar(playerid, params[]){
     new tmp[256], tmp2[256], Index;
     tmp = strtok(params, Index);
     tmp2 = strtok(params, Index);
-    if(!strlen(params) || !IsNumeric(tmp))return SendClientMessage(playerid, COLOR_BLANCO, "USO: /congelar <playerid> opcional <razón>");
+    if(!strlen(params) || !IsNumeric(tmp))return SendClientMessage(playerid, COLOR_BLANCO, "USO: /congelar <playerid> opcional <razï¿½n>");
     new jugador, name[MAX_PLAYER_NAME], admin[MAX_PLAYER_NAME], str[128];
     jugador = strval(tmp);
     if (IsPlayerNPC(jugador)) return SendClientMessage(playerid,red, "ERROR: No puedes congelar a los NPC Bots >:D .");
@@ -8874,14 +8874,14 @@ dcmd_congelar(playerid, params[]){
           }
           PlayerMessageToPlayers(playerid, COLOR_GRIS, str);
           PlayerInfo[jugador][congelado] = 1;
-          printf("[KICK] Usuario %s Congelado Por %s Razón: %s",admin, name, params[2]);
+          printf("[KICK] Usuario %s Congelado Por %s Razï¿½n: %s",admin, name, params[2]);
           return TogglePlayerControllable(jugador, 0);
         }
         else{
           format(str, sizeof(str), "{4DFFFF}El Administrador {ffffff}%s{4DFFFF} ha Desparalizado a {ffffff}%s.", admin, name);
           PlayerMessageToPlayers(playerid, COLOR_GRIS, str);
           PlayerInfo[jugador][congelado] = 0;
-          printf("[KICK] Usuario %s DesCongelado Por %s Razón: %s",admin, name, params[2]);
+          printf("[KICK] Usuario %s DesCongelado Por %s Razï¿½n: %s",admin, name, params[2]);
           return TogglePlayerControllable(jugador, 1);
         }
       }else return SendClientMessage(playerid, COLOR_ROJO, "ERROR: No puedes usar este comando sobre este jugador");
@@ -8936,10 +8936,10 @@ dcmd_goto(playerid,params[]) {
 			} else SetPlayerPos(playerid,x+2,y,z);
 			new string[256];
 			if(PlayerInfo[playerid][Ocultado] == 0 && !IsPlayerAdmin(player1)){
-				format(string,sizeof(string),"El Administrador %s [ID: %d] se reubicado a tu posición actual.", PlayerName2(playerid), playerid);
+				format(string,sizeof(string),"El Administrador %s [ID: %d] se reubicado a tu posiciï¿½n actual.", PlayerName2(playerid), playerid);
 				SendClientMessage(player1,blue,string);
 			}
-			format(string,sizeof(string),"Posición cambiada hacia las coordenadas de \"%s\"", pName(player1));
+			format(string,sizeof(string),"Posiciï¿½n cambiada hacia las coordenadas de \"%s\"", pName(player1));
 			return SendClientMessage(playerid,blue,string);
 		} else return SendClientMessage(playerid, red, "ERROR: El jugador no esta conectado o eres tu mismo!");
 	} else return SendClientMessage(playerid,red,"Error >> Requiere RCON.");
@@ -9290,9 +9290,9 @@ dcmd_givecash(playerid,params[]) {
 		new player1 = strval(tmp), cash = strval(tmp2);
 		new string[256];
 		new DineroActual = GetPlayerMoney(player1);
-		if (PlayerInfo[player1][nivel] >= 1 && !IsPlayerAdmin(playerid)) return SendClientMessage(playerid, red, "[» ERROR «]:{FFFFFF} No puedes enviar dinero a otros Administradores, Ya los descubrimos malcriados.");
+		if (PlayerInfo[player1][nivel] >= 1 && !IsPlayerAdmin(playerid)) return SendClientMessage(playerid, red, "[ï¿½ ERROR ï¿½]:{FFFFFF} No puedes enviar dinero a otros Administradores, Ya los descubrimos malcriados.");
 		if(player1 == playerid && !IsPlayerAdmin(playerid)) return SendClientMessage(playerid,red,"No te puedes dar score, y si alguien te da sera guardado en un Log.");
-        if(strlen(tmp2) > 6 && PlayerInfo[playerid][nivel] <= 4) return SendClientMessage(playerid, red, "[» ERROR «]:{FFFFFF} No puedes dar dinero de una cantidad mayor a 6 digitos.");
+        if(strlen(tmp2) > 6 && PlayerInfo[playerid][nivel] <= 4) return SendClientMessage(playerid, red, "[ï¿½ ERROR ï¿½]:{FFFFFF} No puedes dar dinero de una cantidad mayor a 6 digitos.");
 	    if(IsPlayerConnected(player1) && player1 != INVALID_PLAYER_ID) {
 			format(string2,sizeof(string2),"{4DFFFF}El Administrador {ffffff}%s{4DFFFF} Dio {ffffff}$%d {4DFFFF}Al Jugador {ffffff}%s.", pName(playerid),cash,pName(player1));
 			format(DINERO_STRING,sizeof(DINERO_STRING),"[CMD]: %s[%d] Dio al jugador %s[%d]: $%d Pesos.", pName(playerid),playerid,pName(player1),player1,cash);
@@ -9315,9 +9315,9 @@ dcmd_descash(playerid,params[]) {
 		new player1 = strval(tmp), cash = strval(tmp2);
 		new string[256];
 		new DineroActual = GetPlayerMoney(player1);
-		if (PlayerInfo[player1][nivel] >= 1 && !IsPlayerAdmin(playerid)) return SendClientMessage(playerid, red, "[» ERROR «]:{FFFFFF} No puedes enviar dinero a otros Administradores, Ya los descubrimos malcriados.");
+		if (PlayerInfo[player1][nivel] >= 1 && !IsPlayerAdmin(playerid)) return SendClientMessage(playerid, red, "[ï¿½ ERROR ï¿½]:{FFFFFF} No puedes enviar dinero a otros Administradores, Ya los descubrimos malcriados.");
 		if(player1 == playerid && !IsPlayerAdmin(playerid)) return SendClientMessage(playerid,red,"No te puedes dar score, y si alguien te da sera guardado en un Log.");
-        if(strlen(tmp2) > 6 && PlayerInfo[playerid][nivel] <= 4) return SendClientMessage(playerid, red, "[» ERROR «]:{FFFFFF} No puedes dar dinero de una cantidad mayor a 6 digitos.");
+        if(strlen(tmp2) > 6 && PlayerInfo[playerid][nivel] <= 4) return SendClientMessage(playerid, red, "[ï¿½ ERROR ï¿½]:{FFFFFF} No puedes dar dinero de una cantidad mayor a 6 digitos.");
 	    if(IsPlayerConnected(player1) && player1 != INVALID_PLAYER_ID) {
 			format(string2,sizeof(string2),"{4DFFFF}El Administrador {ffffff}%s{4DFFFF} Quito {ffffff}$%d {4DFFFF}Al Jugador {ffffff}%s.", pName(playerid),cash,pName(player1));
 			format(DINERO_STRING,sizeof(DINERO_STRING),"[CMD]: %s[%d] Quito al jugador %s[%d]: $%d Pesos.", pName(playerid),playerid,pName(player1),player1,cash);
@@ -9376,7 +9376,7 @@ dcmd_setcash(playerid,params[]) {
 	    if(!strlen(tmp) || !strlen(tmp2) || !IsNumeric(tmp2)) return SendClientMessage(playerid, red, "USE: /setcash [jugador] [cantidad] para quitarle dinero a un jugador.");
 		new player1 = strval(tmp), SetDinero = strval(tmp2);
 		new string[256];
-		if (PlayerInfo[player1][nivel] >= 1 && !IsPlayerAdmin(playerid)) return SendClientMessage(playerid, red, "[» ERROR «]:{FFFFFF} No puedes enviar dinero a otros Administradores, Ya los descubrimos malcriados.");
+		if (PlayerInfo[player1][nivel] >= 1 && !IsPlayerAdmin(playerid)) return SendClientMessage(playerid, red, "[ï¿½ ERROR ï¿½]:{FFFFFF} No puedes enviar dinero a otros Administradores, Ya los descubrimos malcriados.");
 		if(player1 == playerid && !IsPlayerAdmin(playerid)) return SendClientMessage(playerid,red,"No te puedes dar dinero, y si alguien te da sera guardado en un Log.");
 	    if(IsPlayerConnected(player1) && player1 != INVALID_PLAYER_ID) {
 			format(string2,sizeof(string2),"{4DFFFF}El Administrador {ffffff}%s{4DFFFF} Fijo el dinero de {ffffff}%s {4DFFFF}en {ffffff}$%d.", pName(playerid),pName(player1),SetDinero);
@@ -9400,7 +9400,7 @@ dcmd_darscore(playerid,params[])
 	    if(!strlen(tmp) || !strlen(tmp2) || !IsNumeric(tmp2)) return SendClientMessage(playerid, red, "usa: /darscore [jugador] [puntaje]");
 		new player1 = strval(tmp),darmas = strval(tmp2), score = GetPlayerScore(player1);
 		new string[256];
-		if (PlayerInfo[player1][nivel] >= 1 && !IsPlayerAdmin(playerid)) return SendClientMessage(playerid, red, "[» ERROR «]:{FFFFFF} No puedes enviar score a otros Administradores, Ya los descubrimos malcriados.");
+		if (PlayerInfo[player1][nivel] >= 1 && !IsPlayerAdmin(playerid)) return SendClientMessage(playerid, red, "[ï¿½ ERROR ï¿½]:{FFFFFF} No puedes enviar score a otros Administradores, Ya los descubrimos malcriados.");
 		if(player1 == playerid && !IsPlayerAdmin(playerid)) return SendClientMessage(playerid,red,"No te puedes dar score, y si alguien te da sera guardado en un Log.");
 		if(IsPlayerConnected(player1) && player1 != INVALID_PLAYER_ID) {
 		format(string2,sizeof(string2),"{4DFFFF}El Administrador {ffffff}%s{4DFFFF} Ha sumado el score de {ffffff}%s {4DFFFF}En {ffffff}%d {4DFFFF}Puntos.", pName(playerid),pName(player1),darmas);
@@ -9423,7 +9423,7 @@ dcmd_setscore(playerid,params[])
 	    if(!strlen(tmp) || !strlen(tmp2) || !IsNumeric(tmp2)) return SendClientMessage(playerid, red, "usa: /setscore [jugador] [puntaje]");
 		new player1 = strval(tmp),score = strval(tmp2);
 		new string[256];
-		if (PlayerInfo[player1][nivel] >= 1 && !IsPlayerAdmin(playerid)) return SendClientMessage(playerid, red, "[» ERROR «]:{FFFFFF} No puedes enviar score a otros Administradores, Ya los descubrimos malcriados.");
+		if (PlayerInfo[player1][nivel] >= 1 && !IsPlayerAdmin(playerid)) return SendClientMessage(playerid, red, "[ï¿½ ERROR ï¿½]:{FFFFFF} No puedes enviar score a otros Administradores, Ya los descubrimos malcriados.");
 		if(player1 == playerid && !IsPlayerAdmin(playerid)) return SendClientMessage(playerid,red,"No te puedes dar score, y si alguien te da sera guardado en un Log.");
 		if(IsPlayerConnected(player1) && player1 != INVALID_PLAYER_ID) {
 		CMDMessageToAdmins(playerid,"SETSCORE y se ha guardado en un Log.");
@@ -9447,7 +9447,7 @@ dcmd_explode(playerid,params[]) {
 		    if(!strlen(params)) return SendClientMessage(playerid, red, "Use: /Explode [Player] [Razon]");
 	    	new player1, playername[MAX_PLAYER_NAME], adminname[MAX_PLAYER_NAME],str[256];
 			player1 = strval(tmp);
-			if(!strlen(razon)) return SendClientMessage(playerid, red, "Tienes que poner una razón.");
+			if(!strlen(razon)) return SendClientMessage(playerid, red, "Tienes que poner una razï¿½n.");
 			if(!IsPlayerAdmin(playerid) && IsPlayerAdmin(player1))
 			{
 			new Float:burnx, Float:burny, Float:burnz; GetPlayerPos(playerid,burnx, burny, burnz);
@@ -9458,7 +9458,7 @@ dcmd_explode(playerid,params[]) {
 		 	if(IsPlayerConnected(player1) && player1 != INVALID_PLAYER_ID ) {
 				GetPlayerName(player1, playername, sizeof(playername)); 	GetPlayerName(playerid, adminname, sizeof(adminname));
 				CMDMessageToAdmins(playerid,"EXPLODE");
-				format(str, sizeof(str), "* Admin %s Exploto al usuario %s, Razón: %s", adminname,playername,razon);
+				format(str, sizeof(str), "* Admin %s Exploto al usuario %s, Razï¿½n: %s", adminname,playername,razon);
 				printf(str);
 				//SaveCMD(playerid, str);
 				new Float:burnx, Float:burny, Float:burnz; GetPlayerPos(player1,burnx, burny, burnz); CreateExplosionForPlayer(player1,burnx, burny , burnz, 7,30.0);
@@ -9472,7 +9472,7 @@ if(SinCHAT == 1&& !IsPlayerAdmin(playerid)) return SendClientMessage(playerid,CO
     new reported, tmp[256], tmp2[256], Index;		tmp = strtok(params,Index), tmp2 = strrest(params,Index);
     if(!strlen(params)) return SendClientMessage(playerid, red, "Use: /Reportar [Jugador] [Razon]");
 	reported = strval(tmp);
-	if(IsPlayerNPC(reported))ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{F50000}Retardado", "TU REPORTE NO FUE ENVIADO, HAS REPORTADO UN ZOMBIE BOT, VERIFICA LOS ESPACIOS EN TÚ COMANDO.", "x", "");
+	if(IsPlayerNPC(reported))ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{F50000}Retardado", "TU REPORTE NO FUE ENVIADO, HAS REPORTADO UN ZOMBIE BOT, VERIFICA LOS ESPACIOS EN Tï¿½ COMANDO.", "x", "");
  	if(IsPlayerConnected(reported) && reported != INVALID_PLAYER_ID) {
 		if(playerid == reported) return SendClientMessage(playerid,red,"ERROR: No puede Reportarse a Usted Mismo");
 		if(IsPlayerNPC(reported)) return SendClientMessage(playerid,red,"[ ERROR ]: {ffffff}No puedes reportar a los NPC, ellos no son jugadores.");
@@ -9485,7 +9485,7 @@ if(SinCHAT == 1&& !IsPlayerAdmin(playerid)) return SendClientMessage(playerid,CO
 			format(str, sizeof(str), "{CCCCFF}%s {FFFFFF}[ID: %d] {FF0000}Reporta a {FFFFFF}%s [ID: %d] {FF0000}Razon: {FFFFFF}%s",reporter,playerid, reportedname, reported, params[strlen(tmp)+1]);
 			for(new i = 1; i < MAX_REPORTS-1; i++) Reports[i] = Reports[i+1];
 			Reports[MAX_REPORTS-1] = str;
-			printf("[/REPORTAR] %s ha reportado al jugador %s, Razón: %s",reporter,reportedname,params[strlen(tmp)+1]);
+			printf("[/REPORTAR] %s ha reportado al jugador %s, Razï¿½n: %s",reporter,reportedname,params[strlen(tmp)+1]);
 			return SendClientMessage(playerid,yellow, "Tu Reporte a sido enviado a los Admins.");
 		} else return SendClientMessage(playerid,red,"ERROR: Razon invalida");
 	} else return SendClientMessage(playerid, red, "Jugador No conectado");
@@ -9495,7 +9495,7 @@ if(SinCHAT == 1&& !IsPlayerAdmin(playerid)) return SendClientMessage(playerid,CO
     new reported, tmp[256], tmp2[256], Index;		tmp = strtok(params,Index), tmp2 = strtok(params,Index);
     if(!strlen(params)) return SendClientMessage(playerid, red, "Use: /Report [PlayerID] [Reason]");
 	reported = strval(tmp);
-	if(IsPlayerNPC(reported))ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{F50000}Retardado", "TU REPORTE NO FUE ENVIADO, HAS REPORTADO UN ZOMBIE BOT, VERIFICA LOS ESPACIOS EN TÚ COMANDO.", "x", "");
+	if(IsPlayerNPC(reported))ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{F50000}Retardado", "TU REPORTE NO FUE ENVIADO, HAS REPORTADO UN ZOMBIE BOT, VERIFICA LOS ESPACIOS EN Tï¿½ COMANDO.", "x", "");
  	if(IsPlayerConnected(reported) && reported != INVALID_PLAYER_ID) {
 		if(playerid == reported) return SendClientMessage(playerid,red,"ERROR: No se puede Reportarse a Usted Mismo");
 		if(IsPlayerNPC(reported)) return SendClientMessage(playerid,red,"[ ERROR ]: {ffffff}No puedes reportar a los NPC, ellos no son jugadores.");
@@ -9508,7 +9508,7 @@ if(SinCHAT == 1&& !IsPlayerAdmin(playerid)) return SendClientMessage(playerid,CO
 			format(str, sizeof(str), "{CCCCFF}%s {FFFFFF}[ID: %d] {FF0000}Reporta a {FFFFFF}%s [ID: %d] {FF0000}Razon: {FFFFFF}%s",reporter,playerid, reportedname, reported, params[strlen(tmp)+1]);
 			for(new i = 1; i < MAX_REPORTS-1; i++) Reports[i] = Reports[i+1];
 			Reports[MAX_REPORTS-1] = str;
-			printf("[/REPORT] %s ha reportado al jugador %s, Razón: %s",reporter,reportedname,params[strlen(tmp)+1]);
+			printf("[/REPORT] %s ha reportado al jugador %s, Razï¿½n: %s",reporter,reportedname,params[strlen(tmp)+1]);
 			return SendClientMessage(playerid,yellow, "You report send to administrators online..");
 		} else return SendClientMessage(playerid,red,"ERROR: Razon not avalible");
 	} else return SendClientMessage(playerid, red, "player no connected");
@@ -9584,7 +9584,7 @@ dcmd_g(playerid,params[]) {
 dcmd_link(playerid,params[])
 {
 		if(!strlen(params)) return SendClientMessage(playerid, red, "[-] Usa: /Link [* Ejemplo: http://musica.com/un_sonido.mp3]");
-        if(strlen(params[0]) >= 256) return SendClientMessage(playerid,ADMIN_COLOR, "El nombre de la canción es demaciado largo D:");
+        if(strlen(params[0]) >= 256) return SendClientMessage(playerid,ADMIN_COLOR, "El nombre de la canciï¿½n es demaciado largo D:");
 		new string[280];
 		format(string, sizeof(string), "%s",params[0]);
 	 	PlayAudioStreamForPlayerEx(playerid,string);
@@ -9594,7 +9594,7 @@ dcmd_link(playerid,params[])
 
 dcmd_link_excut(playerid,params[])
 {
-		if(!strlen(params)) return SendClientMessage(playerid, red, "[-] Error al reproducir la canción.");
+		if(!strlen(params)) return SendClientMessage(playerid, red, "[-] Error al reproducir la canciï¿½n.");
 		new string[450];
 		format(string, sizeof(string), "%s",params[0]);
 	 	PlayAudioStreamForPlayerEx(playerid,string);
@@ -9681,7 +9681,7 @@ dcmd_reportes(playerid,params[]) {
 }
 dcmd_admins(playerid,params[])
 {
-	if(PlayerInfo[playerid][nivel] < 2) return ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{ffffff}Administración:{f50000} ZR", "{4DFFFF}La Lista de Administración de RZ no esta disponible.", "x", "");
+	if(PlayerInfo[playerid][nivel] < 2) return ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{ffffff}Administraciï¿½n:{f50000} ZR", "{4DFFFF}La Lista de Administraciï¿½n de RZ no esta disponible.", "x", "");
 	#pragma unused params
 	new conteo, admins[664],texto[256],titulo[128];
 	for(new i = 0; i < GetMaxPlayers(); i++)
@@ -9695,7 +9695,7 @@ dcmd_admins(playerid,params[])
 			conteo++;
 		}
 	}
-	if(conteo == 0) ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{ffffff}Administración:{f50000} ZR", "{4DFFFF}La Lista de Administración de Zombie Revolution No se da a conocer por razones de seguridad.", "x", "");
+	if(conteo == 0) ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{ffffff}Administraciï¿½n:{f50000} ZR", "{4DFFFF}La Lista de Administraciï¿½n de Zombie Revolution No se da a conocer por razones de seguridad.", "x", "");
 	format(titulo,128,"Admins Conectados: {FFFFFF}%d",conteo);
 	for(new i = 0; i < GetMaxPlayers(); i++)
 	{
@@ -9728,7 +9728,7 @@ dcmd_peers(playerid,params[])
 			conteo++;
 		}
 	}
-	if(conteo == 0) ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{ffffff}RZClient:{f50000} PEERS", "{4DFFFF}Ningun usuario está conectado con el RZClient.", "x", "");
+	if(conteo == 0) ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "{ffffff}RZClient:{f50000} PEERS", "{4DFFFF}Ningun usuario estï¿½ conectado con el RZClient.", "x", "");
 	format(titulo,sizeof(titulo),"RZClient Peers: {FFFFFF}%d",conteo);
 	for(new i = 0; i < GetMaxPlayers(); i++)
 	{
@@ -9765,17 +9765,17 @@ for(new i = 0; i < GetMaxPlayers(); i++)
 	{
 		if(PlayerInfo[i][VIP] == 1 && (PlayerInfo[i][Ocultado] == 0 && !IsPlayerAdmin(playerid)))
 		{
-		format(texto,128,"{FFFFFF}%s [%d] [Nivel]: {FF0033}» SILVER «\n\n",PlayerName2(i),i);
+		format(texto,128,"{FFFFFF}%s [%d] [Nivel]: {FF0033}ï¿½ SILVER ï¿½\n\n",PlayerName2(i),i);
 		strcat(admins,texto);
 		}
 		if(PlayerInfo[i][VIP] == 2 && (PlayerInfo[i][Ocultado] == 0 && !IsPlayerAdmin(playerid)))
 		{
-		format(texto,128,"{FFFFFF}%s [%d] [Nivel]: {FF0033}» GOLD «\n\n",PlayerName2(i),i);
+		format(texto,128,"{FFFFFF}%s [%d] [Nivel]: {FF0033}ï¿½ GOLD ï¿½\n\n",PlayerName2(i),i);
 		strcat(admins,texto);
 		}
 		else if(PlayerInfo[i][VIP] == 3 && (PlayerInfo[i][Ocultado] == 0 && !IsPlayerAdmin(playerid)))
 		{
-		format(texto,128,"{FFFFFF}%s [%d] [Nivel]: {FF0033}» PREMIUM «\n\n",PlayerName2(i),i);
+		format(texto,128,"{FFFFFF}%s [%d] [Nivel]: {FF0033}ï¿½ PREMIUM ï¿½\n\n",PlayerName2(i),i);
 		strcat(admins,texto);
 		}
 	}
@@ -9907,7 +9907,7 @@ stock GetWeaponNameEx(weaponid, weapon[], len = sizeof(weapon))
     switch(weaponid)
     {
         case 18: strcat(weapon, "Molotov Cocktail", len);
-        case 44: strcat(weapon, "Googles de Visión Nocturna", len);
+        case 44: strcat(weapon, "Googles de Visiï¿½n Nocturna", len);
         case 45:  strcat(weapon, "Googles Infrarojos", len);
         default: GetWeaponName(weaponid, weapon, len);
     }
@@ -9932,7 +9932,7 @@ PUBLIC:AssignDroneToPlayer(AssignedDrone, playerid, max_owner_distance, max_atta
 	NPC_INFO[AssignedDrone][DRONE_MAX_ATTACK_HIT] = max_attack;
 	NPC_INFO[AssignedDrone][DRONE_MIN_ATTACK_HIT] = min_attack;
 	GameTextForPlayer(playerid, "~b~~h~~h~LINKED!", 1000, 3);
-	SendFormatMessage(playerid, COLOR_ARTICULO,"]> DroneSystem <[ {FFFF33} %s {ffffff}Rango de seguimiento: %dkm, Rango de detección enemiga: %dkm.", PlayerName2(AssignedDrone), max_owner_distance, max_attack_distance);
+	SendFormatMessage(playerid, COLOR_ARTICULO,"]> DroneSystem <[ {FFFF33} %s {ffffff}Rango de seguimiento: %dkm, Rango de detecciï¿½n enemiga: %dkm.", PlayerName2(AssignedDrone), max_owner_distance, max_attack_distance);
 	SendFormatMessage(playerid, COLOR_ARTICULO,"]> DroneSystem <[ {FFFF33} %s {ffffff}Rango de ataque: %dkm, Hit maximo: %d, Hit minimo: %d.", PlayerName2(AssignedDrone), min_attack_distance, max_attack, min_attack);
 	TogglePlayerControllable(playerid, 1);
 	PlayerInfo[playerid][SpawnProtection] = 0;
@@ -9957,7 +9957,7 @@ stock NegociarDrone(playerid, name[], price, max_owner_distance, max_attack_dist
 {
     if(GetPlayerMoney(playerid) < price) return SendFormatMessage(playerid, COLOR_ARTICULO, "[COMERCIO]: {ffffff} No tienes el dinero suficiente para adquirir el drone %s.", name);
     new AssignedDrone = GetUnusedDrone();
-    if(AssignedDrone == INVALID_PLAYER_ID) return SendClientMessage(playerid, COLOR_ARTICULO, "[COMERCIO]: {ffffff} se me han agotado los drones!, vuelve más tarde.");
+    if(AssignedDrone == INVALID_PLAYER_ID) return SendClientMessage(playerid, COLOR_ARTICULO, "[COMERCIO]: {ffffff} se me han agotado los drones!, vuelve mï¿½s tarde.");
 	if(PlayerInfo[playerid][DRONE_ID] != INVALID_PLAYER_ID)
 	{
 		FreeDroneBOT(PlayerInfo[playerid][DRONE_ID], playerid);
@@ -9996,7 +9996,7 @@ stock NegociarAntibiotico(playerid, antibiotic[], precio, Float:salud)
         salud = float(100);
     }
     SetPlayerHealth(playerid, salud);
-	return SendFormatMessage(playerid, COLOR_ARTICULO, "[COMERCIO]: {ffffff} Has adquirido el antibiotico {FF0099}%s{ffffff} Ahora tu salud está al {FF0099}%.1f {ffffff}porciento.",antibiotic,salud);
+	return SendFormatMessage(playerid, COLOR_ARTICULO, "[COMERCIO]: {ffffff} Has adquirido el antibiotico {FF0099}%s{ffffff} Ahora tu salud estï¿½ al {FF0099}%.1f {ffffff}porciento.",antibiotic,salud);
 }
 
 
@@ -10379,8 +10379,8 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 	new INGRESANDO[151];
 	new Nombre[MAX_PLAYER_NAME];
 	GetPlayerName(playerid,Nombre,sizeof(Nombre));
-	format(REGISTRANDO,sizeof(REGISTRANDO),"{9C00EB}=====> {FFFFFF}%s\n\n{9C00EB}Esta cuenta esta disponible para registrarse\n\n{FFFFFF}Registrala! Elige una contraseña:",Nombre);
-	format(INGRESANDO,sizeof(INGRESANDO),"{9C00EB}=====> {FFFFFF}%s\n\n{9C00EB}Esta cuenta esta registrada\n\n{9C00EB}Inicia Sesión Para Jugar!\n\n{f50000}Tipea tu Contraseña:",Nombre);
+	format(REGISTRANDO,sizeof(REGISTRANDO),"{9C00EB}=====> {FFFFFF}%s\n\n{9C00EB}Esta cuenta esta disponible para registrarse\n\n{FFFFFF}Registrala! Elige una contraseï¿½a:",Nombre);
+	format(INGRESANDO,sizeof(INGRESANDO),"{9C00EB}=====> {FFFFFF}%s\n\n{9C00EB}Esta cuenta esta registrada\n\n{9C00EB}Inicia Sesiï¿½n Para Jugar!\n\n{f50000}Tipea tu Contraseï¿½a:",Nombre);
 	if (dialogid == REGISTRO)
 	{
 	if(PlayerInfo[playerid][Identificado] == 1) return 0;
@@ -10411,7 +10411,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 	PlayerInfo[playerid][VirusZ] = 0;
 	PlayerInfo[playerid][VirusG] = 0;
 	SendClientMessage(playerid,red,"]<!>[ {ffffff}Cuenta exitozamente Registrada, Ya puedes jugar en nuestro servidor, recuerda leer las /rules.");
-	SendClientMessage(playerid,red,"]<!>[ {ffffff}Diviertete en el modo supervivencia, es casí único.");
+	SendClientMessage(playerid,red,"]<!>[ {ffffff}Diviertete en el modo supervivencia, es casï¿½ ï¿½nico.");
 	ShowPlayerDialog(playerid, INGRESO, DIALOG_STYLE_INPUT, ">>", INGRESANDO, ">>", "x");
 	}
 	return 1;
@@ -10516,7 +10516,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 		{
 			new SString[119];
 			PlayerPlaySound(playerid, 1053, 0.0, 0.0, 0.0);
-			format(SString,sizeof(SString),"{9C00EB}La Contraseña: '{ffffff} %s {9C00EB}' que has tipeado es incorrecta, intentalo de nuevo.",inputtext);
+			format(SString,sizeof(SString),"{9C00EB}La Contraseï¿½a: '{ffffff} %s {9C00EB}' que has tipeado es incorrecta, intentalo de nuevo.",inputtext);
 			ShowPlayerDialog(playerid, INGRESO, DIALOG_STYLE_INPUT, "{F50000}[== {ffffff}Revolucion Zombie{f50000} ==]",SString, "Listo", "x");
 			PlayerInfo[playerid][ContrasenaIncorrecta]++;
 			if(PlayerInfo[playerid][ContrasenaIncorrecta] >= 3)
@@ -10584,7 +10584,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 		/*---------- */
 		GivePlayerMoney(playerid, -gastos_totales);
 		format(RecargandoXD,sizeof(RecargandoXD),"{ffffff} Has gastado un total de ${00FF66}%d{ffffff} en {7AFFAF}%d {ffffff}litros de combustible.",gastos_totales,Cantidad);
-		ShowPlayerDialog(playerid,0,DIALOG_STYLE_MSGBOX, "{f50000}[ » Revolucion Zombie « ]:{ffffff} Combustible.",RecargandoXD,"X","");
+		ShowPlayerDialog(playerid,0,DIALOG_STYLE_MSGBOX, "{f50000}[ ï¿½ Revolucion Zombie ï¿½ ]:{ffffff} Combustible.",RecargandoXD,"X","");
 		}
 		return 1;
 	}
@@ -10992,7 +10992,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
     {
 	    if(response)
 	    {
-			if(PlayerInfo[playerid][CLAN] == 1 && !IsPlayerAdmin(playerid)) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ » ERROR « ]:{ffffff} No puedes utilizar este comando cuando eres parte de un CLAN.");
+			if(PlayerInfo[playerid][CLAN] == 1 && !IsPlayerAdmin(playerid)) return SendClientMessage(playerid, COLOR_DE_ERROR, "[ ï¿½ ERROR ï¿½ ]:{ffffff} No puedes utilizar este comando cuando eres parte de un CLAN.");
 	        new string[256];
 	   		if(!strlen(inputtext)) return ShowPlayerDialog(playerid,DIALOG_TEXTO,DIALOG_STYLE_INPUT,"Texto Personalizado","{B300B3}NO PUEDES DEJARLO EN BLANCO!",">>","x");
 	     	if(DetectarSpam(inputtext)) return ShowPlayerDialog(playerid,DIALOG_TEXTO,DIALOG_STYLE_INPUT,"Texto Personalizado","{B300B3}EL TEXTO QUE INGRESASTE PUEDE CONTENER SPAM ELIGE OTRO!",">>","x");
@@ -11015,7 +11015,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				case 0:
 				{
 					return ShowPlayerDialog(playerid, Armamentos, DIALOG_STYLE_TABLIST_HEADERS, "{FF0099}R.Z: {FFFFFF}Comercio::{FF0099} Armas",
-					"Arma\tPrecio\tMunición\n\
+					"Arma\tPrecio\tMuniciï¿½n\n\
 					Desert Eagle\t$5000\t50\n\
 					Colt 45\t$2000\t200\n\
 					MP5-K MG\t$5000\t500\n\
@@ -11032,7 +11032,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				case 1:
 				{
 					return ShowPlayerDialog(playerid, AntibioticosRZ, DIALOG_STYLE_TABLIST_HEADERS, "{FF0099}R.Z: {FFFFFF}Comercio::{FF0099} Antibioticos",
-					"Antibiotico\tPrecio\tSanación\n\
+					"Antibiotico\tPrecio\tSanaciï¿½n\n\
 					Neomelubrina (MedicKIT)\t$3000\t100\n\
 					Hidrocortisona\t$$1500\t50\n\
 					Aspirinas\t$750\t25\n\
@@ -11148,7 +11148,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 	if(dialogid == Administradores) {
 	if(response == 1)
     {
-	ShowPlayerDialog(playerid,Duda,DIALOG_STYLE_INPUT, "{f50000}[ » Revolucion Zombie « ]:{ffffff} Contacto..","{ffff00}Introduce Lo Que deseas saber Aqui, Gracias.\n\n","Enviar","Cerrar");
+	ShowPlayerDialog(playerid,Duda,DIALOG_STYLE_INPUT, "{f50000}[ ï¿½ Revolucion Zombie ï¿½ ]:{ffffff} Contacto..","{ffff00}Introduce Lo Que deseas saber Aqui, Gracias.\n\n","Enviar","Cerrar");
 	}
 	return 1;
 	}
@@ -11156,7 +11156,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
     {
     if(response == 1)
     {
-    ShowPlayerDialog(playerid,Duda,DIALOG_STYLE_INPUT, "{f50000}[ » Revolucion Zombie « ]:{ffffff} Contacto..","{ffff00}Introduce Lo Que deseas saber Aqui, Gracias.\n\n","Enviar","Cerrar");
+    ShowPlayerDialog(playerid,Duda,DIALOG_STYLE_INPUT, "{f50000}[ ï¿½ Revolucion Zombie ï¿½ ]:{ffffff} Contacto..","{ffff00}Introduce Lo Que deseas saber Aqui, Gracias.\n\n","Enviar","Cerrar");
     }
     }
 	if(dialogid == Duda)
@@ -11191,7 +11191,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 	{
 		if(response)
 		{
-		if(strlen(inputtext) >= 100) return SendClientMessage(playerid,ADMIN_COLOR, "El nombre de la canción es demaciado largo D:");
+		if(strlen(inputtext) >= 100) return SendClientMessage(playerid,ADMIN_COLOR, "El nombre de la canciï¿½n es demaciado largo D:");
 		StopAudioStreamForPlayerEx(playerid);
 		new LinkENCONTRADO[500];
 		format(LinkENCONTRADO,sizeof(LinkENCONTRADO),"http://Revolucion-Zombie.com/play.php?q=%s",inputtext);
@@ -11238,7 +11238,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 	        	db_free_result(NUM_ROWS_SQL);
 				format(UpdateSQL, sizeof(UpdateSQL), "DELETE FROM RZCData WHERE Username = '%s'",Nick);
 				db_query(DataBase_USERS,UpdateSQL);
-				format(UpdateSQL, sizeof(UpdateSQL), "{ffffff}Usuario %s Liberado \n\n==> Info:\n\nAdmin: %s\nFecha de Baneo: %s\nRazón: %s",Nick,Banner,Fecha,Razon);
+				format(UpdateSQL, sizeof(UpdateSQL), "{ffffff}Usuario %s Liberado \n\n==> Info:\n\nAdmin: %s\nFecha de Baneo: %s\nRazï¿½n: %s",Nick,Banner,Fecha,Razon);
 				ShowPlayerDialog(playerid,0,DIALOG_STYLE_MSGBOX,"{00FF00}[- RZ UNBAN -]",UpdateSQL,"x","");
 				printf("[RZUNBAN] %s Fue Liberado por %s [ID: %d]\n", Nick,PlayerName2(playerid),playerid);
 				SendFormatMessageToAll(COLOR_DE_ERROR,"[ R.Z ]: {ffffff}%s {00C4EB}ha liberado la cuenta {ffffff}%s {"COLOR_DE_ERROR_EX"} restringida por {ffffff}%s",PlayerName2(playerid),Nick,Banner);
@@ -11295,7 +11295,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				) return ShowPlayerDialog(playerid,0,DIALOG_STYLE_MSGBOX,"<= DESBLOQUEAR =>","{FF0000}Este usuario no puede ser desbloqueado. (IP)","x","");
 				format(UpdateSQL, sizeof(UpdateSQL), "UPDATE Usuarios SET Banned='0' WHERE Username = '%s'",Nick);
 				db_query(DataBase_USERS,UpdateSQL);
-				format(UpdateSQL, sizeof(UpdateSQL), "{ffffff}Usuario %s Desbaneado IP: %s\n\n==> Info:\n\nSCORE: %s\nDINERO: %s\nVIP: %s\nAdmin: %s\nFecha de Baneo: %s\nRazón: %s",Nick,DireccionIP,puntos,cash,vip,bAdminer,fecha,bRazoner);
+				format(UpdateSQL, sizeof(UpdateSQL), "{ffffff}Usuario %s Desbaneado IP: %s\n\n==> Info:\n\nSCORE: %s\nDINERO: %s\nVIP: %s\nAdmin: %s\nFecha de Baneo: %s\nRazï¿½n: %s",Nick,DireccionIP,puntos,cash,vip,bAdminer,fecha,bRazoner);
 				ShowPlayerDialog(playerid,0,DIALOG_STYLE_MSGBOX,"{00FF00}[- UNBAN -]",UpdateSQL,"x","");
 				printf("[UNBAN] %s Fue desbaneado por %s [ID: %d]\n", Nick,PlayerName2(playerid),playerid);
 				format(UpdateSQL, sizeof(UpdateSQL), "unbanip %s",inputtext);
@@ -11347,7 +11347,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				) return ShowPlayerDialog(playerid,0,DIALOG_STYLE_MSGBOX,"<= DESBLOQUEAR =>","{FF0000}Este usuario no puede ser desbloqueado. (nick)","x","");
 				format(UpdateSQL, sizeof(UpdateSQL), "UPDATE Usuarios SET Banned='0' WHERE Username = '%s'",Nick);
 				db_query(DataBase_USERS,UpdateSQL);
-				format(UpdateSQL, sizeof(UpdateSQL), "{ffffff}Usuario %s Desbaneado IP: %s\n\n==> Info:\n\nSCORE: %s\nDINERO: %s\nVIP: %s\nAdmin: %s\nFecha de Baneo: %s\nRazón: %s",Nick,DireccionIP,puntos,cash,vip,bAdminer,fecha,bRazoner);
+				format(UpdateSQL, sizeof(UpdateSQL), "{ffffff}Usuario %s Desbaneado IP: %s\n\n==> Info:\n\nSCORE: %s\nDINERO: %s\nVIP: %s\nAdmin: %s\nFecha de Baneo: %s\nRazï¿½n: %s",Nick,DireccionIP,puntos,cash,vip,bAdminer,fecha,bRazoner);
 				ShowPlayerDialog(playerid,0,DIALOG_STYLE_MSGBOX,"{00FF00}[- UNBAN -]",UpdateSQL,"x","");
 				printf("[UNBAN] %s Fue desbaneado por %s [ID: %d]\n", Nick,PlayerName2(playerid),playerid);
 				format(UpdateSQL, sizeof(UpdateSQL), "unbanip %s",DireccionIP);
@@ -11387,50 +11387,50 @@ stock ANNOUNCE_BUG(str_announce[])
         for (iLen = strlen(str_announce); iPos < iLen; iPos ++)
             switch (str_announce[iPos])
             {
-                case 'à':   an_str[iPos] = 151;
-                case 'á':   an_str[iPos] = 152;
-                case 'â':   an_str[iPos] = 153;
-                case 'ä':   an_str[iPos] = 154;
-                case 'À':   an_str[iPos] = 128;
-                case 'Á':   an_str[iPos] = 129;
-                case 'Â':   an_str[iPos] = 130;
-                case 'Ä':   an_str[iPos] = 131;
-                case 'è':   an_str[iPos] = 157;
-                case 'é':   an_str[iPos] = 158;
-                case 'ê':   an_str[iPos] = 159;
-                case 'ë':   an_str[iPos] = 160;
-                case 'È':   an_str[iPos] = 134;
-                case 'É':   an_str[iPos] = 135;
-                case 'Ê':   an_str[iPos] = 136;
-                case 'Ë':   an_str[iPos] = 137;
-                case 'ì':   an_str[iPos] = 161;
-                case 'í':   an_str[iPos] = 162;
-                case 'î':   an_str[iPos] = 163;
-                case 'ï':   an_str[iPos] = 164;
-                case 'Ì':   an_str[iPos] = 138;
-                case 'Í':   an_str[iPos] = 139;
-                case 'Î':   an_str[iPos] = 140;
-                case 'Ï':   an_str[iPos] = 141;
-                case 'ò':   an_str[iPos] = 165;
-                case 'ó':   an_str[iPos] = 166;
-                case 'ô':   an_str[iPos] = 167;
-                case 'ö':   an_str[iPos] = 168;
-                case 'Ò':   an_str[iPos] = 142;
-                case 'Ó':   an_str[iPos] = 143;
-                case 'Ô':   an_str[iPos] = 144;
-                case 'Ö':   an_str[iPos] = 145;
-                case 'ù':   an_str[iPos] = 169;
-                case 'ú':   an_str[iPos] = 170;
-                case 'û':   an_str[iPos] = 171;
-                case 'ü':   an_str[iPos] = 172;
-                case 'Ù':   an_str[iPos] = 146;
-                case 'Ú':   an_str[iPos] = 147;
-                case 'Û':   an_str[iPos] = 148;
-                case 'Ü':   an_str[iPos] = 149;
-                case 'ñ':   an_str[iPos] = 174;
-                case 'Ñ':   an_str[iPos] = 173;
-                case '¡':   an_str[iPos] = 64;
-                case '¿':   an_str[iPos] = 175;
+                case 'ï¿½':   an_str[iPos] = 151;
+                case 'ï¿½':   an_str[iPos] = 152;
+                case 'ï¿½':   an_str[iPos] = 153;
+                case 'ï¿½':   an_str[iPos] = 154;
+                case 'ï¿½':   an_str[iPos] = 128;
+                case 'ï¿½':   an_str[iPos] = 129;
+                case 'ï¿½':   an_str[iPos] = 130;
+                case 'ï¿½':   an_str[iPos] = 131;
+                case 'ï¿½':   an_str[iPos] = 157;
+                case 'ï¿½':   an_str[iPos] = 158;
+                case 'ï¿½':   an_str[iPos] = 159;
+                case 'ï¿½':   an_str[iPos] = 160;
+                case 'ï¿½':   an_str[iPos] = 134;
+                case 'ï¿½':   an_str[iPos] = 135;
+                case 'ï¿½':   an_str[iPos] = 136;
+                case 'ï¿½':   an_str[iPos] = 137;
+                case 'ï¿½':   an_str[iPos] = 161;
+                case 'ï¿½':   an_str[iPos] = 162;
+                case 'ï¿½':   an_str[iPos] = 163;
+                case 'ï¿½':   an_str[iPos] = 164;
+                case 'ï¿½':   an_str[iPos] = 138;
+                case 'ï¿½':   an_str[iPos] = 139;
+                case 'ï¿½':   an_str[iPos] = 140;
+                case 'ï¿½':   an_str[iPos] = 141;
+                case 'ï¿½':   an_str[iPos] = 165;
+                case 'ï¿½':   an_str[iPos] = 166;
+                case 'ï¿½':   an_str[iPos] = 167;
+                case 'ï¿½':   an_str[iPos] = 168;
+                case 'ï¿½':   an_str[iPos] = 142;
+                case 'ï¿½':   an_str[iPos] = 143;
+                case 'ï¿½':   an_str[iPos] = 144;
+                case 'ï¿½':   an_str[iPos] = 145;
+                case 'ï¿½':   an_str[iPos] = 169;
+                case 'ï¿½':   an_str[iPos] = 170;
+                case 'ï¿½':   an_str[iPos] = 171;
+                case 'ï¿½':   an_str[iPos] = 172;
+                case 'ï¿½':   an_str[iPos] = 146;
+                case 'ï¿½':   an_str[iPos] = 147;
+                case 'ï¿½':   an_str[iPos] = 148;
+                case 'ï¿½':   an_str[iPos] = 149;
+                case 'ï¿½':   an_str[iPos] = 174;
+                case 'ï¿½':   an_str[iPos] = 173;
+                case 'ï¿½':   an_str[iPos] = 64;
+                case 'ï¿½':   an_str[iPos] = 175;
                 case '`':   an_str[iPos] = 177;
                 case '&':   an_str[iPos] = 38;
                 default:    an_str[iPos] = str_announce[iPos];
@@ -11688,7 +11688,7 @@ public OnPlayerHackDetected(playerid, hack_type)
 				if(IsPlayerAdmin(playerid)) return 0;
 				printf("[BAN] %s expulsado por MONEY HACKING",PlayerName2(playerid));
 				new string[256];
-				format(string, sizeof(string), "{FFFFFF}El Servidor {4DFFFF}[B]loqueo del servidor al Jugador {ffffff}%s. {4DFFFF}[Razón: Money Hack ]",PlayerName2(playerid));
+				format(string, sizeof(string), "{FFFFFF}El Servidor {4DFFFF}[B]loqueo del servidor al Jugador {ffffff}%s. {4DFFFF}[Razï¿½n: Money Hack ]",PlayerName2(playerid));
 				SendClientMessageToAll(-1, string);
 	            BanEx(playerid,"Hacking #MONEY_HACK");
 	            return 0;
@@ -11698,7 +11698,7 @@ public OnPlayerHackDetected(playerid, hack_type)
 				if(IsPlayerAdmin(playerid)||!IsPlayerInAnyVehicle(playerid)) return 0;
 				printf("[KICK] %s expulsado por CLEO HACKING", PlayerName2(playerid));
 				new string[256];
-				format(string, sizeof(string), "{FFFFFF}El Servidor {4DFFFF}[E]xpulso del servidor al Jugador {ffffff}%s. {4DFFFF}[Razón: CLEO HACKING #iTroll ]",PlayerName2(playerid));
+				format(string, sizeof(string), "{FFFFFF}El Servidor {4DFFFF}[E]xpulso del servidor al Jugador {ffffff}%s. {4DFFFF}[Razï¿½n: CLEO HACKING #iTroll ]",PlayerName2(playerid));
 				SendClientMessageToAll(-1, string);
 	            Kick(playerid);
 	            return 0;
@@ -11724,7 +11724,7 @@ public OnPlayerHackDetected(playerid, hack_type)
 	        {
 				if(IsPlayerAdmin(playerid)) return 0;
 				new string[256];
-				format(string, sizeof(string), "{FFFFFF}El Servidor {4DFFFF} [B]loqueo del servidor al Jugador {ffffff}%s. {4DFFFF}[Razón: CLEO HACKING #CW ]",PlayerName2(playerid));
+				format(string, sizeof(string), "{FFFFFF}El Servidor {4DFFFF} [B]loqueo del servidor al Jugador {ffffff}%s. {4DFFFF}[Razï¿½n: CLEO HACKING #CW ]",PlayerName2(playerid));
 				SendClientMessageToAll(-1, string);
 	            BanSQL(playerid,INVALID_PLAYER_ID,"CLEO HACKING #CAR WARP"); // Banear By Anti Cheat
 	            return 0;
@@ -11733,7 +11733,7 @@ public OnPlayerHackDetected(playerid, hack_type)
 	        {
 				if(IsPlayerAdmin(playerid)) return 0;
 				new string[256];
-				format(string, sizeof(string), "{FFFFFF}El Servidor {4DFFFF} [B]loqueo del servidor al Jugador {ffffff}%s. {4DFFFF}[Razón: CLEO HACKING #PS ]",PlayerName2(playerid));
+				format(string, sizeof(string), "{FFFFFF}El Servidor {4DFFFF} [B]loqueo del servidor al Jugador {ffffff}%s. {4DFFFF}[Razï¿½n: CLEO HACKING #PS ]",PlayerName2(playerid));
 				SendClientMessageToAll(-1, string);
 	            BanSQL(playerid,INVALID_PLAYER_ID,"CLEO HACKING #CAR SPAM"); // Banear By Anti Cheat
 	            return 0;
@@ -11750,7 +11750,7 @@ public OnVehicleMod(playerid, vehicleid, componentid)
     if (!modok)
 	{
 	new string[256];
-	format(string, sizeof(string), "{FFFFFF}El Servidor {4DFFFF} [B]loqueo del servidor al Jugador {ffffff}%s. {4DFFFF}[Razón: CRASHER BITCH ¬¬ ]",PlayerName2(playerid));
+	format(string, sizeof(string), "{FFFFFF}El Servidor {4DFFFF} [B]loqueo del servidor al Jugador {ffffff}%s. {4DFFFF}[Razï¿½n: CRASHER BITCH ï¿½ï¿½ ]",PlayerName2(playerid));
 	SendClientMessageToAll(-1, string);
 	BanSQL(playerid,INVALID_PLAYER_ID,"HACKING #CAR_CRASHER");
 	return 1;
@@ -11893,31 +11893,31 @@ public Anuncios()
 SendClientMessageToAll(ADMIN_COLOR, " ");
 switch(random(24))
 {
-case 0:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ¡UNETE AL GRUPO DE FACEBOOK! {FFFF33}www.facebook.com/groups/revolutionzombie/");
-case 1:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ¿Sin armas o dinero? Dirigase hacia los cientifico para realizar misiones!");
-case 2:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} Sí tiene alguna duda acerca del servidor, utilice /ask, los moderadores le atenderan. ");
+case 0:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ï¿½UNETE AL GRUPO DE FACEBOOK! {FFFF33}www.facebook.com/groups/revolutionzombie/");
+case 1:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ï¿½Sin armas o dinero? Dirigase hacia los cientifico para realizar misiones!");
+case 2:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} Sï¿½ tiene alguna duda acerca del servidor, utilice /ask, los moderadores le atenderan. ");
 case 3:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} Recuerda que si eres miembro de un clan debes tener cuidado por donde vas!");
-case 4:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ¿Sabías Qué.. Puedes comprar un drone express en cualquier lugar? /buydrone");
-case 5:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ¿Sabías qué.. Es posible adquirir drones más baratos en el simbolo de la bandera?");
-case 6:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ¿Amigo sin Armas? Regalale una utilizando el comando /drop");
+case 4:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ï¿½Sabï¿½as Quï¿½.. Puedes comprar un drone express en cualquier lugar? /buydrone");
+case 5:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ï¿½Sabï¿½as quï¿½.. Es posible adquirir drones mï¿½s baratos en el simbolo de la bandera?");
+case 6:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ï¿½Amigo sin Armas? Regalale una utilizando el comando /drop");
 case 7:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} Recuerde que para interactuar con los comerciantes del juego debe utilizar la tecla Y.");
-case 8:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ¿Aburrido? Descarga el RZClient y máximiza tu diversión! {FF0099}http://bit.ly/RZCLIENTE");
-case 9:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ¿Alguien está haciendo trampa? Reportelo con el comando /reportar");
-case 10:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ¿Todos leen lo que escribes? Utilice el comando {FF0099}/g{ffffff} para hablar local y no globalmente.");
-case 11:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ¿Cansado de los Zombies? Acuda a cualquier zona segura y deshagase de ellos!");
-case 12:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ¿Sin Objetivo? Los cientificos (en los iconos del radar) pueden darte misiones!");
-case 13:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ¿Un Hacker? Utilice el comando {FF0099}/reportar{ffffff} para evitar alertarlo!");
-case 14:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ¿Sin Dinero? Pidale a algun amigo que le envie utilizando /sendcash");
-case 15:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ¿Muy Díficil? Puede obtener una membresia VIP con puntos o pago mensual de paypal {FF0099}/rvip");
-case 16:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ¿No le gusta ser de los buenos? Adquiere una membresia VIP utilizando puntos o dinero real para desbloquear el equipo z");
-case 17:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ¿Sin Sangre? Acuda con cualquier comerciante de la ciudad y compre los antibioticos!");
+case 8:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ï¿½Aburrido? Descarga el RZClient y mï¿½ximiza tu diversiï¿½n! {FF0099}http://bit.ly/RZCLIENTE");
+case 9:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ï¿½Alguien estï¿½ haciendo trampa? Reportelo con el comando /reportar");
+case 10:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ï¿½Todos leen lo que escribes? Utilice el comando {FF0099}/g{ffffff} para hablar local y no globalmente.");
+case 11:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ï¿½Cansado de los Zombies? Acuda a cualquier zona segura y deshagase de ellos!");
+case 12:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ï¿½Sin Objetivo? Los cientificos (en los iconos del radar) pueden darte misiones!");
+case 13:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ï¿½Un Hacker? Utilice el comando {FF0099}/reportar{ffffff} para evitar alertarlo!");
+case 14:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ï¿½Sin Dinero? Pidale a algun amigo que le envie utilizando /sendcash");
+case 15:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ï¿½Muy Dï¿½ficil? Puede obtener una membresia VIP con puntos o pago mensual de paypal {FF0099}/rvip");
+case 16:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ï¿½No le gusta ser de los buenos? Adquiere una membresia VIP utilizando puntos o dinero real para desbloquear el equipo z");
+case 17:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ï¿½Sin Sangre? Acuda con cualquier comerciante de la ciudad y compre los antibioticos!");
 case 18:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} Recuerde guardar constantemente su progreso utilizando el comando {FF0099}/gc");
 case 19:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} Recuerde agregar la IP a favoritos: play.revolucion-zombie.com:7778");
-case 20:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ¡RECOLECTA! TODAS LAS ARMAS ESTAN PERMITIDAS, ¡SÍ! TODAS!");
-case 21:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ¡SÉ UN ZOMBIE! Los jugadores VIP tienen la posibilidad de ser zombies con diversas habilidades!");
-case 22:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} Visita la página web para adquirir el cliente: {F500F5}www.Revolucion-Zombie.com");
-case 23:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ¿Sabias Qué.. El Cliente del servidor (RZClient) otorga armas adicionales cada vez que reapareces?");
-case 24:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ¿Sabias Qué.. El Cliente del servidor (RZClient) bonifíca cada kill que haces?");
+case 20:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ï¿½RECOLECTA! TODAS LAS ARMAS ESTAN PERMITIDAS, ï¿½Sï¿½! TODAS!");
+case 21:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ï¿½Sï¿½ UN ZOMBIE! Los jugadores VIP tienen la posibilidad de ser zombies con diversas habilidades!");
+case 22:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} Visita la pï¿½gina web para adquirir el cliente: {F500F5}www.Revolucion-Zombie.com");
+case 23:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ï¿½Sabias Quï¿½.. El Cliente del servidor (RZClient) otorga armas adicionales cada vez que reapareces?");
+case 24:SendClientMessageToAll(COLOR_ARTICULO, "[+]{FFFFFF} ï¿½Sabias Quï¿½.. El Cliente del servidor (RZClient) bonifï¿½ca cada kill que haces?");
 }
 for(new npcid = 0; npcid < GetMaxPlayers(); npcid++)
 {
@@ -12472,7 +12472,7 @@ stock OnPlayerTakePickup(playerid, pickupid)
 				if(GetMissionProgressAmount(playerid) >= GetMissionProgressLimit(playerid))
 				{
 					PlayerPlaySound(playerid, 1057, 0.0, 0.0, 0.0);
-					SendClientMessage(playerid,red,"]<!>[ {ffffff}Tú mision está completa, dirigete con cualquier cientifico para recibir tu recompensa.");
+					SendClientMessage(playerid,red,"]<!>[ {ffffff}Tï¿½ mision estï¿½ completa, dirigete con cualquier cientifico para recibir tu recompensa.");
 					}else{
 					PlayerPlaySound(playerid, 1054, 0.0, 0.0, 0.0);
 					SetMissionProgressAmount(playerid, GetMissionProgressAmount(playerid)+1);
@@ -12487,7 +12487,7 @@ stock OnPlayerTakePickup(playerid, pickupid)
 		    GivePlayerMoney(playerid, moneyadd);
 			PlayerPlaySound(playerid, 1057, 0.0, 0.0, 0.0);
 			if(!IsPlayerOnMission(playerid)){
-			SendFormatMessage(playerid,red,"]<!>[ {ffffff}Has encontrado %s! Recibiste $%d monedas, puedes conseguir más trabajando en una misión.", gpickupName, moneyadd);}
+			SendFormatMessage(playerid,red,"]<!>[ {ffffff}Has encontrado %s! Recibiste $%d monedas, puedes conseguir mï¿½s trabajando en una misiï¿½n.", gpickupName, moneyadd);}
 			else {
 				SendFormatMessage(playerid,red,"]<!>[ {ffffff}Has encontrado %s! Recibiste $%d monedas.", gpickupName, moneyadd);
 			}
@@ -13134,7 +13134,7 @@ stock UpdateCoreRoundStatus()
 		SendClientMessageToAll(red,"********");
 		SendClientMessageToAll(red,">] RZ [< {ffffff}Joder nooooooooooo!!!");
 		SendClientMessageToAll(red,">] RZ [< {ffffff}Han destruido el nucleo los zombis de mierda!");
-		SendClientMessageToAll(red,">] RZ [< {ffffff}Mision fallida, suerte para la próxima.");
+		SendClientMessageToAll(red,">] RZ [< {ffffff}Mision fallida, suerte para la prï¿½xima.");
 		SendClientMessageToAll(red,"********");
 	}
 	if(HumanCore[CURRENT_ROUND] > HumanCore[ROUNDS])
@@ -13380,14 +13380,14 @@ PUBLIC:OnDroneUpdate(playerid)
 				        }
 						if(PlayerInfo[HumanID][InCORE] == 1 && !IsPlayerAdmin(HumanID)){
 					    	SendClientMessage(HumanID,red,">] DroneSystem [< {ffffff}Tu drone ha sido liberado porque has ingresado al nucleo.");
-						    //SendFormatMessageToAll(0x0FFFF66FF, "<!> %s [%d] {ffffff}  dejó de protgeger a: {FF33CC}%s",PlayerName2(playerid), playerid, PlayerName2(HumanID) );
+						    //SendFormatMessageToAll(0x0FFFF66FF, "<!> %s [%d] {ffffff}  dejï¿½ de protgeger a: {FF33CC}%s",PlayerName2(playerid), playerid, PlayerName2(HumanID) );
 							PlayerInfo[HumanID][DRONE_ID] = INVALID_PLAYER_ID;//unset drone for playerid.
 					 		NPC_INFO[playerid][LastFinded] = INVALID_PLAYER_ID;
 					 		NPC_INFO[playerid][Attacking] = INVALID_PLAYER_ID;
 							FreeDroneBOT(playerid, HumanID);
 							return 1;
 						}
-              		    //SendFormatMessageToAll(0x0FFFF66FF, "<!> %s [%d] {ffffff} está protegiendo a: {FF33CC}%s",PlayerName2(playerid), playerid, PlayerName2(HumanID) );
+              		    //SendFormatMessageToAll(0x0FFFF66FF, "<!> %s [%d] {ffffff} estï¿½ protegiendo a: {FF33CC}%s",PlayerName2(playerid), playerid, PlayerName2(HumanID) );
 				 		NPC_INFO[playerid][LastFinded] = HumanID;
 
 						new Float:x2, Float:y2, Float:z2;
@@ -13410,7 +13410,7 @@ PUBLIC:OnDroneUpdate(playerid)
 			 				    //ELECTRO SHOCK MAS BAJITO: 6003
 			 				    //ELECTRO SHOCK SUAVE Y LARGO: 6402
 			 				    //PUCK! PUCK! (RARITO XDD, como sonido de chupon): 6801
-			 				    //Alarma extraña: 14800
+			 				    //Alarma extraï¿½a: 14800
 			 				    //alarma como de abandonen la nave o fallo del sistema xdd: 30600
 			 				    //NearPlayersPlaySound(soundid, x, y, z, Float:range)
 			 				    if(NPC_INFO[playerid][DRONE_MIN_ATTACK_HIT] <= 15)
@@ -13449,8 +13449,8 @@ PUBLIC:OnDroneUpdate(playerid)
 		            else if (HumanID != INVALID_PLAYER_ID)
 					{
 					    //FCNPC_RemoveFromVehicle(playerid);
-					    SendClientMessage(HumanID,red,">] DroneSystem [< {ffffff}Haz perdido tú drone, te alejaste demasiado de él.");
-					    //SendFormatMessageToAll(0x0FFFF66FF, "<!> %s [%d] {ffffff}  dejó de protgeger a: {FF33CC}%s",PlayerName2(playerid), playerid, PlayerName2(HumanID) );
+					    SendClientMessage(HumanID,red,">] DroneSystem [< {ffffff}Haz perdido tï¿½ drone, te alejaste demasiado de ï¿½l.");
+					    //SendFormatMessageToAll(0x0FFFF66FF, "<!> %s [%d] {ffffff}  dejï¿½ de protgeger a: {FF33CC}%s",PlayerName2(playerid), playerid, PlayerName2(HumanID) );
 						PlayerInfo[HumanID][DRONE_ID] = INVALID_PLAYER_ID;//unset drone for playerid.
 				 		NPC_INFO[playerid][LastFinded] = INVALID_PLAYER_ID;
 				 		NPC_INFO[playerid][Attacking] = INVALID_PLAYER_ID;
@@ -13461,8 +13461,8 @@ PUBLIC:OnDroneUpdate(playerid)
 		            else if (NPC_INFO[playerid][LastFinded] != INVALID_PLAYER_ID)
 					{
 					    //FCNPC_RemoveFromVehicle(playerid);
-					    //SendClientMessage(HumanID,red,">] DroneSystem [< {ffffff}Haz perdido tú drone, te alejaste demasiado de él.");
-					    //SendFormatMessageToAll(0x0FFFF66FF, "<!> %s [%d] {ffffff}  dejó de protgeger a: {FF33CC}%s",PlayerName2(playerid), playerid, PlayerName2(HumanID) );
+					    //SendClientMessage(HumanID,red,">] DroneSystem [< {ffffff}Haz perdido tï¿½ drone, te alejaste demasiado de ï¿½l.");
+					    //SendFormatMessageToAll(0x0FFFF66FF, "<!> %s [%d] {ffffff}  dejï¿½ de protgeger a: {FF33CC}%s",PlayerName2(playerid), playerid, PlayerName2(HumanID) );
 						PlayerInfo[HumanID][DRONE_ID] = INVALID_PLAYER_ID;//unset drone for playerid.
 				 		NPC_INFO[playerid][LastFinded] = INVALID_PLAYER_ID;
 				 		NPC_INFO[playerid][Attacking] = INVALID_PLAYER_ID;
@@ -13509,7 +13509,7 @@ PUBLIC:OnCoreZombieUpdate(playerid, victimID)
    		}
    		SetFCNPCFacingXY(playerid, x, y);
    		//printf("MoveNPC: %d (%f,%f,%f) Speed: %f", playerid, x,y,z, HumanCore[ZOMBIES_MOVE_SPEED]);
-		MoveNPC(playerid,random(5) - random(7) +x, random(7) - random(7) +y, z, HumanCore[ZOMBIES_MOVE_TYPE], HumanCore[ZOMBIES_MOVE_SPEED]);//ÑACA!!
+		MoveNPC(playerid,random(5) - random(7) +x, random(7) - random(7) +y, z, HumanCore[ZOMBIES_MOVE_TYPE], HumanCore[ZOMBIES_MOVE_SPEED]);//ï¿½ACA!!
 		*/
 		return 1;
 	}
@@ -13625,8 +13625,8 @@ PUBLIC:OnAmbientZombieUpdate(playerid, victimID)
    			    {
        			    switch(NPC_INFO[playerid][BType])
        			    {
-						case 3: { MoveNPC(playerid, random(5)-random(7)+x, random(7)-random(7)+y, z, MOVE_TYPE_SPRINT, 0.74444); TextoBuble(playerid,"{f50000}¡¡ CEREBRO !!"); }
-						case 2: { MoveNPC(playerid, random(5)-random(7)+x, random(7)-random(7)+y, z, MOVE_TYPE_SPRINT, 0.80000); TextoBuble(playerid,"{FF00FF}¡¡ HEART !!"); }
+						case 3: { MoveNPC(playerid, random(5)-random(7)+x, random(7)-random(7)+y, z, MOVE_TYPE_SPRINT, 0.74444); TextoBuble(playerid,"{f50000}ï¿½ï¿½ CEREBRO !!"); }
+						case 2: { MoveNPC(playerid, random(5)-random(7)+x, random(7)-random(7)+y, z, MOVE_TYPE_SPRINT, 0.80000); TextoBuble(playerid,"{FF00FF}ï¿½ï¿½ HEART !!"); }
                 		default: { MoveNPC(playerid, random(5)-random(7)+x, random(7)-random(7)+y, z, MOVE_TYPE_RUN,0.56444); }
         			}
 					}
@@ -13634,8 +13634,8 @@ PUBLIC:OnAmbientZombieUpdate(playerid, victimID)
 				   {
        			    switch(NPC_INFO[playerid][BType])
        			    {
-						case 3: { MoveNPC(playerid, random(5)-random(7)+x, random(7)-random(7)+y, z, MOVE_TYPE_SPRINT, 0.75444); TextoBuble(playerid,"{f50000}¡¡ CEREBRO !!"); }
-						//case 2: { MoveNPC(playerid, random(5)-random(7)+x, random(7)-random(7)+y, z, MOVE_TYPE_SPRINT, 0.80000); TextoBuble(playerid,"{FF00FF}¡¡ HEART !!"); }
+						case 3: { MoveNPC(playerid, random(5)-random(7)+x, random(7)-random(7)+y, z, MOVE_TYPE_SPRINT, 0.75444); TextoBuble(playerid,"{f50000}ï¿½ï¿½ CEREBRO !!"); }
+						//case 2: { MoveNPC(playerid, random(5)-random(7)+x, random(7)-random(7)+y, z, MOVE_TYPE_SPRINT, 0.80000); TextoBuble(playerid,"{FF00FF}ï¿½ï¿½ HEART !!"); }
                 		default: { MoveNPC(playerid, random(5)-random(7)+x, random(7)-random(7)+y, z, MOVE_TYPE_RUN,0.46444); }
         			}
 					}
@@ -13668,7 +13668,7 @@ PUBLIC:OnAmbientZombieUpdate(playerid, victimID)
 	//ronquidos: 19600-19604
 	if(NPC_INFO[playerid][LastFinded] != INVALID_PLAYER_ID||NPC_INFO[playerid][Attacking] != INVALID_PLAYER_ID)
 	{
-		if((rztickcount() - ZS_Tick[playerid]) > 20 && GetTotalZombiesInPlayer(victimID) <= 20)//rugir si pasaron más de 20seg y son menos de 20 zombis
+		if((rztickcount() - ZS_Tick[playerid]) > 20 && GetTotalZombiesInPlayer(victimID) <= 20)//rugir si pasaron mï¿½s de 20seg y son menos de 20 zombis
 		{
 		        //printf("First condition called for bot: %d, Player: %s (id %d) | ZombiesIn: %d", playerid, PlayerName2(victimID), victimID, GetTotalZombiesInPlayer(victimID));
 				if(NPC_NEMESIS[playerid] == 0){
@@ -13679,7 +13679,7 @@ PUBLIC:OnAmbientZombieUpdate(playerid, victimID)
 				}
 				ZS_Tick[playerid] = rztickcount();
 		}
-		else if((rztickcount() - ZS_Tick[playerid]) > 20 && ObtenerBOTCercano(victimID) == playerid)//rugir si pasaron más de 20seg y si es el zombi mas cercano
+		else if((rztickcount() - ZS_Tick[playerid]) > 20 && ObtenerBOTCercano(victimID) == playerid)//rugir si pasaron mï¿½s de 20seg y si es el zombi mas cercano
 		{
 		        //printf("Second condition called for bot: %d, Player: %s (id %d) | ZombiesIn: %d", playerid, PlayerName2(victimID), victimID, GetTotalZombiesInPlayer(victimID));
 				if(NPC_NEMESIS[playerid] == 0){
@@ -13893,7 +13893,7 @@ public OnGameModeInit()
 	SetServerActorType(ServerActor[0][sactorid], ACTOR_TYPE_GUNSMITH);
 	SetServerActorSkin(ServerActor[0][sactorid], 181);
 
-	CreateServerActor(1, 70, 856.3638,-2119.7563,20.0042,359.4094);//Científico Muelle LS
+	CreateServerActor(1, 70, 856.3638,-2119.7563,20.0042,359.4094);//Cientï¿½fico Muelle LS
 	SetActorInvulnerable(ServerActor[1][sactorid], true);
 	SetServerActorType(ServerActor[1][sactorid], ACTOR_TYPE_SCIENTIFIC);
 	SetServerActorSkin(ServerActor[1][sactorid], 70);
@@ -13903,7 +13903,7 @@ public OnGameModeInit()
 	SetServerActorType(ServerActor[2][sactorid], ACTOR_TYPE_GUNSMITH);
 	SetServerActorSkin(ServerActor[2][sactorid], 181);
 
-	CreateServerActor(3, 70, 2557.7673, 2783.7126, 13.5202, 87.1632);//Científico refugio cerca del tren LV
+	CreateServerActor(3, 70, 2557.7673, 2783.7126, 13.5202, 87.1632);//Cientï¿½fico refugio cerca del tren LV
 	SetActorInvulnerable(ServerActor[3][sactorid], true);
 	SetServerActorType(ServerActor[3][sactorid], ACTOR_TYPE_SCIENTIFIC);
 	SetServerActorSkin(ServerActor[3][sactorid], 181);
@@ -13915,7 +13915,7 @@ public OnGameModeInit()
 	SetServerActorSkin(ServerActor[4][sactorid], 70);
 
 
-	CreateServerActor(5, 70, 2557.8545, 2770.7224, 13.5202, 88.5772);//Científico refugio cerca del tren LV
+	CreateServerActor(5, 70, 2557.8545, 2770.7224, 13.5202, 88.5772);//Cientï¿½fico refugio cerca del tren LV
 	SetActorInvulnerable(ServerActor[5][sactorid], true);
 	SetServerActorType(ServerActor[5][sactorid], ACTOR_TYPE_SCIENTIFIC);
 	SetServerActorSkin(ServerActor[5][sactorid], 70);
@@ -14033,7 +14033,7 @@ public OnGameModeInit()
 	KillTimer(Timer_Anuncios);
 	Timer_Anuncios = SetTimer("Anuncios",180000,1);
 	//Timer_Transmi = SetTimer("Transmi",480000,1);//8 min xd
-   	SendRconCommand("mapname Español - Zombie");
+   	SendRconCommand("mapname Espaï¿½ol - Zombie");
    	SendRconCommand("language Spanish - English");
 
 	CreateInfectedZone(0, 2197, -155, 2581, 215);
@@ -14047,7 +14047,7 @@ public OnGameModeInit()
 
 
 	CreateSafeZone(0, 1072.265625,-1556.640625,1171.875,-1431.640625);
-	CreateSafeZone(1, -1930.0000457763672,-1708.0000915527344,-1799.0000457763672,-1592.0000915527344);//Montaña Gigante
+	CreateSafeZone(1, -1930.0000457763672,-1708.0000915527344,-1799.0000457763672,-1592.0000915527344);//Montaï¿½a Gigante
 	CreateSafeZone(2, 2493.9998168945312, 2706, 2600.9998168945312, 2806);//ARMERO LV
 	CreateSafeZone(3, 2667.999755859375, -1090, 2761.999755859375, -1058);//Mini Refugio LS
 	CreateSafeZone(4, -1084.0000610351562, -726.9999084472656, -984.0000610351562, -626.9999084472656);//Bandera Drone Sells
@@ -14474,4 +14474,4 @@ public OnGameModeInit()
 	return 1;
 }
 
-// © xRicardOx y OkeiOner - Todos los derechos reservados.
+// ï¿½ xRicardOx y OkeiOner - Todos los derechos reservados.
